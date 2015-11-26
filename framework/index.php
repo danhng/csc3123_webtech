@@ -77,7 +77,8 @@
     $local->addval('context', $context);
     $local->addval('page', $action);
     $local->addval('siteinfo', new Siteinfo($local));
-
+    # dtn: added year for footer rendering
+    $local->addval('year', date("Y"));
     switch ($page->kind)
     {
     case Siteaction::OBJECT:

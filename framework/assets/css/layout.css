@@ -1,11 +1,26 @@
 
-
+html {
+    position: relative;
+    min-height: 100%;
+}
 /*------------------------------------*\
     Things used everywhere
 \*------------------------------------*/
 body {
-    font-family: sans-serif;
+    font-family: "Open Sans";
     background: #fff;
+    margin-bottom: 80px;
+
+}
+
+/* footer */
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    /* Set the fixed height of the footer here */
+    height: 80px;
+    background-color: #f5f5f5;
 }
 
 
