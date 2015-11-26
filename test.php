@@ -12,7 +12,7 @@ $loader = new Twig_Loader_Filesystem(__DIR__.'/templates');
 $twig = new Twig_Environment($loader);
 
 // load template
-$template = $twig->loadTemplate('hello.html');
+$template = $twig->loadTemplate('hello.twig');
 
 // set template variables
 // render template
@@ -20,7 +20,7 @@ echo $template->render(array(
 'name' => 'Clark Kent',
 'username' => 'ckent',
 'password' => 'krypt0n1te',
-));
+'list' => ['a', 'b']));
 
 } catch (Exception $e) {
 die ('ERROR: ' . $e->getMessage());

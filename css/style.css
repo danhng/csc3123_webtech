@@ -1,0 +1,52 @@
+.side {
+    position:absolute;
+    left:0; top:0;
+    width: 25%;
+}
+
+.main {
+    position: absolute;
+    left: 25%;
+    right: 0; top: 0;
+    min-height: 100%;
+
+
+}
+
+.head {
+    position: relative;
+    top: 0;
+    min-height: 10%;
+    width: 100%;
+}
+
+.content_foot {
+    position: relative;
+}
+
+.content {
+    height: auto;
+    min-height: 100%;
+}
+
+.foot {
+    clear: both;
+    position: relative;
+    z-index: 10;
+    height: 3em;
+    text-align: center;
+
+}
+
+
+
+/*.head {*/
+    /*position: absolute;*/
+    /*right:0; top: 0;*/
+/*}*/
+
+.side { background: blue; }
+.main { background: yellow; }
+.head { background: green}
+.content { background: white}
+.foot { background: orange;}
