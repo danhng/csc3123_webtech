@@ -3,11 +3,12 @@
 <head>
     <title>Using External CSS</title>
     <link href="css/style.css" type="text/css" rel="stylesheet" />
+
 </head>
 
   <body>
 
-  <div class="side">
+  <div class="side" id="sideID">
       LNB
   </div>
 
@@ -82,6 +83,17 @@
       </div>
   </div>
 
+  <script>
+      function getFinalHeight() {
+          var body = document.body,
+                  html = document.documentElement;
+          return Math.max( body.scrollHeight, body.offsetHeight,
+                  html.clientHeight, html.scrollHeight, html.offsetHeight );
+      }
+      document.getElementsByClassName("side")[0].setAttribute("style", "height:"+getFinalHeight()+"px;");
+      document.getElementsByClassName("side")[0].style.height= getFinalHeight() + "px";
+      document.getElementsByClassName("side")[0].innerHTML = getFinalHeight();
+  </script>
   </body>
 </html>
 

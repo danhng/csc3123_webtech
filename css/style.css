@@ -1,3 +1,10 @@
+
+/*html, body, #body2*/
+/*{*/
+    /*height: 100%;*/
+    /*min-height: 100%;*/
+/*}*/
+
 .side {
     position:absolute;
     left:0; top:0;
@@ -9,8 +16,6 @@
     left: 25%;
     right: 0; top: 0;
     min-height: 100%;
-
-
 }
 
 .head {
@@ -35,10 +40,7 @@
     z-index: 10;
     height: 3em;
     text-align: center;
-
 }
-
-
 
 /*.head {*/
     /*position: absolute;*/
