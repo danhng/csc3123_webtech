@@ -79,6 +79,7 @@
     $local->addval('siteinfo', new Siteinfo($local));
     # dtn: added year for footer rendering
     $local->addval('year', date("Y"));
+    $local->addval('mailsysadmin', 'mailto:'.Config::SYSADMIN.'?Subject=Open%20Access%20Query');
     switch ($page->kind)
     {
     case Siteaction::OBJECT:
