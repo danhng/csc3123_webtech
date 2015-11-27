@@ -43,19 +43,45 @@
     {% include 'navbar.twig' %}
 {% endblock navigation %}
 
-<div class="container">
+{% block main %}
+    <div class="container">
+    {% if leftnav %}
     <div class="row">
         {% block leftnavbar %}
-            {% include 'leftnavbar.twig' %}
-        {% endblock leftnavbar %}
-
-        {% block main %}
-            <div class="col-md-9">
-                main content twig here
+            <div class="col-md-3">
+                {% include 'leftnavbar.twig' %}
             </div>
-        {% endblock main %}
+        {% endblock leftnavbar %}
+        {% endif %}
+
+        {% block content %}
+
+            {% if leftnav %}
+                <div class=" col-md-offset-1  col-md-8" id="blocks-content">
+            {% endif %}
+            <h1 style="padding-bottom: 10px">Page title</h1>
+
+            {% block contentblocks %}
+            {% include 'blockcontent.twig' %}
+                    {% endblock contentblocks %}
+            {# pagination goes in here#}
+            {% block pagination %}
+                    {% if pagi  %}
+                        <div class="text-center">
+                    {% include 'pagination.twig' %}
+                        </div>
+                    {% endif %}
+                    {% endblock pagination %}
+            {% if leftnav %}
+                </div>
+            {% endif %}
+        {% endblock content %}
+        {% if leftnav %}
     </div>
-</div>
+    {% endif %}
+    </div>
+{% endblock main %}
+
 {% block pagefooter %}
     <footer class="footer">
         {% block footer %}

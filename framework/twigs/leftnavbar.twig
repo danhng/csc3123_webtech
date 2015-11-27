@@ -1,5 +1,4 @@
-
-    <div class="col-md-3">
+{#left vertical search side bar#}
         <div class="sidebar-nav">
             <div class="navbar navbar-default" role="navigation">
                 <div class="navbar-header">
@@ -34,31 +33,26 @@
                                 <div class="form-group">
                                     <label for="department-tag">Department</label>
                                     <select class="form-control" id="department-tag" name="department">
-                                        <option value="1">Documents</option>
-                                        <option value="2">Raw Data</option>
-                                        <option value="3">Applications</option>
-                                        <option value="4">Source Code</option>
+                                        {#Departments#}
+                                        {% for department in departments %}
+                                            <option value = {{ department.val }}>{{ department.name }}</option>
+                                    {% endfor %}
                                     </select>
                                 </div>
                                 <div class="form-group">
                                     <label for="author-tag">Author:</label>
-                                    <select class="form-control" id="author-tag" name="author">
-                                        <option value="1">Documents</option>
-                                        <option value="2">Raw Data</option>
-                                        <option value="3">Applications</option>
-                                        <option value="4">Source Code</option>
-                                    </select>
+                                    <input type="text" name="author" class="form-control" placeholder="Author..." id="author-tag">
                                 </div>
                                 <div class="form-group">
-                                    <label for="type-tag">Release Year:</label>
-                                    <select class="form-control" id="type-tag" name="year">
-                                        <option value="1">Documents</option>
-                                        <option value="2">Raw Data</option>
-                                        <option value="3">Applications</option>
-                                        <option value="4">Source Code</option>
+                                    <label for="release-year-tag">Release Year:</label>
+                                    <select class="form-control" id="release-year-tag" name="release-year">
+                                        {#Release Years#}
+                                        {% for releaseyear in releaseyears %}
+                                        <option value = {{ releaseyear.val }}>{{ releaseyear.name }}</option>
+                                        {% endfor %}
                                     </select>
                                 </div>
-                                <button type="submit" class="btn btn-primary col-md-offset-4">Search</button>
+                                <button type="submit" class="btn btn-lg btn-primary col-md-offset-4">Search</button>
                             </form>
                                 </div>
                         {#<li class="dropdown">#}
@@ -78,4 +72,4 @@
                 </div><!--/.nav-collapse -->
             </div>
         </div>
-    </div>
+

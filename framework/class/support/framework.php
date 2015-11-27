@@ -35,6 +35,8 @@
                     implode(DIRECTORY_SEPARATOR, array($dir, 'class/support')),
                     implode(DIRECTORY_SEPARATOR, array($dir, 'class/models')),
                     implode(DIRECTORY_SEPARATOR, array($dir, 'lib')),
+                    #@@ add the new directory for the open access site
+                    implode(DIRECTORY_SEPARATOR, array($dir, 'class/open-access')),
                     get_include_path()
                 ))
             );

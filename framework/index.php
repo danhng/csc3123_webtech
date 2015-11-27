@@ -36,6 +36,9 @@
  *         Query strings and/or post fields are in the $_ arrays as normal.
  */
     include 'class/support/framework.php';
+    // not sure why the include statement added for open access directory in the framwork.php file does not work...
+    include 'class/open-access/twigvals.php';
+    include 'class/open-access/oa-config.php';
     Framework::initialise();
 
     $local = Local::getinstance()->setup(__DIR__, FALSE, TRUE, TRUE, TRUE); # Not Ajax, debug on, load twig, load RB
@@ -79,7 +82,34 @@
     $local->addval('siteinfo', new Siteinfo($local));
     # dtn: added year for footer rendering
     $local->addval('year', date("Y"));
+    # dtn: added mailto link for contact us section
     $local->addval('mailsysadmin', 'mailto:'.Config::SYSADMIN.'?Subject=Open%20Access%20Query');
+    # dtn: try drop down list passing
+
+    #@@ todo
+    $dps = array( array("val" => "1", "name" => "Computing Science"));
+    $local->addval('departments', $dps);
+    $rls = array( array("val" => "1", "name" => "2014"));
+    $local->addval('releaseyears', $rls);
+
+    #@@todo
+    $bcontents = array();
+    for ($i = 0; $i < 3; $i++) {
+        array_push($bcontents, array("type" => "[RAW]",
+                                "title" => "This is a title",
+                                "author" => "Juan Rodriguez",
+                                "department" => "Computing Science",
+                                "rlyear" => "2014",
+                                "description"=> "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
+                                doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae
+                                dicta sunt explicabo."));
+
+    }
+
+    #@@ todo
+    $local->addval(TwigValues::LEFTNAV, true);
+    $local->addval(TwigValues::PAGNIATION, true);
+    $local->addval(TwigValues::BLOCKCONTENTS, $bcontents);
     switch ($page->kind)
     {
     case Siteaction::OBJECT:
@@ -93,6 +123,11 @@
     default :
         (new Web)->internal('Weird error');
     }
-
+#@@ see the source
+echo $tpl;
+#@@ see the action
+echo $action;
+#@@ see the request
+//var_dump($context);
     $local->render($tpl);
 ?>

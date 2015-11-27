@@ -569,6 +569,7 @@
                 list($uri) = explode('?', $uri);
             }
             $req = array_filter(explode('/', $uri)); # array_filter removes empty elements - trailing / or multiple /
+
 /*
  * If you know that the base directory is empty then you can delete the next test block.
  *
