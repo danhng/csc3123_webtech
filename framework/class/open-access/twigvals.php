@@ -6,7 +6,7 @@
  * Stores a handful of TWIG variables that will be used in the site's templates.
  */
 
-class TwigValues {
+class InterfaceValues {
     #Left search nav bar
     const LEFTNAV = "leftnav";
 
@@ -20,10 +20,15 @@ class TwigValues {
     const BLOCKCONTENT_UPLOADDATE = "udate";
     const BLOCKCONTENT_DESCRIPTION = "description";
     const BLOCKCONTENTS = "bcontents";
+    const BLOCKCONTENT_DEF = '0';
 
-    #Pagniation
+    #Pagination
     const PAGNIATION = "pagi";
     const PAGES_COUNT = "pages-count";
     const CURRENT_PAGE = "current-page";
+
+    const VALID_SEARCH_PARAMS = [InterfaceValues::BLOCKCONTENT_TYPE,
+        InterfaceValues::BLOCKCONTENT_TITLE, InterfaceValues::BLOCKCONTENT_AUTHOR,
+        InterfaceValues::BLOCKCONTENT_DEPRARTMENT, InterfaceValues::BLOCKCONTENT_UPLOADDATE];
 
 }

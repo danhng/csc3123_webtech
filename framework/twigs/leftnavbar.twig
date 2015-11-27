@@ -1,4 +1,6 @@
 {#left vertical search side bar#}
+{#set a default value for some select forms#}
+{% set def = '0' %}
         <div class="sidebar-nav">
             <div class="navbar navbar-default" role="navigation">
                 <div class="navbar-header">
@@ -24,6 +26,7 @@
                                 <div class="form-group">
                                 <label for="type-tag">Type:</label>
                                 <select class="form-control" id="type-tag" name="type">
+                                    <option value = {{ def }}>{{ "Select Type" }}</option>
                                     <option value="1">Documents</option>
                                     <option value="2">Raw Data</option>
                                     <option value="3">Applications</option>
@@ -34,6 +37,7 @@
                                     <label for="department-tag">Department</label>
                                     <select class="form-control" id="department-tag" name="department">
                                         {#Departments#}
+                                        <option value = {{ def }}>{{ "Select Department" }}</option>
                                         {% for department in departments %}
                                             <option value = {{ department.val }}>{{ department.name }}</option>
                                     {% endfor %}
@@ -47,6 +51,7 @@
                                     <label for="release-year-tag">Release Year:</label>
                                     <select class="form-control" id="release-year-tag" name="release-year">
                                         {#Release Years#}
+                                        <option value = {{ def }}>{{ "Select Release Year" }}</option>
                                         {% for releaseyear in releaseyears %}
                                         <option value = {{ releaseyear.val }}>{{ releaseyear.name }}</option>
                                         {% endfor %}

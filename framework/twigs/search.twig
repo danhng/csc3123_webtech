@@ -1,0 +1,13 @@
+{% extends 'page.twig' %}
+
+{% block contentblocks %}
+    {% include 'blockcontent.twig' %}
+{% endblock contentblocks %}
+
+ {% block pagination %}
+     {% if pagi  %}
+         <div class="text-center">
+             {% include 'pagination.twig' %}
+         </div>
+     {% endif %}
+ {% endblock pagination %}

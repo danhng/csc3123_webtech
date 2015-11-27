@@ -141,7 +141,7 @@
                         $error['file'],
                 	$error['line']
                     );
-                    $this->make500();
+                   // $this->make500();
                 }
                 else
                 {
@@ -163,7 +163,7 @@
                 $e->getFile(),
                 $e->getLine()
             );
-            $this->make500();
+            //$this->make500();
             exit;
         }
 /**
@@ -198,7 +198,7 @@
             );
             if ($this->debug || in_array($errno, array(E_ERROR, E_CORE_ERROR, E_COMPILE_ERROR, E_USER_ERROR)))
             { # this is an internal error or we are debugging, so we need to stop
-                $this->make500();
+               // $this->make500();
                 exit;
             }
 /*

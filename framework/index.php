@@ -96,7 +96,7 @@
     $bcontents = array();
     for ($i = 0; $i < 3; $i++) {
         array_push($bcontents, array("type" => "[RAW]",
-                                "title" => "This is a title",
+                               "title" => "This is a title",
                                 "author" => "Juan Rodriguez",
                                 "department" => "Computing Science",
                                 "rlyear" => "2014",
@@ -107,12 +107,13 @@
     }
 
     #@@ todo
-    $local->addval(TwigValues::LEFTNAV, true);
-    $local->addval(TwigValues::PAGNIATION, true);
-    $local->addval(TwigValues::BLOCKCONTENTS, $bcontents);
+    $local->addval(InterfaceValues::LEFTNAV, true);
+    $local->addval(InterfaceValues::PAGNIATION, true);
+    $local->addval(InterfaceValues::BLOCKCONTENTS, $bcontents);
     switch ($page->kind)
     {
     case Siteaction::OBJECT:
+        #@@ get class name in stead of template
         $tpl = (new $page->source)->handle($context);
         break;
 
