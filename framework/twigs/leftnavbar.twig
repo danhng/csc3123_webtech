@@ -15,10 +15,8 @@
                 <div class="navbar-collapse collapse sidebar-navbar-collapse">
                     <ul class="nav navbar-nav" id="left_navbar">
                             <div class="col-md-12" id="form-div">
-                                {%if done %}
-                                    <h3>We'll be in touch as soon as possible!</h3>
-                                {% endif %}
                             <form role="form" action="{{base}}/searchcontent" method="get">
+                                <input type="hidden" name="currentpage" value="1"/>
                                 <div class="form-group">
                                     <label for="tilte-tag">Title:</label>
                                     <input type="text" name="title" class="form-control" placeholder="Title" id="title-tag">

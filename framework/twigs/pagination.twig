@@ -1,6 +1,6 @@
 {#pagination. What is needed:
-1. how many pages - pages-count
-2. current pages - current-page
+1. how many pages - pagecount
+2. current pages - currentpage
 #}
 <nav>
     <ul class="pagination">
@@ -9,11 +9,9 @@
                 <span aria-hidden="true">&laquo;</span>
             </a>
         </li>
-        <li  class="active"><a href="#">1</a></li>
-        <li><a href="#">2</a></li>
-        <li><a href="#">3</a></li>
-        <li><a href="#">4</a></li>
-        <li><a href="#">5</a></li>
+        {% for i in 1..pagescount %}
+        <li  {% if i == currentpage %} class="active" {% endif %}><a href="#">{{ i }}</a></li>
+        {% endfor %}
         <li>
             <a href="#" aria-label="Next">
                 <span aria-hidden="true">&raquo;</span>

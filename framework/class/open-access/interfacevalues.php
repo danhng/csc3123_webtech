@@ -21,15 +21,19 @@ class InterfaceValues {
     const BLOCKCONTENT_DESCRIPTION = "description";
     const BLOCKCONTENTS = "bcontents";
     const BLOCKCONTENT_DEF = '0';
+    const BLOCKCONTENT_PAGE = 'bcontent-page';
 
     #Pagination
     const PAGNIATION = "pagi";
-    const PAGES_COUNT = "pages-count";
-    const CURRENT_PAGE = "current-page";
+    const PAGES_COUNT = "pagescount";
+    const CURRENT_PAGE = "currentpage";
 
     const VALID_SEARCH_PARAMS = [InterfaceValues::BLOCKCONTENT_TYPE,
         InterfaceValues::BLOCKCONTENT_TITLE, InterfaceValues::BLOCKCONTENT_AUTHOR,
         InterfaceValues::BLOCKCONTENT_DEPRARTMENT, InterfaceValues::BLOCKCONTENT_RLYEAR,
         InterfaceValues::BLOCKCONTENT_UPLOADDATE];
+
+    #@@todo
+    const BLOCKS_PER_PAGE = 3;
 
 }

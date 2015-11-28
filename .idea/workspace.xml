@@ -2,15 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f15a4cd6-96e9-4c15-9b9a-5b941459cd0f" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/framework/class/open-access/experiment.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/framework/twigs/okay.twig" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/framework/class/open-access/oa-config.php" afterPath="$PROJECT_DIR$/framework/class/open-access/database.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/framework/class/open-access/search.php" afterPath="$PROJECT_DIR$/framework/class/open-access/publicoperation.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/framework/class/open-access/twigvals.php" afterPath="$PROJECT_DIR$/framework/class/open-access/interfacevalue.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/framework/twigs/home.twig" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/framework/class/open-access/interfacevalue.php" afterPath="$PROJECT_DIR$/framework/class/open-access/interfacevalues.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/framework/class/kint/Kint.class.php" afterPath="$PROJECT_DIR$/framework/class/kint/Kint.class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/framework/index.php" afterPath="$PROJECT_DIR$/framework/index.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/framework/class/open-access/database.php" afterPath="$PROJECT_DIR$/framework/class/open-access/database.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/framework/class/open-access/experiment.php" afterPath="$PROJECT_DIR$/framework/class/open-access/experiment.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/framework/class/open-access/publicoperation.php" afterPath="$PROJECT_DIR$/framework/class/open-access/publicoperation.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/framework/twigs/index.twig" afterPath="$PROJECT_DIR$/framework/twigs/index.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/framework/twigs/leftnavbar.twig" afterPath="$PROJECT_DIR$/framework/twigs/leftnavbar.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/framework/twigs/page.twig" afterPath="$PROJECT_DIR$/framework/twigs/page.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/framework/twigs/pagination.twig" afterPath="$PROJECT_DIR$/framework/twigs/pagination.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/framework/twigs/search.twig" afterPath="$PROJECT_DIR$/framework/twigs/search.twig" />
     </list>
     <ignored path="www.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -32,33 +34,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/framework/index.php">
+      <file leaf-file-name="pagination.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/framework/twigs/pagination.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.5384617">
-              <caret line="38" column="115" selection-start-line="38" selection-start-column="115" selection-end-line="38" selection-end-column="115" />
-              <folding>
-                <element signature="e#6#152#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Kint.class.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/framework/class/kint/Kint.class.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.1153846">
-              <caret line="10" column="30" selection-start-line="10" selection-start-column="30" selection-end-line="10" selection-end-column="30" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="experiment.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/framework/class/open-access/experiment.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.9444444">
-              <caret line="3" column="16" selection-start-line="3" selection-start-column="16" selection-end-line="3" selection-end-column="16" />
+            <state vertical-scroll-proportion="-7.1923075">
+              <caret line="11" column="28" selection-start-line="11" selection-start-column="28" selection-end-line="11" selection-end-column="28" />
               <folding />
             </state>
           </provider>
@@ -67,8 +47,8 @@
       <file leaf-file-name="publicoperation.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/framework/class/open-access/publicoperation.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-1.4485531">
-              <caret line="10" column="40" selection-start-line="10" selection-start-column="40" selection-end-line="10" selection-end-column="40" />
+            <state vertical-scroll-proportion="0.46463022">
+              <caret line="29" column="127" selection-start-line="29" selection-start-column="127" selection-end-line="29" selection-end-column="127" />
               <folding>
                 <element signature="e#7#37#0#PHP" expanded="true" />
               </folding>
@@ -76,68 +56,65 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="database.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/framework/class/open-access/database.php">
+      <file leaf-file-name="home.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/framework/twigs/home.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-13.076923">
-              <caret line="20" column="10" selection-start-line="20" selection-start-column="10" selection-end-line="20" selection-end-column="10" />
-              <folding>
-                <element signature="e#6#100#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="interfacevalue.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/framework/class/open-access/interfacevalue.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-17.653847">
-              <caret line="32" column="8" selection-start-line="32" selection-start-column="8" selection-end-line="32" selection-end-column="8" />
+            <state vertical-scroll-proportion="-7.923077">
+              <caret line="38" column="0" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="framework.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/framework/class/support/framework.php">
+      <file leaf-file-name="leftnavbar.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/framework/twigs/leftnavbar.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-13.807693">
-              <caret line="38" column="75" selection-start-line="38" selection-start-column="75" selection-end-line="38" selection-end-column="75" />
+            <state vertical-scroll-proportion="13.730769">
+              <caret line="18" column="70" selection-start-line="18" selection-start-column="70" selection-end-line="18" selection-end-column="70" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="context.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/framework/class/support/context.php">
+      <file leaf-file-name="search.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/framework/twigs/search.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-7.9615383">
-              <caret line="121" column="24" selection-start-line="121" selection-start-column="24" selection-end-line="121" selection-end-column="24" />
+            <state vertical-scroll-proportion="-0.65384614">
+              <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+              <folding>
+                <element signature="e#203#231#0#HTML" expanded="true" />
+                <element signature="e#293#321#0#HTML" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="login.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/framework/twigs/login.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-9.230769">
+              <caret line="18" column="36" selection-start-line="18" selection-start-column="36" selection-end-line="18" selection-end-column="36" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="userlogin.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/framework/class/support/userlogin.php">
+      <file leaf-file-name="index.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/framework/twigs/index.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="13.076923">
-              <caret line="127" column="32" selection-start-line="127" selection-start-column="32" selection-end-line="127" selection-end-column="32" />
-              <folding>
-                <element signature="e#6#151#0#PHP" expanded="true" />
-              </folding>
+            <state vertical-scroll-proportion="-9.153846">
+              <caret line="14" column="20" selection-start-line="14" selection-start-column="20" selection-end-line="14" selection-end-column="20" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="debug.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/framework/class/support/debug.php">
+      <file leaf-file-name="interfacevalues.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/framework/class/open-access/interfacevalues.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-7.519231">
-              <caret line="23" column="12" selection-start-line="23" selection-start-column="12" selection-end-line="23" selection-end-column="12" />
-              <folding>
-                <element signature="e#6#156#0#PHP" expanded="true" />
-              </folding>
+            <state vertical-scroll-proportion="-18.692308">
+              <caret line="36" column="10" selection-start-line="36" selection-start-column="10" selection-end-line="36" selection-end-column="10" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -169,7 +146,6 @@
         <option value="$PROJECT_DIR$/style.css" />
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/css/style.css" />
-        <option value="$PROJECT_DIR$/framework/twigs/index.twig" />
         <option value="$PROJECT_DIR$/framework/twigs/footer.twig" />
         <option value="$PROJECT_DIR$/framework/class/support/context.php" />
         <option value="$PROJECT_DIR$/framework/twigs/navbar.twig" />
@@ -178,25 +154,31 @@
         <option value="$PROJECT_DIR$/framework/assets/css/layout.css" />
         <option value="$PROJECT_DIR$/framework/class/open-acess/twigvals.php" />
         <option value="$PROJECT_DIR$/framework/class/support/framework.php" />
-        <option value="$PROJECT_DIR$/framework/twigs/pagination.twig" />
         <option value="$PROJECT_DIR$/framework/twigs/twigvals.twig" />
         <option value="$PROJECT_DIR$/framework/twigs/blockcontent.twig" />
-        <option value="$PROJECT_DIR$/framework/twigs/page.twig" />
         <option value="$PROJECT_DIR$/framework/class/support/userlogin.php" />
         <option value="$PROJECT_DIR$/framework/class/support/search.php" />
-        <option value="$PROJECT_DIR$/framework/twigs/search.twig" />
         <option value="$PROJECT_DIR$/framework/class/support/local.php" />
         <option value="$PROJECT_DIR$/framework/class/open-access/oa-config.php" />
         <option value="$PROJECT_DIR$/framework/twigs/okay.twig" />
         <option value="$PROJECT_DIR$/framework/class/open-access/search.php" />
-        <option value="$PROJECT_DIR$/framework/twigs/leftnavbar.twig" />
         <option value="$PROJECT_DIR$/framework/class/support/debug.php" />
         <option value="$PROJECT_DIR$/framework/class/open-access/twigvals.php" />
         <option value="$PROJECT_DIR$/framework/class/open-access/searchcontent.php" />
         <option value="$PROJECT_DIR$/framework/class/open-access/public.php" />
-        <option value="$PROJECT_DIR$/framework/class/open-access/experiment.php" />
-        <option value="$PROJECT_DIR$/framework/index.php" />
         <option value="$PROJECT_DIR$/framework/class/kint/Kint.class.php" />
+        <option value="$PROJECT_DIR$/framework/twigs/page.twig" />
+        <option value="$PROJECT_DIR$/framework/twigs/home.twig" />
+        <option value="$PROJECT_DIR$/framework/class/open-access/database.php" />
+        <option value="$PROJECT_DIR$/framework/class/open-access/experiment.php" />
+        <option value="$PROJECT_DIR$/framework/twigs/search.twig" />
+        <option value="$PROJECT_DIR$/framework/class/open-access/interfacevalues.php" />
+        <option value="$PROJECT_DIR$/framework/index.php" />
+        <option value="$PROJECT_DIR$/framework/twigs/login.twig" />
+        <option value="$PROJECT_DIR$/framework/twigs/index.twig" />
+        <option value="$PROJECT_DIR$/framework/twigs/leftnavbar.twig" />
+        <option value="$PROJECT_DIR$/framework/twigs/pagination.twig" />
+        <option value="$PROJECT_DIR$/framework/class/open-access/publicoperation.php" />
       </list>
     </option>
   </component>
@@ -501,24 +483,10 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/framework/class/config.dist.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/framework/twigs/contact.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.82258064">
           <caret line="18" column="36" selection-start-line="18" selection-start-column="36" selection-end-line="18" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/framework/class/support/web.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.13665594">
-          <caret line="22" column="24" selection-start-line="22" selection-start-column="24" selection-end-line="22" selection-end-column="24" />
         </state>
       </provider>
     </entry>
@@ -632,14 +600,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/framework/twigs/pagination.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.1923075">
-          <caret line="11" column="27" selection-start-line="11" selection-start-column="27" selection-end-line="11" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/framework/class/info.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -674,26 +634,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/framework/twigs/blockcontent.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.076923">
-          <caret line="20" column="55" selection-start-line="20" selection-start-column="55" selection-end-line="20" selection-end-column="55" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/com/jetbrains/php/lang/psi/stubs/data/standard_5.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.34726688">
           <caret line="305" column="9" selection-start-line="305" selection-start-column="9" selection-end-line="305" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/framework/twigs/index.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="25" />
           <folding />
         </state>
       </provider>
@@ -772,38 +716,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/framework/twigs/page.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.076923">
-          <caret line="59" column="37" selection-start-line="59" selection-start-column="37" selection-end-line="59" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/framework/twigs/search.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3279743">
-          <caret line="12" column="26" selection-start-line="12" selection-start-column="26" selection-end-line="12" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/framework/twigs/leftnavbar.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.076923">
-          <caret line="20" column="76" selection-start-line="20" selection-start-column="76" selection-end-line="20" selection-end-column="76" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/framework/twigs/login.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.5384617">
-          <caret line="10" column="14" selection-start-line="10" selection-start-column="14" selection-end-line="10" selection-end-column="51" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/framework/class/support/developer.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.0">
@@ -864,16 +776,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/framework/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.5384617">
-          <caret line="38" column="115" selection-start-line="38" selection-start-column="115" selection-end-line="38" selection-end-column="115" />
-          <folding>
-            <element signature="e#6#152#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/framework/class/kint/Kint.class.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-5.1153846">
@@ -882,36 +784,121 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/framework/twigs/page.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="2.2411575">
+          <caret line="82" column="7" selection-start-line="82" selection-start-column="7" selection-end-line="82" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/framework/class/open-access/experiment.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.9444444">
-          <caret line="3" column="16" selection-start-line="3" selection-start-column="16" selection-end-line="3" selection-end-column="16" />
+        <state vertical-scroll-proportion="-1.0384616">
+          <caret line="15" column="71" selection-start-line="15" selection-start-column="71" selection-end-line="15" selection-end-column="71" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/framework/class/open-access/database.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.076923">
-          <caret line="20" column="10" selection-start-line="20" selection-start-column="10" selection-end-line="20" selection-end-column="10" />
+        <state vertical-scroll-proportion="-11.769231">
+          <caret line="18" column="48" selection-start-line="18" selection-start-column="48" selection-end-line="18" selection-end-column="48" />
           <folding>
             <element signature="e#6#100#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/framework/class/open-access/interfacevalue.php">
+    <entry file="file://$PROJECT_DIR$/framework/twigs/login.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-17.653847">
-          <caret line="32" column="8" selection-start-line="32" selection-start-column="8" selection-end-line="32" selection-end-column="8" />
+        <state vertical-scroll-proportion="-9.230769">
+          <caret line="18" column="36" selection-start-line="18" selection-start-column="36" selection-end-line="18" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/framework/twigs/home.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.923077">
+          <caret line="38" column="0" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/framework/twigs/leftnavbar.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="13.730769">
+          <caret line="18" column="70" selection-start-line="18" selection-start-column="70" selection-end-line="18" selection-end-column="70" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/framework/twigs/search.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.65384614">
+          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding>
+            <element signature="e#203#231#0#HTML" expanded="true" />
+            <element signature="e#293#321#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/framework/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.26205787">
+          <caret line="99" column="51" selection-start-line="99" selection-start-column="51" selection-end-line="99" selection-end-column="51" />
+          <folding>
+            <element signature="e#6#152#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/framework/twigs/blockcontent.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6012862">
+          <caret line="22" column="31" selection-start-line="22" selection-start-column="31" selection-end-line="22" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/framework/twigs/index.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.153846">
+          <caret line="14" column="20" selection-start-line="14" selection-start-column="20" selection-end-line="14" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/framework/class/open-access/interfacevalues.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-18.692308">
+          <caret line="36" column="10" selection-start-line="36" selection-start-column="10" selection-end-line="36" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/framework/twigs/pagination.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.1923075">
+          <caret line="11" column="28" selection-start-line="11" selection-start-column="28" selection-end-line="11" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/framework/class/support/web.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.4646302">
+          <caret line="88" column="20" selection-start-line="88" selection-start-column="20" selection-end-line="88" selection-end-column="20" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/framework/class/open-access/publicoperation.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.4485531">
-          <caret line="10" column="40" selection-start-line="10" selection-start-column="40" selection-end-line="10" selection-end-column="40" />
+        <state vertical-scroll-proportion="0.46463022">
+          <caret line="29" column="127" selection-start-line="29" selection-start-column="127" selection-end-line="29" selection-end-column="127" />
           <folding>
             <element signature="e#7#37#0#PHP" expanded="true" />
           </folding>

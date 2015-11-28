@@ -1,12 +1,10 @@
 <!doctype html>
-<!--[if lt IE 9]>
-<html class="ie"><![endif]-->
-<!--[if gte IE 9]><!-->
-<html><!--<![endif]-->
+<!--[if lt IE 9]><html class="ie"><![endif]-->
+<!--[if gte IE 9]><!--><html><!--<![endif]-->
 <head>
     <meta charset="utf-8"/>
 
-    <title>{% block title %}{{ context.sitename|upper }}{% endblock title %}</title>
+    <title>{% block title %}{{context.sitename|upper}}{% endblock title %}</title>
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
@@ -21,12 +19,7 @@
     #}
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" media="screen,print"/>
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"/>
-    <link rel="stylesheet" href="{{ assets }}/css/layout.css" media="screen"/>
-    <!-- Add style for the left nav bar -->
-    <link rel="stylesheet" href="{{ assets }}/css/leftnavbar.css" media="screen"/>
-    <!-- Add Open Sans font from Google -->
-    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans">
-
+    <link rel="stylesheet" href="{{assets}}/css/layout.css" media="screen"/>
 
     {% block links %}
     {% endblock links %}
@@ -43,52 +36,24 @@
     {% include 'navbar.twig' %}
 {% endblock navigation %}
 
-{% block main %}
-    <div class="container">
-    {% if leftnav %}
-    <div class="row">
-        {% block leftnavbar %}
-            <div class="col-md-3">
-                {% include 'leftnavbar.twig' %}
-            </div>
-        {% endblock leftnavbar %}
-        {% endif %}
+<div class="container">
+    {% block pageheader %}
+        <header class="row">
+            {% block header %}
+            {% endblock header %}
+        </header>
+    {% endblock pageheader %}
 
-        {% block content %}
+    {% block main %}
+    {% endblock main %}
 
-            {% if leftnav %}
-                <div class=" col-md-offset-1  col-md-8" id="blocks-content">
-            {% endif %}
-            <h1 style="padding-bottom: 10px">Page title</h1>
-
-            {% block contentblocks %}
-            {% include 'blockcontent.twig' %}
-                    {% endblock contentblocks %}
-            {# pagination goes in here#}
-            {% block pagination %}
-                    {% if pagi  %}
-                        <div class="text-center">
-                    {% include 'pagination.twig' %}
-                        </div>
-                    {% endif %}
-                    {% endblock pagination %}
-            {% if leftnav %}
-                </div>
-            {% endif %}
-        {% endblock content %}
-        {% if leftnav %}
-    </div>
-    {% endif %}
-    </div>
-{% endblock main %}
-
-{% block pagefooter %}
-    <footer class="footer">
-        {% block footer %}
-            {% include 'footer.twig' %}
-        {% endblock footer %}
-    </footer>
-{% endblock pagefooter %}
+    {% block pagefooter %}
+        <footer class="row">
+            {% block footer %}
+            {% endblock footer %}
+        </footer>
+    {% endblock pagefooter %}
+</div>
 
 <!--[if lt IE 9]>
 <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
@@ -109,7 +74,7 @@
     {% block setup %}
     {% endblock setup %}
 
-    $(function () {
+    $(function(){
         {% block onload %}
         {% endblock onload %}
     })

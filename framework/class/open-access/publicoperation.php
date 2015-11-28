@@ -10,7 +10,6 @@
  */
 class PublicOperation extends Siteaction
 {
-
     /**
      * /search handler.
      * @param $context Context the context object for the site
@@ -23,10 +22,30 @@ class PublicOperation extends Siteaction
                 $query[$param] = $context->getpar($param, false);
         }
         #@@ add template variables to the local object
-        $context->local()->addVal(InterfaceValues::BLOCKCONTENTS, $this->search_publications($query));
+        $full_result = $this->search_publications($query);
+
+        $context->local()->addVal(InterfaceValues::BLOCKCONTENTS,
+            $this->get_blocks($full_result, $context->mustgetpar(InterfaceValues::CURRENT_PAGE, 0)));
+        $context->local()->addVal(InterfaceValues::CURRENT_PAGE, 1);
+        $context->local()->addVal(InterfaceValues::PAGES_COUNT, ceil(sizeof($full_result) / InterfaceValues::BLOCKS_PER_PAGE));
         $context->local()->addval(InterfaceValues::LEFTNAV, true);
         $context->local()->addval(InterfaceValues::PAGNIATION, true);
-        return 'page.twig';
+
+        return 'search.twig';
+    }
+
+    /**
+     * @param $blocks array all blocks
+     * @param $page_number mixed the page number
+     * @return array the blocks needed
+     */
+    private function get_blocks($blocks, $page_number) {
+        if (!is_numeric($page_number) || $page_number < 0)
+            (new Web)->internal('Something went wrong. We are working on it. '.$page_number);
+        if ($page_number === 0) {
+            $page_number = 1;
+        }
+        return array_slice($blocks, ($page_number - 1) * InterfaceValues::BLOCKS_PER_PAGE, InterfaceValues::BLOCKS_PER_PAGE);
     }
 
     /**

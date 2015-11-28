@@ -1,11 +1,19 @@
-{% extends 'page.twig' %}
+{% extends 'home.twig' %}
 
 {% block contentblocks %}
     {% include 'blockcontent.twig' %}
 {% endblock contentblocks %}
 
+     {% block pagetitle %}
+        {% if bcontents|length == 0 %}
+            <h1 style="padding-bottom: 10px">No result :(</h1>
+            {% else %}
+                <h1 style="padding-bottom: 10px">Search results</h1>
+            {% endif %}
+                {% endblock pagetitle %}
+
  {% block pagination %}
-     {% if pagi  %}
+     {% if pagi and bcontents|length > 0 %}
          <div class="text-center">
              {% include 'pagination.twig' %}
          </div>

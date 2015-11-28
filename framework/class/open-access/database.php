@@ -16,6 +16,7 @@ class Database {
     const PUBLICATION_TYPE = 'type';
     const PUBLICATION_AUTHOR = 'author';
     const PUBLICATION_DEPARTMENT = 'department';
+    const PUBLICATION_DESCRIPTION = 'description';
     const PUBLICATION_CONTENT = 'content';
     const PUBLICATION_RLYEAR = 'rlyear';
     const PUBLICATION_UDATE = 'udate';

@@ -12,6 +12,7 @@ class Experiment extends Siteaction
             $publication->type = $what[Database::PUBLICATION_TYPE];
             $publication->author = $what[Database::PUBLICATION_AUTHOR];
             $publication->department = $what[Database::PUBLICATION_DEPARTMENT];
+            $publication->description = $what[Database::PUBLICATION_DESCRIPTION];
             $publication->rlyear = $what[Database::PUBLICATION_RLYEAR];
             $publication->udate = $what[Database::PUBLICATION_UDATE];
             #@@ todo count
@@ -20,14 +21,14 @@ class Experiment extends Siteaction
         }
 
     public function publish_test($context) {
-        $bcontents = array("type" => "[RAW]",
-            "title" => "This is a title",
-            "author" => "Juan Rodriguez",
-            "department" => "Computing Science",
-            "rlyear" => "2014",
-            "description"=> "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
+        $bcontents = array('type' => '[RAW]',
+            'title' => 'This is a title',
+            'author' => 'Juan Rodriguez',
+            'department' => 'Computing Science',
+            'rlyear' => '2014',
+            'description'=> 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
                                 doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae
-                                dicta sunt explicabo.",
+                                dicta sunt explicabo.',
             'udate' => '2015-07-31');
         $this->publish_inner($bcontents);
         $context->local();
