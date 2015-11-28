@@ -37,8 +37,6 @@
  */
     include 'class/support/framework.php';
     // not sure why the include statement added for open access directory in the framwork.php file does not work...
-    include 'class/open-access/twigvals.php';
-    include 'class/open-access/oa-config.php';
     Framework::initialise();
 
     $local = Local::getinstance()->setup(__DIR__, FALSE, TRUE, TRUE, TRUE); # Not Ajax, debug on, load twig, load RB

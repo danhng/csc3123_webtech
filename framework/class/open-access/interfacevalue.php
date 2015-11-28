@@ -29,6 +29,7 @@ class InterfaceValues {
 
     const VALID_SEARCH_PARAMS = [InterfaceValues::BLOCKCONTENT_TYPE,
         InterfaceValues::BLOCKCONTENT_TITLE, InterfaceValues::BLOCKCONTENT_AUTHOR,
-        InterfaceValues::BLOCKCONTENT_DEPRARTMENT, InterfaceValues::BLOCKCONTENT_UPLOADDATE];
+        InterfaceValues::BLOCKCONTENT_DEPRARTMENT, InterfaceValues::BLOCKCONTENT_RLYEAR,
+        InterfaceValues::BLOCKCONTENT_UPLOADDATE];
 
 }

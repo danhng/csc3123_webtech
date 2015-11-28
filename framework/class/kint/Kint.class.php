@@ -8,7 +8,7 @@ define( 'KINT_DIR', dirname( __FILE__ ) . '/' );
 require KINT_DIR . 'config.default.php';
 require KINT_DIR . 'parsers/parser.class.php';
 
-if ( is_readable( KINT_DIR . 'oa-config.php' ) ) {
+if ( is_readable( KINT_DIR . 'database.php' ) ) {
 	require KINT_DIR . 'config.php';
 }
 

@@ -5,23 +5,27 @@
  */
 
 /**
- * Class Search to handle search queries.
+ * Class SearchPublication to handle search queries.
+ * @@ Seems like Search and search.php can't be used (500). Have they been used elsewhere?
  */
-class Search extends Siteaction
+class PublicOperation extends Siteaction
 {
+
     /**
      * /search handler.
      * @param $context Context the context object for the site
      * @return string the template
      */
-    public function search($context) {
+    public function searchcontent($context) {
         $query = array();
         foreach (InterfaceValues::VALID_SEARCH_PARAMS as $param) {
-            if ($context->haspostpar($param))
-                array_push($query, array($param => $context->postpar($param)));
+            if ($context->hasgetpar($param))
+                $query[$param] = $context->getpar($param, false);
         }
-        #@@ add twig variables to the local object
+        #@@ add template variables to the local object
         $context->local()->addVal(InterfaceValues::BLOCKCONTENTS, $this->search_publications($query));
+        $context->local()->addval(InterfaceValues::LEFTNAV, true);
+        $context->local()->addval(InterfaceValues::PAGNIATION, true);
         return 'page.twig';
     }
 
@@ -32,23 +36,25 @@ class Search extends Siteaction
      */
     private function search_publications($query) {
         //todo verify query (javascript?)
-        $query = $this->filter_query($query);
-        $publications = R::find(Database::PUBLICATION, $this->build_search_query($query), array_values($query));
-        return $this->make_content($query);
+        $filtered_query = $this->filter_query($query);
+        $publications = R::find(Database::PUBLICATION, $this->build_search_query($filtered_query), array_values($filtered_query));
+        return $this->make_content($publications);
     }
 
     private function build_search_query($query) {
-        $sql = '';
+        $sql = ' where ';
         foreach (array_keys($query) as $param) {
             if (!strcmp($sql, '')) {
                 $sql .= ' and ';
             }
             #@@ use string searching for title and author
-            if (strcmp($param, InterfaceValues::BLOCKCONTENT_TITLE) || strcmp($param, InterfaceValues::BLOCKCONTENT_AUTHOR)) {
-                $sql .= ($param.' regexp ?');
+            if (strcmp($param, InterfaceValues::BLOCKCONTENT_TITLE) === 0 || strcmp($param, InterfaceValues::BLOCKCONTENT_AUTHOR) === 0) {
+                $sql .= ($param.' regexp ? ');
             }
             #@@ use equality searching for the remainder
-            $sql .= ($param.' =?');
+            else {
+                $sql .= ($param.' =? ');
+            }
         }
         return $sql;
     }
@@ -60,9 +66,10 @@ class Search extends Siteaction
     private function filter_query($raw_query) {
         $filtered_query = array();
         foreach ($raw_query as $param => $value) {
-            if ($pair = $this->filter_parameter($param, $value))
-                array_push($filtered_query, $pair);
+            if ($this->filter_parameter($param, $value))
+                $filtered_query[$param] = $value;
         }
+        return $filtered_query;
     }
 
     /**
@@ -73,21 +80,21 @@ class Search extends Siteaction
      */
     private function filter_parameter($parameter, $value) {
         # param is invalid
-        if (array_search($parameter, InterfaceValues::VALID_SEARCH_PARAMS)) {
+        if (!array_search($parameter, InterfaceValues::VALID_SEARCH_PARAMS)) {
             return false;
         }
         $value = trim($value);
         # value is invalid
-        if ($value === '') {
+        if (!$value) {
             return false;
         }
         switch ($parameter) {
             case InterfaceValues::BLOCKCONTENT_TYPE :
             case InterfaceValues::BLOCKCONTENT_DEPRARTMENT:
             case InterfaceValues::BLOCKCONTENT_RLYEAR:
-                return (strcmp($value, InterfaceValues::BLOCKCONTENT_DEF) ? false : array($parameter => $value));
+                return !strcmp($value, InterfaceValues::BLOCKCONTENT_DEF);
         }
-        return array($parameter => $value);
+        return true;
     }
 
     /**
@@ -103,6 +110,7 @@ class Search extends Siteaction
                 Database::PUBLICATION_DEPARTMENT => $p->department, Database::PUBLICATION_CONTENT => $p->content,
                 Database::PUBLICATION_RLYEAR => $p->rlyear, Database::PUBLICATION_UDATE => $p->udate));
         }
+        Debug::vdump($content);
         return $content;
     }
 
