@@ -10,7 +10,7 @@
             </a>
         </li>
         {% for i in 1..pagescount %}
-        <li  {% if i == currentpage %} class="active" {% endif %}><a href="#">{{ i }}</a></li>
+        <li  {% if i == currentpage %} class="active" {% endif %}><a href={{ base }}/searchcontent/{{ searchhash }}/{{ i }}>{{ i }}</a></li>
         {% endfor %}
         <li>
             <a href="#" aria-label="Next">

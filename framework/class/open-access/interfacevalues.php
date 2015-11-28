@@ -23,6 +23,8 @@ class InterfaceValues {
     const BLOCKCONTENT_DEF = '0';
     const BLOCKCONTENT_PAGE = 'bcontent-page';
 
+    const SEARCH_HASH = 'searchhash';
+
     #Pagination
     const PAGNIATION = "pagi";
     const PAGES_COUNT = "pagescount";

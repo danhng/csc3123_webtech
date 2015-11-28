@@ -20,4 +20,6 @@ class Database {
     const PUBLICATION_CONTENT = 'content';
     const PUBLICATION_RLYEAR = 'rlyear';
     const PUBLICATION_UDATE = 'udate';
+
+    const SEARCH = 'search';
 }
