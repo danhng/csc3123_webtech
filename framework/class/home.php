@@ -25,7 +25,9 @@
  */
         public function handle($context)
         {
-            return 'index.twig';
+            $page = array_key_exists(0, $context->rest()) ? $context->rest()[0] : 1;
+Debug::show('page at home :'.$page);
+            return (new PublicOperation())->full($context, $page);
         }
     }
 ?>

@@ -5,17 +5,13 @@
 {% endblock contentblocks %}
 
      {% block pagetitle %}
-        {% if bcontents|length == 0 %}
-            <h1 style="padding-bottom: 10px">No result :(</h1>
-            {% else %}
-                <h1 style="padding-bottom: 10px">Search results</h1>
-            {% endif %}
+                <h1 style="padding-bottom: 10px">{{ page_title }}</h1>
                 {% endblock pagetitle %}
 
  {% block pagination %}
-     {% if pagi and bcontents|length > 0 %}
+        {% if pagination %}
          <div class="text-center">
              {% include 'pagination.twig' %}
          </div>
-     {% endif %}
+     {%  endif %}
  {% endblock pagination %}

@@ -5,17 +5,64 @@
 <nav>
     <ul class="pagination">
         <li>
-            <a href="#" aria-label="Previous">
-                <span aria-hidden="true">&laquo;</span>
-            </a>
+            {% if currentpage == 1 %}
+                <a href="#" aria-label="Previous">
+                    <span aria-hidden="true">&laquo;</span>
+                </a>
+            {% else %}
+                {% if page == 'searchcontent' %}
+                    <a href={{ base }}/searchcontent/{{ searchhash }}/{{ currentpage - 1 }} aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                    </a>
+                {% elseif page == 'category' %}
+                    <a href={{ base }}/category/{{ cattype }}/{{ currentpage - 1 }} aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                    </a>
+                    {% elseif page == 'home' %}
+                    <a href={{ base }}/home/{{ currentpage - 1 }} aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                    </a>
+                {% else %}
+                    <a href="#" aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                    </a>
+                {% endif %}
+            {% endif %}
         </li>
         {% for i in 1..pagescount %}
+            {% if page == 'searchcontent' %}
         <li  {% if i == currentpage %} class="active" {% endif %}><a href={{ base }}/searchcontent/{{ searchhash }}/{{ i }}>{{ i }}</a></li>
+            {% elseif page == 'category' %}
+               <li  {% if i == currentpage %} class="active" {% endif %}><a href={{ base }}/category/{{ cattype }}/{{ i }}>{{ i }}</a></li>
+            {% elseif page == 'home' %}
+                <li  {% if i == currentpage %} class="active" {% endif %}><a href={{ base }}/home/{{ i }}>{{ i }}</a></li>
+            {% endif %}
         {% endfor %}
         <li>
-            <a href="#" aria-label="Next">
-                <span aria-hidden="true">&raquo;</span>
-            </a>
+            {% if currentpage == pagescount %}
+                <a href="#" aria-label="Next">
+                    <span aria-hidden="true">&raquo;</span>
+                </a>
+            {% else %}
+                {% if page == 'searchcontent' %}
+                    <a href={{ base }}/searchcontent/{{ searchhash }}/{{ currentpage + 1 }} aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                    </a>
+                {% elseif page == 'category' %}
+                    <a href={{ base }}/category/{{ cattype }}/{{ currentpage + 1 }} aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+
+                    </a>
+                {% elseif page == 'home' %}
+                    <a href={{ base }}/home/{{ currentpage + 1 }} aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                    </a>
+                    {% else %}
+                    <a href="#" aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                    </a>
+                {% endif %}
+            {% endif %}
         </li>
     </ul>
 </nav>

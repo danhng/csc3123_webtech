@@ -12,9 +12,15 @@ class InterfaceValues {
     const LEFTNAV_DEPARTMENTS = "departments";
     const LEFTNAV_RLYEARS = "releaseyears";
 
+    #page
+    const PAGE_TITLE = "page_title";
+    const CATEGORIES = ["doc" => "1", "raw" => "2", "app" => "3", "src" => "4", "home" => "0"];
+    const CATEGORY_TYPE = 'cattype';
+
+
     # Block content: a typical publication placeholder.
     const BLOCKCONTENT_TYPE = "type";
-    const BLOCKCONTENT_VALUES = ["1" => "[DOC]", "2" => "[RAW]", "3" => "[APP]", "4" => "[SRC]"];
+    const BLOCKCONTENT_VALUES = ["1" => "Document", "2" => "Raw data", "3" => "Application", "4" => "Source code"];
     const BLOCKCONTENT_TITLE = "title";
     const BLOCKCONTENT_AUTHOR = "author";
     const BLOCKCONTENT_DEPRARTMENT = "department";
@@ -28,7 +34,7 @@ class InterfaceValues {
     const SEARCH_HASH = 'searchhash';
 
     #Pagination
-    const PAGNIATION = "pagi";
+    const PAGINATION = "pagination";
     const PAGES_COUNT = "pagescount";
     const CURRENT_PAGE = "currentpage";
 

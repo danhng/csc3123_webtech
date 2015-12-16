@@ -10,7 +10,7 @@ class Experiment extends Siteaction
 
             $publication = R::dispense(Database::PUBLICATION);
 
-            $department_bean = Database::get_bean_single_param(Database::DEPARTMENT, Database::DEPARTMENT_NAME, $what[Database::PUBLICATION_DEPARTMENT]);
+            $department_bean = Database::get_beans_single_param(Database::DEPARTMENT, Database::DEPARTMENT_NAME, $what[Database::PUBLICATION_DEPARTMENT], true);
 
             R::begin();
             try{

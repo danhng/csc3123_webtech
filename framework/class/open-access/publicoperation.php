@@ -55,18 +55,8 @@ Debug::vdump($filtered_query);
                 (new Web)->bad('Method not supported.');
             }
         }
-        #@@ add search hash to twig compatible vars
-        $context->local()->addval(InterfaceValues::SEARCH_HASH, $full_result[InterfaceValues::SEARCH_HASH]);
-        #@@ add bcontents to twig compatible vars
-        $context->local()->addVal(InterfaceValues::BLOCKCONTENTS,
-            $this->get_blocks($full_result['content'], $currentpage));
-        #@@ add currentpage to twig compatible vars
-        $context->local()->addVal(InterfaceValues::CURRENT_PAGE, $currentpage);
-        $context->local()->addVal(InterfaceValues::PAGES_COUNT, ceil(sizeof($full_result['content']) / InterfaceValues::BLOCKS_PER_PAGE));
-        $context->local()->addval(InterfaceValues::LEFTNAV, true);
-        $context->local()->addval(InterfaceValues::PAGNIATION, true);
-
-        return 'search.twig';
+       return $this->prepareSearchPage($context, $currentpage, 'Search results', $full_result,
+           array(array("name" => InterfaceValues::SEARCH_HASH,  'val' => $full_result[InterfaceValues::SEARCH_HASH] )));
     }
 
     /**
@@ -74,7 +64,7 @@ Debug::vdump($filtered_query);
      * @param $search_id string
      * @return array of results (twig compatible)
      */
-    private function search_publications_id($search_id) {
+     function search_publications_id($search_id) {
         $search_rb = R::findOne(Database::SEARCH, 'hash =?', [$search_id]);
         #@@ oops more than 1 search is found...
         if (!$search_rb) {
@@ -99,7 +89,7 @@ Debug::vdump($sql);
      * @param $query array|null
      * @return array of results (twig compatible)
      */
-    private function search_publications_query($query) {
+     function search_publications_query($query) {
         if (!$query) {
             (new Web)->internal(Util::ERROR_MESSAGE_500.var_export($query, true));
         }
@@ -271,6 +261,52 @@ Debug::show("private param filter in switch: ".$parameter.$value.$valid);
                 Database::PUBLICATION_DESCRIPTION => $p->description));
         }
         return ['content' => $content, InterfaceValues::SEARCH_HASH => $search_id];
+    }
+
+    public function category($context) {
+        $category_abbrv = $context->rest()[0];
+        if (!array_key_exists($category_abbrv, InterfaceValues::CATEGORIES)) {
+            $context->divert('/error/404');
+        }
+        $category = InterfaceValues::CATEGORIES[$category_abbrv];
+        $page = array_key_exists(1, $context->rest()) ? $context->rest()[1] : 1;
+
+        $full_result = $this->search_publications_query(array(Database::PUBLICATION_TYPE => $category));
+
+        return $this->prepareSearchPage($context, $page, "Category ".$this->categoryName($category), $full_result,
+            array(array('name' => InterfaceValues::CATEGORY_TYPE, 'val' => $category_abbrv)));
+    }
+
+    public function full($context, $page) {
+        $full_result = $this->search_publications_query(array(Database::PUBLICATION_TITLE => '.+'));
+        return $this->prepareSearchPage($context, $page , 'Home', $full_result);
+    }
+
+    private function prepareSearchPage($context, $current_page, $page_title, $blockcontents, $additional_attributes = array()) {
+        #@@ add bcontents to twig compatible vars
+        $context->local()->addVal(InterfaceValues::BLOCKCONTENTS,
+            $this->get_blocks($blockcontents['content'], $current_page));
+        #@@ add currentpage to twig compatible vars
+        $context->local()->addVal(InterfaceValues::CURRENT_PAGE, $current_page);
+        $page_count = ceil(sizeof($blockcontents['content']) / InterfaceValues::BLOCKS_PER_PAGE);
+        $context->local()->addVal(InterfaceValues::PAGES_COUNT, $page_count);
+        $context->local()->addval(InterfaceValues::LEFTNAV, true);
+        $context->local()->addval(InterfaceValues::PAGINATION, $page_count > 0);
+        $context->local()->addval(InterfaceValues::PAGE_TITLE, $page_title);
+
+        foreach ($additional_attributes as $attribute) {
+            $context->local()->addval($attribute["name"], $attribute["val"]);
+        }
+
+        return "search.twig";
+    }
+
+
+
+    private function categoryName($id) {
+        if (array_key_exists($id, InterfaceValues::BLOCKCONTENT_VALUES))
+            return InterfaceValues::BLOCKCONTENT_VALUES[$id];
+        return "Null";
     }
 
 

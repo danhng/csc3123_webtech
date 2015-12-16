@@ -8,7 +8,9 @@ array of :
 6. Brief Description (For showing at page result)
 7. Full Description DB
 #}
-
+{% if bcontents|length == 0 %}
+            <h3 style="padding-bottom: 10px">Nothing to show...</h3>
+{% else %}
 {% for bcontent in bcontents %}
 <div class="well">
     <div class="media">
@@ -36,3 +38,4 @@ array of :
     </div>
 </div>
 {% endfor %}
+{% endif %}

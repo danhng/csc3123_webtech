@@ -37,12 +37,18 @@ Debug::vdump($beans);
         return $beans;
     }
 
-    public static function get_beans_single_param($bean, $param, $value) {
+    public static function get_beans_single_param($bean, $param, $value, $findOne = false) {
         if (empty($bean) || empty($param)) {
 Debug::show("cant find ".$bean.$param.$value);
             return false;
         }
-        $beans = R::findAll($bean, "where ".$param." = ?", array($value));
+        $beans = null;
+        if ($findOne) {
+            $beans = R::findOne($bean, "where " . $param . " = ?", array($value));
+        }
+        else {
+            $beans = R::findAll($bean, "where " . $param . " = ?", array($value));
+        }
 Debug::show("Finding beans ". $bean." for : ".$param.' = '.$value);
 Debug::vdump($beans);
         return $beans;

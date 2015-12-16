@@ -12,10 +12,10 @@
             </div>
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav">
-                        <li{{page == 'home' ? ' class="active"'}}><a href="{{base}}/">Documents</a></li>
-                        <li{{page == 'about' ? ' class="active"'}}><a href="{{base}}/about">Raw Data</a></li>
-                        <li{{page == 'contact' ? ' class="active"'}}><a href="{{base}}/contact">Applications</a></li>
-                        <li><a href="{{base}}/contact">Source Code</a></li>
+                        <li{{cattype == 'doc' ? ' class="active"'}}><a href="{{base}}/category/doc">Documents</a></li>
+                        <li{{cattype == 'raw' ? ' class="active"'}}><a href="{{base}}/category/raw">Raw Data</a></li>
+                        <li{{cattype == 'app' ? ' class="active"'}}><a href="{{base}}/category/app">Applications</a></li>
+                        <li{{cattype == 'src' ? ' class="active"'}}><a href="{{base}}/category/src">Source Code</a></li>
                         {% if context.hasadmin %}
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Admin<b class="caret"></b></a>
