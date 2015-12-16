@@ -12,7 +12,18 @@ array of :
 {% for bcontent in bcontents %}
 <div class="well">
     <div class="media">
-            <h3>{{ bcontent.type }} {{ bcontent.title }}</h3>
+            <h3>{% if bcontent.type == "1" %}
+                    [DOC]
+                {% elseif bcontent.type == "2" %}
+                    [RAW]
+                {% elseif bcontent.type == "3" %}
+                    [APP]
+                {% elseif bcontent.type == "4" %}
+                    [SRC]
+                {% else%}
+                    [NULL]
+                    {% endif %}
+    {{ bcontent.title }}</h3>
               <ul class="list-inline list-unstyled">
                 <li><button type="button" class="btn btn-primary btn-sm btn-link">{{ bcontent.author }}</button></li>
                 <li>|</li>

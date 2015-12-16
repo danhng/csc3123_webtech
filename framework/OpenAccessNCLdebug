@@ -1,0 +1,227 @@
+beans: 
+array(2) {
+  [1]=>
+  object(RedBeanPHP\OODBBean)#27 (10) {
+    ["properties":protected]=>
+    array(2) {
+      ["id"]=>
+      string(1) "1"
+      ["name"]=>
+      string(14) "Electrical Eng"
+    }
+    ["__info":protected]=>
+    array(5) {
+      ["type"]=>
+      string(10) "department"
+      ["sys.id"]=>
+      string(2) "id"
+      ["sys.orig"]=>
+      array(2) {
+        ["id"]=>
+        string(1) "1"
+        ["name"]=>
+        string(14) "Electrical Eng"
+      }
+      ["tainted"]=>
+      bool(false)
+      ["changed"]=>
+      bool(false)
+    }
+    ["beanHelper":protected]=>
+    object(RedBeanPHP\BeanHelper\SimpleFacadeBeanHelper)#21 (0) {
+    }
+    ["fetchType":protected]=>
+    NULL
+    ["withSql":protected]=>
+    string(0) ""
+    ["withParams":protected]=>
+    array(0) {
+    }
+    ["aliasName":protected]=>
+    NULL
+    ["via":protected]=>
+    NULL
+    ["noLoad":protected]=>
+    bool(false)
+    ["all":protected]=>
+    bool(false)
+  }
+  [2]=>
+  object(RedBeanPHP\OODBBean)#30 (10) {
+    ["properties":protected]=>
+    array(2) {
+      ["id"]=>
+      string(1) "2"
+      ["name"]=>
+      string(15) "Electrical Comp"
+    }
+    ["__info":protected]=>
+    array(5) {
+      ["type"]=>
+      string(10) "department"
+      ["sys.id"]=>
+      string(2) "id"
+      ["sys.orig"]=>
+      array(2) {
+        ["id"]=>
+        string(1) "2"
+        ["name"]=>
+        string(15) "Electrical Comp"
+      }
+      ["tainted"]=>
+      bool(false)
+      ["changed"]=>
+      bool(false)
+    }
+    ["beanHelper":protected]=>
+    object(RedBeanPHP\BeanHelper\SimpleFacadeBeanHelper)#21 (0) {
+    }
+    ["fetchType":protected]=>
+    NULL
+    ["withSql":protected]=>
+    string(0) ""
+    ["withParams":protected]=>
+    array(0) {
+    }
+    ["aliasName":protected]=>
+    NULL
+    ["via":protected]=>
+    NULL
+    ["noLoad":protected]=>
+    bool(false)
+    ["all":protected]=>
+    bool(false)
+  }
+}
+all release years beans:
+array(1) {
+  [0]=>
+  string(4) "2014"
+}
+query before filter:
+array(5) {
+  ["title"]=>
+  string(0) ""
+  ["author"]=>
+  string(5) "rodri"
+  ["department"]=>
+  string(1) "0"
+  ["rlyear"]=>
+  string(1) "0"
+  ["type"]=>
+  string(1) "0"
+}
+value after trim is null: title
+value after trim is null: department0
+value after trim is null: rlyear0
+value after trim is null: type0
+query after filter:
+array(1) {
+  ["author"]=>
+  string(5) "rodri"
+}
+Entry method filtered query:
+array(1) {
+  ["author"]=>
+  string(5) "rodri"
+}
+SQL query:
+string(22) " where author regexp ?"
+Finding beans department for : id = 1
+array(1) {
+  [1]=>
+  object(RedBeanPHP\OODBBean)#35 (10) {
+    ["properties":protected]=>
+    array(2) {
+      ["id"]=>
+      string(1) "1"
+      ["name"]=>
+      string(14) "Electrical Eng"
+    }
+    ["__info":protected]=>
+    array(5) {
+      ["type"]=>
+      string(10) "department"
+      ["sys.id"]=>
+      string(2) "id"
+      ["sys.orig"]=>
+      array(2) {
+        ["id"]=>
+        string(1) "1"
+        ["name"]=>
+        string(14) "Electrical Eng"
+      }
+      ["tainted"]=>
+      bool(false)
+      ["changed"]=>
+      bool(false)
+    }
+    ["beanHelper":protected]=>
+    object(RedBeanPHP\BeanHelper\SimpleFacadeBeanHelper)#21 (0) {
+    }
+    ["fetchType":protected]=>
+    NULL
+    ["withSql":protected]=>
+    string(0) ""
+    ["withParams":protected]=>
+    array(0) {
+    }
+    ["aliasName":protected]=>
+    NULL
+    ["via":protected]=>
+    NULL
+    ["noLoad":protected]=>
+    bool(false)
+    ["all":protected]=>
+    bool(false)
+  }
+}
+Finding beans department for : id = 2
+array(1) {
+  [2]=>
+  object(RedBeanPHP\OODBBean)#35 (10) {
+    ["properties":protected]=>
+    array(2) {
+      ["id"]=>
+      string(1) "2"
+      ["name"]=>
+      string(15) "Electrical Comp"
+    }
+    ["__info":protected]=>
+    array(5) {
+      ["type"]=>
+      string(10) "department"
+      ["sys.id"]=>
+      string(2) "id"
+      ["sys.orig"]=>
+      array(2) {
+        ["id"]=>
+        string(1) "2"
+        ["name"]=>
+        string(15) "Electrical Comp"
+      }
+      ["tainted"]=>
+      bool(false)
+      ["changed"]=>
+      bool(false)
+    }
+    ["beanHelper":protected]=>
+    object(RedBeanPHP\BeanHelper\SimpleFacadeBeanHelper)#21 (0) {
+    }
+    ["fetchType":protected]=>
+    NULL
+    ["withSql":protected]=>
+    string(0) ""
+    ["withParams":protected]=>
+    array(0) {
+    }
+    ["aliasName":protected]=>
+    NULL
+    ["via":protected]=>
+    NULL
+    ["noLoad":protected]=>
+    bool(false)
+    ["all":protected]=>
+    bool(false)
+  }
+}

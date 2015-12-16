@@ -369,7 +369,7 @@
 	public function handle($context)
 	{
 	    $action = $context->action();
-	    return $this->$action($context); #@@ this is why I love PHP!
+	    return $this->$action($context);
 	}
     }
 ?>

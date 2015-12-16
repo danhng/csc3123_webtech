@@ -2,13 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f15a4cd6-96e9-4c15-9b9a-5b941459cd0f" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/framework/class/open-access/util.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/framework/class/open-access/leftsearchbar.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/framework/test.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/framework/class/open-access/database.php" afterPath="$PROJECT_DIR$/framework/class/open-access/database.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/framework/class/open-access/experiment.php" afterPath="$PROJECT_DIR$/framework/class/open-access/experiment.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/framework/class/open-access/interfacevalues.php" afterPath="$PROJECT_DIR$/framework/class/open-access/interfacevalues.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/framework/class/open-access/publicoperation.php" afterPath="$PROJECT_DIR$/framework/class/open-access/publicoperation.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/framework/class/open-access/util.php" afterPath="$PROJECT_DIR$/framework/class/open-access/util.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/framework/class/support/debug.php" afterPath="$PROJECT_DIR$/framework/class/support/debug.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/framework/class/support/userlogin.php" afterPath="$PROJECT_DIR$/framework/class/support/userlogin.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/framework/index.php" afterPath="$PROJECT_DIR$/framework/index.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/framework/twigs/blockcontent.twig" afterPath="$PROJECT_DIR$/framework/twigs/blockcontent.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/framework/twigs/leftnavbar.twig" afterPath="$PROJECT_DIR$/framework/twigs/leftnavbar.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/framework/twigs/pagination.twig" afterPath="$PROJECT_DIR$/framework/twigs/pagination.twig" />
     </list>
     <ignored path="www.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -30,31 +36,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="pagination.twig" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/framework/twigs/pagination.twig">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.3279743">
-              <caret line="12" column="120" selection-start-line="12" selection-start-column="120" selection-end-line="12" selection-end-column="120" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="search.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/framework/twigs/search.twig">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-11.115385">
-              <caret line="17" column="31" selection-start-line="17" selection-start-column="31" selection-end-line="17" selection-end-column="31" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="publicoperation.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="publicoperation.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/framework/class/open-access/publicoperation.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-12.807693">
-              <caret line="61" column="138" selection-start-line="61" selection-start-column="138" selection-end-line="61" selection-end-column="138" />
+            <state vertical-scroll-proportion="0.53536975">
+              <caret line="270" column="16" selection-start-line="270" selection-start-column="16" selection-end-line="270" selection-end-column="16" />
               <folding>
                 <element signature="e#7#66#0#PHP" expanded="true" />
               </folding>
@@ -62,12 +48,64 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="local.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/framework/class/support/local.php">
+      <file leaf-file-name="util.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/framework/class/open-access/util.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-15.769231">
-              <caret line="200" column="17" selection-start-line="200" selection-start-column="17" selection-end-line="200" selection-end-column="17" />
+            <state vertical-scroll-proportion="-11.769231">
+              <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="database.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/framework/class/open-access/database.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-13.461538">
+              <caret line="39" column="27" selection-start-line="39" selection-start-column="27" selection-end-line="39" selection-end-column="27" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="OpenAccessNCLdebug" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/framework/OpenAccessNCLdebug">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="226" column="1" selection-start-line="226" selection-start-column="1" selection-end-line="226" selection-end-column="1" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="experiment.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/framework/class/open-access/experiment.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-10.846154">
+              <caret line="62" column="31" selection-start-line="62" selection-start-column="31" selection-end-line="62" selection-end-column="31" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/framework/index.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-8.192307">
+              <caret line="108" column="17" selection-start-line="108" selection-start-column="17" selection-end-line="108" selection-end-column="17" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="leftsearchbar.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/framework/class/open-access/leftsearchbar.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-9.153846">
+              <caret line="14" column="19" selection-start-line="14" selection-start-column="19" selection-end-line="14" selection-end-column="111" />
+              <folding>
+                <element signature="e#6#39#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -75,9 +113,11 @@
       <file leaf-file-name="leftnavbar.twig" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/framework/twigs/leftnavbar.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-2.5185184">
-              <caret line="17" column="88" selection-start-line="17" selection-start-column="88" selection-end-line="17" selection-end-column="88" />
-              <folding />
+            <state vertical-scroll-proportion="-2.3461537">
+              <caret line="27" column="72" selection-start-line="27" selection-start-column="72" selection-end-line="27" selection-end-column="72" />
+              <folding>
+                <marker date="1450234880581" expanded="true" signature="3926:4006" placeholder="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -85,18 +125,8 @@
       <file leaf-file-name="blockcontent.twig" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/framework/twigs/blockcontent.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-7.1923075">
-              <caret line="11" column="24" selection-start-line="11" selection-start-column="24" selection-end-line="11" selection-end-column="24" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="login.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/framework/twigs/login.twig">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-10.192307">
-              <caret line="18" column="36" selection-start-line="18" selection-start-column="36" selection-end-line="18" selection-end-column="36" />
+            <state vertical-scroll-proportion="-17.384615">
+              <caret line="33" column="29" selection-start-line="33" selection-start-column="29" selection-end-line="33" selection-end-column="29" />
               <folding />
             </state>
           </provider>
@@ -138,31 +168,35 @@
         <option value="$PROJECT_DIR$/framework/class/open-acess/twigvals.php" />
         <option value="$PROJECT_DIR$/framework/class/support/framework.php" />
         <option value="$PROJECT_DIR$/framework/twigs/twigvals.twig" />
-        <option value="$PROJECT_DIR$/framework/twigs/blockcontent.twig" />
-        <option value="$PROJECT_DIR$/framework/class/support/userlogin.php" />
         <option value="$PROJECT_DIR$/framework/class/support/search.php" />
         <option value="$PROJECT_DIR$/framework/class/support/local.php" />
         <option value="$PROJECT_DIR$/framework/class/open-access/oa-config.php" />
         <option value="$PROJECT_DIR$/framework/twigs/okay.twig" />
         <option value="$PROJECT_DIR$/framework/class/open-access/search.php" />
-        <option value="$PROJECT_DIR$/framework/class/support/debug.php" />
         <option value="$PROJECT_DIR$/framework/class/open-access/twigvals.php" />
         <option value="$PROJECT_DIR$/framework/class/open-access/searchcontent.php" />
         <option value="$PROJECT_DIR$/framework/class/open-access/public.php" />
         <option value="$PROJECT_DIR$/framework/class/kint/Kint.class.php" />
         <option value="$PROJECT_DIR$/framework/twigs/page.twig" />
         <option value="$PROJECT_DIR$/framework/twigs/home.twig" />
-        <option value="$PROJECT_DIR$/framework/class/open-access/experiment.php" />
         <option value="$PROJECT_DIR$/framework/twigs/search.twig" />
-        <option value="$PROJECT_DIR$/framework/index.php" />
         <option value="$PROJECT_DIR$/framework/twigs/login.twig" />
         <option value="$PROJECT_DIR$/framework/twigs/index.twig" />
-        <option value="$PROJECT_DIR$/framework/class/open-access/util.php" />
-        <option value="$PROJECT_DIR$/framework/class/open-access/database.php" />
-        <option value="$PROJECT_DIR$/framework/class/open-access/interfacevalues.php" />
-        <option value="$PROJECT_DIR$/framework/twigs/leftnavbar.twig" />
-        <option value="$PROJECT_DIR$/framework/class/open-access/publicoperation.php" />
         <option value="$PROJECT_DIR$/framework/twigs/pagination.twig" />
+        <option value="$PROJECT_DIR$/framework/test.php" />
+        <option value="$PROJECT_DIR$/framework/class/support/userlogin.php" />
+        <option value="$PROJECT_DIR$/framework/twigs/blockcontent.twig" />
+        <option value="$PROJECT_DIR$/framework/class/support/debug.php" />
+        <option value="$PROJECT_DIR$/framework/class/open-access/util.php" />
+        <option value="$PROJECT_DIR$/framework/class/open-access/interfacevalues.php" />
+        <option value="$PROJECT_DIR$/framework/index.php" />
+        <option value="$PROJECT_DIR$/framework/twigs/leftnavbar.twig" />
+        <option value="$PROJECT_DIR$/framework/class/open-access/experiment.php" />
+        <option value="$PROJECT_DIR$/framework/class/open-access/database.php" />
+        <option value="$PROJECT_DIR$/framework/OpenAccessNCLdebug" />
+        <option value="$PROJECT_DIR$/framework/class/open-access/leftnavbar.php" />
+        <option value="$PROJECT_DIR$/framework/class/open-access/leftsearchbar.php" />
+        <option value="$PROJECT_DIR$/framework/class/open-access/publicoperation.php" />
       </list>
     </option>
   </component>
@@ -176,9 +210,9 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="y" value="24" />
+    <option name="y" value="-4" />
     <option name="width" value="1366" />
-    <option name="height" value="744" />
+    <option name="height" value="772" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -205,6 +239,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -341,8 +377,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -355,15 +389,15 @@
     <property name="php.override.implement.member.chooser.php.doc" value="NONE" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/framework/class/support" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/framework/class/open-access" />
       <recent name="$PROJECT_DIR$/framework/class" />
       <recent name="$PROJECT_DIR$/framework" />
       <recent name="$PROJECT_DIR$/css" />
       <recent name="$PROJECT_DIR$" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/framework/class/support" />
     </key>
   </component>
   <component name="RunManager">
@@ -429,7 +463,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="24" width="1366" height="744" extended-state="6" />
+    <frame x="0" y="-4" width="1366" height="772" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16398244" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -470,52 +504,12 @@
     <option name="LAST_COMMIT_MESSAGE" value="fixed some behaviour of the pagination. Next is to maintain state." />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <option name="time" value="1" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/../Downloads/blog2/one-page-wonder.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="92.19231">
-          <caret line="138" column="1" selection-start-line="138" selection-start-column="1" selection-end-line="138" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../Downloads/blog2/bootstrap_blog_demo2.htm">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-21.576923">
-          <caret line="102" column="22" selection-start-line="71" selection-start-column="16" selection-end-line="102" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/framework/assets/css/leftnavbar.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.076923">
-          <caret line="20" column="5" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/framework/assets/css/layout.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-20.923077">
-          <caret line="32" column="0" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/com/jetbrains/php/lang/psi/stubs/data/standard_defines.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="19.432476">
-          <caret line="711" column="9" selection-start-line="711" selection-start-column="9" selection-end-line="711" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/framework/class/support/statuscodes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/framework/class/multi.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-9.153846">
@@ -548,7 +542,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -563,9 +556,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-1.6923077">
           <caret line="12" column="30" selection-start-line="12" selection-start-column="30" selection-end-line="12" selection-end-column="30" />
-          <folding>
-            <element signature="e#6#156#0#PHP" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -580,7 +570,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.34726688">
           <caret line="305" column="9" selection-start-line="305" selection-start-column="9" selection-end-line="305" selection-end-column="9" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -588,7 +577,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.34726688">
           <caret line="1013" column="9" selection-start-line="1013" selection-start-column="9" selection-end-line="1013" selection-end-column="9" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -610,9 +598,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-7.9615383">
           <caret line="39" column="10" selection-start-line="39" selection-start-column="10" selection-end-line="39" selection-end-column="10" />
-          <folding>
-            <element signature="e#6#1459#0#PHP" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -620,7 +605,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.34726688">
           <caret line="82" column="0" selection-start-line="82" selection-start-column="0" selection-end-line="82" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -628,13 +612,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-16.423077">
           <caret line="31" column="20" selection-start-line="31" selection-start-column="20" selection-end-line="31" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/framework/twigs/okay.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.02733119">
-          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -663,17 +640,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.34726688">
           <caret line="188" column="9" selection-start-line="188" selection-start-column="9" selection-end-line="188" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/framework/class/support/debug.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.519231">
-          <caret line="23" column="12" selection-start-line="23" selection-start-column="12" selection-end-line="23" selection-end-column="12" />
-          <folding>
-            <element signature="e#6#156#0#PHP" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -698,56 +664,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/framework/class/open-access/experiment.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.0384616">
-          <caret line="15" column="71" selection-start-line="15" selection-start-column="71" selection-end-line="15" selection-end-column="71" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/framework/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.26205787">
-          <caret line="99" column="51" selection-start-line="99" selection-start-column="51" selection-end-line="99" selection-end-column="51" />
-          <folding>
-            <element signature="e#6#152#0#PHP" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/framework/class/support/web.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="1.4646302">
           <caret line="88" column="20" selection-start-line="88" selection-start-column="20" selection-end-line="88" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/framework/class/support/userlogin.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.6666667">
-          <caret line="35" column="8" selection-start-line="35" selection-start-column="8" selection-end-line="35" selection-end-column="74" />
-          <folding>
-            <element signature="e#6#151#0#PHP" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/framework/class/open-access/util.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.8461537">
-          <caret line="12" column="76" selection-start-line="12" selection-start-column="76" selection-end-line="12" selection-end-column="76" />
-          <folding>
-            <element signature="e#7#40#0#PHP" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/framework/class/open-access/database.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.076923">
-          <caret line="23" column="28" selection-start-line="23" selection-start-column="28" selection-end-line="23" selection-end-column="28" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -755,7 +675,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -763,23 +682,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-9.153846">
           <caret line="14" column="20" selection-start-line="14" selection-start-column="20" selection-end-line="14" selection-end-column="20" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/framework/twigs/login.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.192307">
+        <state vertical-scroll-proportion="0.0">
           <caret line="18" column="36" selection-start-line="18" selection-start-column="36" selection-end-line="18" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/framework/class/open-access/interfacevalues.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.5">
-          <caret line="25" column="31" selection-start-line="25" selection-start-column="31" selection-end-line="25" selection-end-column="31" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -787,7 +696,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="29.692308">
           <caret line="38" column="0" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -795,7 +703,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-10.562289">
           <caret line="106" column="15" selection-start-line="106" selection-start-column="12" selection-end-line="106" selection-end-column="15" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -803,7 +710,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-3.9814816">
           <caret line="135" column="39" selection-start-line="135" selection-start-column="39" selection-end-line="135" selection-end-column="39" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -811,53 +717,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.5385852">
           <caret line="8595" column="25" selection-start-line="8595" selection-start-column="25" selection-end-line="8595" selection-end-column="25" />
-          <folding>
-            <marker date="1448560317571" expanded="true" signature="129145:129272" placeholder="INSERT INTO ${$table}..." />
-            <marker date="1448560317571" expanded="true" signature="129542:129583" placeholder="INSERT INTO ${$table}..." />
-            <marker date="1448560317571" expanded="true" signature="131893:131924" placeholder="ALTER TABLE ${$table}..." />
-            <marker date="1448560317571" expanded="true" signature="132577:132594" placeholder="UPDATE ${$ta..." />
-            <marker date="1448560317571" expanded="true" signature="134289:134344" placeholder="SELECT ${{$f..." />
-            <marker date="1448560317571" expanded="true" signature="134771:134803" placeholder="SELECT ${{$t..." />
-            <marker date="1448560317571" expanded="true" signature="135820:136247" placeholder="SELECT ${{$d..." />
-            <marker date="1448560317571" expanded="true" signature="136352:136586" placeholder="SELECT ${{$d..." />
-            <marker date="1448560317571" expanded="true" signature="137427:137580" placeholder="SELECT ${{$l..." />
-            <marker date="1448560317571" expanded="true" signature="137710:137811" placeholder="SELECT ${{$l..." />
-            <marker date="1448560317571" expanded="true" signature="138416:138672" placeholder="SELECT ${{$t..." />
-            <marker date="1448560317571" expanded="true" signature="139217:139247" placeholder="SELECT COUNT..${{$table}..." />
-            <marker date="1448560317571" expanded="true" signature="139756:139992" placeholder="SELECT COUNT..${{$linkTable}..." />
-            <marker date="1448560317571" expanded="true" signature="140116:140266" placeholder="SELECT COUNT..${{$linkTable}..." />
-            <marker date="1448560317571" expanded="true" signature="140743:140764" placeholder="DELETE FROM ..." />
-            <marker date="1448560317571" expanded="true" signature="141128:141210" placeholder="DELETE FROM ..." />
-            <marker date="1448560317571" expanded="true" signature="141304:141355" placeholder="DELETE FROM ..." />
-            <marker date="1448560317571" expanded="true" signature="141739:141781" placeholder="ALTER TABLE ${$table}..." />
-            <marker date="1448560317571" expanded="true" signature="145914:147016" placeholder="SELECT infor..key_column_usage..." />
-            <marker date="1448560317571" expanded="true" signature="149210:149372" placeholder="CREATE TABLE..${$table}..." />
-            <marker date="1448560317571" expanded="true" signature="152335:152418" placeholder="ALTER TABLE ${$table}..." />
-            <marker date="1448560317571" expanded="true" signature="154026:154168" placeholder="ALTER TABLE ${{$table}..." />
-            <marker date="1448560317571" expanded="true" signature="154979:155004" placeholder="DROP TABLE I..." />
-            <marker date="1448560317571" expanded="true" signature="157588:157619" placeholder="DROP TABLE I..." />
-            <marker date="1448560317571" expanded="true" signature="157859:157904" placeholder="INSERT INTO tmp_backup..." />
-            <marker date="1448560317571" expanded="true" signature="157882:157904" placeholder="SELECT * FRO..${$table}..." />
-            <marker date="1448560317571" expanded="true" signature="157955:157974" placeholder="DROP TABLE `..." />
-            <marker date="1448560317571" expanded="true" signature="158380:158469" placeholder="CREATE TABLE..${$table}..." />
-            <marker date="1448560317571" expanded="true" signature="158867:158912" placeholder="INSERT INTO `${$table}`..." />
-            <marker date="1448560317571" expanded="true" signature="158888:158912" placeholder="SELECT * FRO..tmp_backup..." />
-            <marker date="1448560317571" expanded="true" signature="158926:158947" placeholder="DROP TABLE t..." />
-            <marker date="1448560317571" expanded="true" signature="163400:163435" placeholder="ALTER TABLE `${$table}`..." />
-            <marker date="1448560317571" expanded="true" signature="164029:164109" placeholder="SELECT name ..sqlite_master..." />
-            <marker date="1448560317571" expanded="true" signature="164251:164311" placeholder="CREATE TABLE..${$table}..." />
-            <marker date="1448560317571" expanded="true" signature="166059:166071" placeholder="DELETE FROM ..." />
-            <marker date="1448560317571" expanded="true" signature="166506:166531" placeholder="DROP TABLE I..." />
-            <marker date="1448560317571" expanded="true" signature="166611:166636" placeholder="DROP TABLE I..." />
-            <marker date="1448560317571" expanded="true" signature="168708:170731" placeholder="SELECT infor..key_column_usage..." />
-            <marker date="1448560317571" expanded="true" signature="172463:172564" placeholder="SELECT table..tables..." />
-            <marker date="1448560317571" expanded="true" signature="172719:172762" placeholder="CREATE TABLE..${$table}..." />
-            <marker date="1448560317571" expanded="true" signature="172940:173078" placeholder="SELECT colum..columns..." />
-            <marker date="1448560317571" expanded="true" signature="175583:175595" placeholder="ALTER TABLE ${$table}..." />
-            <marker date="1448560317571" expanded="true" signature="176082:176181" placeholder="ALTER TABLE ${{$table}..." />
-            <marker date="1448560317571" expanded="true" signature="177605:177709" placeholder="ALTER TABLE ${{$table}..." />
-            <marker date="1448560317571" expanded="true" signature="178062:178093" placeholder="DROP TABLE I..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -865,103 +724,171 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-9.615385">
           <caret line="10514" column="39" selection-start-line="10514" selection-start-column="39" selection-end-line="10514" selection-end-column="39" />
-          <folding>
-            <marker date="1443637869000" expanded="true" signature="129145:129272" placeholder="INSERT INTO ${$table}..." />
-            <marker date="1443637869000" expanded="true" signature="129542:129583" placeholder="INSERT INTO ${$table}..." />
-            <marker date="1443637869000" expanded="true" signature="131893:131924" placeholder="ALTER TABLE ${$table}..." />
-            <marker date="1443637869000" expanded="true" signature="132577:132594" placeholder="UPDATE ${$ta..." />
-            <marker date="1443637869000" expanded="true" signature="134289:134344" placeholder="SELECT ${{$f..." />
-            <marker date="1443637869000" expanded="true" signature="134771:134803" placeholder="SELECT ${{$t..." />
-            <marker date="1443637869000" expanded="true" signature="135820:136247" placeholder="SELECT ${{$d..." />
-            <marker date="1443637869000" expanded="true" signature="136352:136586" placeholder="SELECT ${{$d..." />
-            <marker date="1443637869000" expanded="true" signature="137427:137580" placeholder="SELECT ${{$l..." />
-            <marker date="1443637869000" expanded="true" signature="137710:137811" placeholder="SELECT ${{$l..." />
-            <marker date="1443637869000" expanded="true" signature="138416:138672" placeholder="SELECT ${{$t..." />
-            <marker date="1443637869000" expanded="true" signature="139217:139247" placeholder="SELECT COUNT..${{$table}..." />
-            <marker date="1443637869000" expanded="true" signature="139756:139992" placeholder="SELECT COUNT..${{$linkTable}..." />
-            <marker date="1443637869000" expanded="true" signature="140116:140266" placeholder="SELECT COUNT..${{$linkTable}..." />
-            <marker date="1443637869000" expanded="true" signature="140743:140764" placeholder="DELETE FROM ..." />
-            <marker date="1443637869000" expanded="true" signature="141128:141210" placeholder="DELETE FROM ..." />
-            <marker date="1443637869000" expanded="true" signature="141304:141355" placeholder="DELETE FROM ..." />
-            <marker date="1443637869000" expanded="true" signature="141739:141781" placeholder="ALTER TABLE ${$table}..." />
-            <marker date="1443637869000" expanded="true" signature="145914:147016" placeholder="SELECT infor..key_column_usage..." />
-            <marker date="1443637869000" expanded="true" signature="149210:149372" placeholder="CREATE TABLE..${$table}..." />
-            <marker date="1443637869000" expanded="true" signature="152335:152418" placeholder="ALTER TABLE ${$table}..." />
-            <marker date="1443637869000" expanded="true" signature="154026:154168" placeholder="ALTER TABLE ${{$table}..." />
-            <marker date="1443637869000" expanded="true" signature="154979:155004" placeholder="DROP TABLE I..." />
-            <marker date="1443637869000" expanded="true" signature="157588:157619" placeholder="DROP TABLE I..." />
-            <marker date="1443637869000" expanded="true" signature="157859:157904" placeholder="INSERT INTO tmp_backup..." />
-            <marker date="1443637869000" expanded="true" signature="157882:157904" placeholder="SELECT * FRO..${$table}..." />
-            <marker date="1443637869000" expanded="true" signature="157955:157974" placeholder="DROP TABLE `..." />
-            <marker date="1443637869000" expanded="true" signature="158380:158469" placeholder="CREATE TABLE..${$table}..." />
-            <marker date="1443637869000" expanded="true" signature="158867:158912" placeholder="INSERT INTO `${$table}`..." />
-            <marker date="1443637869000" expanded="true" signature="158888:158912" placeholder="SELECT * FRO..tmp_backup..." />
-            <marker date="1443637869000" expanded="true" signature="158926:158947" placeholder="DROP TABLE t..." />
-            <marker date="1443637869000" expanded="true" signature="163400:163435" placeholder="ALTER TABLE `${$table}`..." />
-            <marker date="1443637869000" expanded="true" signature="164029:164109" placeholder="SELECT name ..sqlite_master..." />
-            <marker date="1443637869000" expanded="true" signature="164251:164311" placeholder="CREATE TABLE..${$table}..." />
-            <marker date="1443637869000" expanded="true" signature="166059:166071" placeholder="DELETE FROM ..." />
-            <marker date="1443637869000" expanded="true" signature="166506:166531" placeholder="DROP TABLE I..." />
-            <marker date="1443637869000" expanded="true" signature="166611:166636" placeholder="DROP TABLE I..." />
-            <marker date="1443637869000" expanded="true" signature="168708:170731" placeholder="SELECT infor..key_column_usage..." />
-            <marker date="1443637869000" expanded="true" signature="172463:172564" placeholder="SELECT table..tables..." />
-            <marker date="1443637869000" expanded="true" signature="172719:172762" placeholder="CREATE TABLE..${$table}..." />
-            <marker date="1443637869000" expanded="true" signature="172940:173078" placeholder="SELECT colum..columns..." />
-            <marker date="1443637869000" expanded="true" signature="175583:175595" placeholder="ALTER TABLE ${$table}..." />
-            <marker date="1443637869000" expanded="true" signature="176082:176181" placeholder="ALTER TABLE ${{$table}..." />
-            <marker date="1443637869000" expanded="true" signature="177605:177709" placeholder="ALTER TABLE ${{$table}..." />
-            <marker date="1443637869000" expanded="true" signature="178062:178093" placeholder="DROP TABLE I..." />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/framework/class/open-access/publicoperation.php">
+    <entry file="file://$PROJECT_DIR$/framework/test.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.807693">
-          <caret line="61" column="138" selection-start-line="61" selection-start-column="138" selection-end-line="61" selection-end-column="138" />
-          <folding>
-            <element signature="e#7#66#0#PHP" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="0.10932476">
+          <caret line="4" column="3" selection-start-line="4" selection-start-column="3" selection-end-line="4" selection-end-column="3" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/framework/class/support/local.php">
+    <entry file="file://$PROJECT_DIR$/framework/twigs/pagination.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-15.769231">
-          <caret line="200" column="17" selection-start-line="200" selection-start-column="17" selection-end-line="200" selection-end-column="17" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/framework/twigs/leftnavbar.twig">
+    <entry file="file://$PROJECT_DIR$/framework/index.nodb.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.5185184">
-          <caret line="17" column="88" selection-start-line="17" selection-start-column="88" selection-end-line="17" selection-end-column="88" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/framework/twigs/search.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.115385">
+        <state vertical-scroll-proportion="0.0">
           <caret line="17" column="31" selection-start-line="17" selection-start-column="31" selection-end-line="17" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/framework/class/support/local.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="200" column="17" selection-start-line="200" selection-start-column="17" selection-end-line="200" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/framework/lib/testautoload.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/framework/class/support/userlogin.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-11.655">
+          <caret line="15" column="2" selection-start-line="15" selection-start-column="2" selection-end-line="15" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/framework/class/support/debug.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-12.423077">
+          <caret line="24" column="58" selection-start-line="24" selection-start-column="58" selection-end-line="24" selection-end-column="58" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/framework/class/contact.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.1275">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/framework/twigs/okay.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0425">
+          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/framework/class/open-access/interfacevalues.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.17">
+          <caret line="15" column="19" selection-start-line="15" selection-start-column="19" selection-end-line="15" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/framework/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.192307">
+          <caret line="108" column="17" selection-start-line="108" selection-start-column="17" selection-end-line="108" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/framework/class/open-access/experiment.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-10.846154">
+          <caret line="62" column="31" selection-start-line="62" selection-start-column="31" selection-end-line="62" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/framework/OpenAccessNCLdebug">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="226" column="1" selection-start-line="226" selection-start-column="1" selection-end-line="226" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/framework/class/open-access/database.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-13.461538">
+          <caret line="39" column="27" selection-start-line="39" selection-start-column="27" selection-end-line="39" selection-end-column="27" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/framework/twigs/blockcontent.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.1923075">
-          <caret line="11" column="24" selection-start-line="11" selection-start-column="24" selection-end-line="11" selection-end-column="24" />
+        <state vertical-scroll-proportion="-17.384615">
+          <caret line="33" column="29" selection-start-line="33" selection-start-column="29" selection-end-line="33" selection-end-column="29" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/framework/twigs/pagination.twig">
+    <entry file="file://$PROJECT_DIR$/framework/twigs/leftnavbar.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3279743">
-          <caret line="12" column="120" selection-start-line="12" selection-start-column="120" selection-end-line="12" selection-end-column="120" />
+        <state vertical-scroll-proportion="-2.3461537">
+          <caret line="27" column="72" selection-start-line="27" selection-start-column="72" selection-end-line="27" selection-end-column="72" />
+          <folding>
+            <marker date="1450234880581" expanded="true" signature="3926:4006" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/framework/class/open-access/leftsearchbar.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.153846">
+          <caret line="14" column="19" selection-start-line="14" selection-start-column="19" selection-end-line="14" selection-end-column="111" />
+          <folding>
+            <element signature="e#6#39#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/framework/class/open-access/util.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-11.769231">
+          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/framework/class/open-access/publicoperation.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.53536975">
+          <caret line="270" column="16" selection-start-line="270" selection-start-column="16" selection-end-line="270" selection-end-column="16" />
+          <folding>
+            <element signature="e#7#66#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

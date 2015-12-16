@@ -37,7 +37,7 @@
                                         {#Departments#}
                                         <option value = {{ def }}>{{ "Select Department" }}</option>
                                         {% for department in departments %}
-                                            <option value = {{ department.val }}>{{ department.name }}</option>
+                                            <option value = {{ department.id }}>{{ department.name }}</option>
                                     {% endfor %}
                                     </select>
                                 </div>
@@ -51,7 +51,7 @@
                                         {#Release Years#}
                                         <option value = {{ def }}>{{ "Select Release Year" }}</option>
                                         {% for releaseyear in releaseyears %}
-                                        <option value = {{ releaseyear.val }}>{{ releaseyear.name }}</option>
+                                        <option value = {{ releaseyear }}>{{ releaseyear }}</option>
                                         {% endfor %}
                                     </select>
                                 </div>

@@ -22,4 +22,29 @@ class Database {
     const PUBLICATION_UDATE = 'udate';
 
     const SEARCH = 'search';
+
+    const DEPARTMENT = "department";
+    const DEPARTMENT_ID = "id";
+    const DEPARTMENT_NAME = "name";
+
+    const AND_HOLDER = '/and/';
+    const AND_HOLDER_COUNT = 5;
+
+    public static function get_all_beans($bean) {
+        $beans = R::findAll($bean);
+Debug::show("beans: ");
+Debug::vdump($beans);
+        return $beans;
+    }
+
+    public static function get_beans_single_param($bean, $param, $value) {
+        if (empty($bean) || empty($param)) {
+Debug::show("cant find ".$bean.$param.$value);
+            return false;
+        }
+        $beans = R::findAll($bean, "where ".$param." = ?", array($value));
+Debug::show("Finding beans ". $bean." for : ".$param.' = '.$value);
+Debug::vdump($beans);
+        return $beans;
+    }
 }

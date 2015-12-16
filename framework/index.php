@@ -84,30 +84,31 @@
     $local->addval('mailsysadmin', 'mailto:'.Config::SYSADMIN.'?Subject=Open%20Access%20Query');
     # dtn: try drop down list passing
 
-    #@@ todo
-    $dps = array( array("val" => "1", "name" => "Computing Science"));
-    $local->addval('departments', $dps);
-    $rls = array( array("val" => "1", "name" => "2014"));
-    $local->addval('releaseyears', $rls);
-
-    #@@todo
-    $bcontents = array();
-    for ($i = 0; $i < 3; $i++) {
-        array_push($bcontents, array("type" => "[RAW]",
-                               "title" => "This is a title",
-                                "author" => "Juan Rodriguez",
-                                "department" => "Computing Science",
-                                "rlyear" => "2014",
-                                "description"=> "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
-                                doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae
-                                dicta sunt explicabo."));
-
-    }
-
-    #@@ todo
+//    #@@ todo
+//    $dps = array( array("val" => "1", "name" => "Computing Science"));
+//    $local->addval('departments', $dps);
+//    $rls = array( array("val" => "1", "name" => "2014"));
+//    $local->addval('releaseyears', $rls);
+//
+//    #@@todo
+//    $bcontents = array();
+//    for ($i = 0; $i < 3; $i++) {
+//        array_push($bcontents, array("type" => "[RAW]",
+//                               "title" => "This is a title",
+//                                "author" => "Juan Rodriguez",
+//                                "department" => "Computing Science",
+//                                "rlyear" => "2014",
+//                                "description"=> "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
+//                                doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae
+//                                dicta sunt explicabo."));
+//
+//    }
+//
+//    #@@ todo
     $local->addval(InterfaceValues::LEFTNAV, true);
-    $local->addval(InterfaceValues::PAGNIATION, true);
-    $local->addval(InterfaceValues::BLOCKCONTENTS, $bcontents);
+    LeftSearchBar::loadLeftBar($context);
+//    $local->addval(InterfaceValues::PAGNIATION, true);
+//    $local->addval(InterfaceValues::BLOCKCONTENTS, $bcontents);
     switch ($page->kind)
     {
     case Siteaction::OBJECT:
@@ -122,10 +123,6 @@
     default :
         (new Web)->internal('Weird error');
     }
-#@@ see the source
-echo $tpl;
-#@@ see the action
-echo $action;
 #@@ see the request
 //var_dump($context);
     $local->render($tpl);

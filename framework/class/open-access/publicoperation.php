@@ -6,7 +6,6 @@
 
 /**
  * Class SearchPublication to handle search queries.
- * @@ Seems like Search and search.php can't be used (500). Have they been used elsewhere?
  */
 class PublicOperation extends Siteaction
 {
@@ -26,13 +25,17 @@ class PublicOperation extends Siteaction
                     if ($context->haspostpar($param))
                         $query[$param] = $context->mustpostpar($param, true);
                 }
+                $filtered_query = $this->filter_query($query);
+Debug::show("Entry method filtered query:");
+Debug::vdump($filtered_query);
                 #@@ make sure query is not empty...
-                if ($query) {
-                    $full_result = $this->search_publications_query($query);
+                if (!empty($filtered_query)){
+                    $full_result = $this->search_publications_query($filtered_query);
                     $currentpage = $context->postpar(InterfaceValues::CURRENT_PAGE, 1);
                 }
                 else {
-                    (new Web)->bad(Util::ERROR_MESSAGE_500);
+                    Debug::show("Entry method query empty ");
+                    $full_result = $this->make_content(array(), 0);
                 }
                 break;
             }
@@ -75,7 +78,7 @@ class PublicOperation extends Siteaction
         $search_rb = R::findOne(Database::SEARCH, 'hash =?', [$search_id]);
         #@@ oops more than 1 search is found...
         if (!$search_rb) {
-            (new Web)->internal(Util::ERROR_MESSAGE_500.var_export($search_rb, true));
+            (new Web)->notfound("Page not found.");
         }
         $query = $this->filter_query(array(InterfaceValues::BLOCKCONTENT_TYPE => $search_rb->type,
             InterfaceValues::BLOCKCONTENT_TITLE => $search_rb->title,
@@ -84,7 +87,10 @@ class PublicOperation extends Siteaction
             InterfaceValues::BLOCKCONTENT_RLYEAR => $search_rb->rlyear));
         //todo verify query (javascript?)
         $filtered_query = $this->filter_query($query);
-        $publications_rb = R::find(Database::PUBLICATION, $this->build_search_query($filtered_query), array_values($filtered_query));
+        $sql = $this->build_search_query($filtered_query);
+Debug::show("SQL query:");
+Debug::vdump($sql);
+        $publications_rb = R::find(Database::PUBLICATION, $sql , array_values($filtered_query));
         return $this->make_content($publications_rb, $search_id);
 }
 
@@ -114,9 +120,11 @@ class PublicOperation extends Siteaction
                 R::store($search_rb);
             }
             //todo verify query (javascript?)
-            $filtered_query = $this->filter_query($query);
-            $publications_rb = R::find(Database::PUBLICATION, $this->build_search_query($filtered_query),
-                array_values($filtered_query));
+            $sql = $this->build_search_query($query);
+        Debug::show("SQL query:");
+        Debug::vdump($sql);
+            $publications_rb = R::find(Database::PUBLICATION, $sql,
+                array_values($query));
             return $this->make_content($publications_rb, $search_id);
     }
 
@@ -128,18 +136,18 @@ class PublicOperation extends Siteaction
     private function build_search_query($query) {
         $sql = ' where ';
         foreach (array_keys($query) as $param) {
-            if (!strcmp($sql, '')) {
-                $sql .= ' and ';
-            }
             #@@ use string searching for title and author
             if (strcmp($param, InterfaceValues::BLOCKCONTENT_TITLE) === 0 || strcmp($param, InterfaceValues::BLOCKCONTENT_AUTHOR) === 0) {
-                $sql .= ($param.' regexp ? ');
+                $sql .= ($param.' regexp ?');
             }
             #@@ use equality searching for the remainder
             else {
-                $sql .= ($param.' =? ');
+                $sql .= ($param.' = ?');
             }
+                $sql .= Database::AND_HOLDER;
         }
+        $sql = substr($sql, 0, count($sql) - Database::AND_HOLDER_COUNT - 1);
+        $sql = str_replace(Database::AND_HOLDER, ' and ', $sql);
         return $sql;
     }
     /**
@@ -148,11 +156,15 @@ class PublicOperation extends Siteaction
      * @return array the filter query in which all trash parameters are ruled out.
      */
     private function filter_query($raw_query) {
+Debug::show("query before filter:");
+Debug::vdump($raw_query);
         $filtered_query = array();
         foreach ($raw_query as $param => $value) {
             if ($this->filter_parameter($param, $value))
                 $filtered_query[$param] = $value;
         }
+Debug::show("query after filter:");
+Debug::vdump($filtered_query);
         return $filtered_query;
     }
 
@@ -164,19 +176,25 @@ class PublicOperation extends Siteaction
      */
     private function filter_parameter($parameter, $value) {
         # param is invalid
-        if (!array_search($parameter, InterfaceValues::VALID_SEARCH_PARAMS)) {
+        if (array_search($parameter, InterfaceValues::VALID_SEARCH_PARAMS) === false) {
+Debug::show("param not valid: ".$parameter.$value);
             return false;
         }
         $value = trim($value);
+
         # value is invalid
         if (!$value) {
+            Debug::show("value after trim is null: ".$parameter.$value);
             return false;
         }
         switch ($parameter) {
             case InterfaceValues::BLOCKCONTENT_TYPE :
             case InterfaceValues::BLOCKCONTENT_DEPRARTMENT:
-            case InterfaceValues::BLOCKCONTENT_RLYEAR:
-                return !strcmp($value, InterfaceValues::BLOCKCONTENT_DEF);
+            case InterfaceValues::BLOCKCONTENT_RLYEAR: {
+            $valid = strcmp($value, InterfaceValues::BLOCKCONTENT_DEF);
+Debug::show("private param filter in switch: ".$parameter.$value.$valid);
+            return $valid;
+        }
         }
         return true;
     }
@@ -245,15 +263,16 @@ class PublicOperation extends Siteaction
     private function make_content($publications, $search_id) {
         $content = array();
         foreach ($publications as $p) {
+            $department_name = Database::get_beans_single_param(Database::DEPARTMENT, Database::DEPARTMENT_ID, $p->department)[$p->department][Database::DEPARTMENT_NAME];
             array_push($content, array(Database::PUBLICATION_TITLE => $p->title,
                 Database::PUBLICATION_TYPE => $p->type, Database::PUBLICATION_AUTHOR => $p->author,
-                Database::PUBLICATION_DEPARTMENT => $p->department, Database::PUBLICATION_CONTENT => $p->content,
-                Database::PUBLICATION_RLYEAR => $p->rlyear, Database::PUBLICATION_UDATE => $p->udate));
+                Database::PUBLICATION_DEPARTMENT => $department_name, Database::PUBLICATION_CONTENT => $p->content,
+                Database::PUBLICATION_RLYEAR => $p->rlyear, Database::PUBLICATION_UDATE => $p->udate,
+                Database::PUBLICATION_DESCRIPTION => $p->description));
         }
-
-        Debug::vdump($content);
         return ['content' => $content, InterfaceValues::SEARCH_HASH => $search_id];
     }
+
 
     public function handle($context)
     {

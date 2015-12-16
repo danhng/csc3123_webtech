@@ -1,0 +1,6 @@
+<Directory /home/dtn/csc3123_webtech/old>
+	Options -Indexes -FollowSymLinks
+	AllowOverride None
+	Deny from all
+</Directory>
+
