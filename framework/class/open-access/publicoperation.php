@@ -10,7 +10,21 @@
 class PublicOperation extends Siteaction
 {
     /**
-     * /search handler.
+     * /searchcontent handler.
+     *
+     * There are two types of search requests which could be sent to the server.
+     *
+     * 1. Post /searchcontent using parameters
+     * The server will first obtain a hash id using search parameters. If the hash does not exist in the database
+     * it then stores it so that later searches using this id could refer to the correct parameters.
+     * The search is then proceeded as usual.
+     * >>> The first page of the result is returned.
+     *
+     * 2. Get /searchcontent/{hash}/{pagenumber}
+     * Used mostly to implement pagination. the {hash} extracted from context->rest() is used to query parameters in
+     * the search table. The returned parameters are then used for searching publications as usual.
+     * >>> the page {pagenumber} is returned. Or the first page is returned if {pagenunmber} is not specified.
+     *
      * @param $context Context the context object for the site
      * @return string the template
      */
@@ -35,10 +49,11 @@ Debug::vdump($filtered_query);
                 }
                 else {
                     Debug::show("Entry method query empty ");
-                    $full_result = $this->make_content(array(), 0);
+                    $full_result = $this->make_contents(array(), 0);
                 }
                 break;
             }
+            // if the search request is a get then it means it's probably a search using {hash}
             case 'GET' : {
                 #@@ get search id for this search
                 $search_id = $context->rest()[0];
@@ -57,6 +72,63 @@ Debug::vdump($filtered_query);
         }
        return $this->prepareSearchPage($context, $currentpage, 'Search results', $full_result,
            array(array("name" => InterfaceValues::SEARCH_HASH,  'val' => $full_result[InterfaceValues::SEARCH_HASH] )));
+    }
+
+    public function author(Context $context) {
+        $author = str_replace('_', ' ', trim($context->rest()[0]));
+        return $this->list_cat($context, 'author', $author,
+            Database::PUBLICATION_AUTHOR, $author, 'Author');
+
+    }
+
+    public function rlyear(Context $context) {
+        $rlyear = str_replace('_', ' ', trim($context->rest()[0]));
+        return $this->list_cat($context, 'rlyear', $rlyear,
+            Database::PUBLICATION_RLYEAR, $rlyear, 'Release year');
+
+    }
+
+    public function department(Context $context) {
+        $department = str_replace('_', ' ', trim($context->rest()[0]));
+        $department_id = Database::get_beans_single_param(Database::DEPARTMENT, Database::DEPARTMENT_NAME, $department, true)['id'];
+        return $this->list_cat($context, 'department', str_replace('_', ' ', trim($context->rest()[0])),
+            Database::PUBLICATION_DEPARTMENT, $department_id, 'Department');
+    }
+
+    public function category($context) {
+        $category_abbrv = $context->rest()[0];
+        $category = InterfaceValues::CATEGORIES[$category_abbrv];
+        if (!array_key_exists($category_abbrv, InterfaceValues::CATEGORIES)) {
+            $context->divert('/error/404');
+        }
+        return $this->list_cat($context, 'category', $category_abbrv, Database::PUBLICATION_TYPE, $category, 'Category');
+    }
+
+    public function full($context, $page) {
+        $full_result = $this->search_publications_query(array(Database::PUBLICATION_TITLE => '.+'));
+        return $this->prepareSearchPage($context, $page , 'Home', $full_result);
+    }
+
+    /**
+     * handle /content/
+     * TODO user
+     * @param $context
+     * @return string the publication template
+     */
+    public function content(Context $context) {
+        $pub_id = array_key_exists(0, $context->rest()) ? ($context->rest()[0] ? $context->rest()[0] : 0) : 0;
+        if ($pub_id === 0) {
+            $context->divert("/error/404");
+        }
+        $pub_bean = $context->load(Database::PUBLICATION, $pub_id);
+        $pub_content = $this->make_content($pub_bean);
+
+        $context->local()->addval(InterfaceValues::LEFTNAV, true);
+        $context->local()->addval(InterfaceValues::PAGE_TITLE, $pub_bean->title);
+        $context->local()->addVal(InterfaceValues::BLOCKCONTENT, $pub_content);
+
+        return 'publication.twig';
+
     }
 
     /**
@@ -81,7 +153,7 @@ Debug::vdump($filtered_query);
 Debug::show("SQL query:");
 Debug::vdump($sql);
         $publications_rb = R::find(Database::PUBLICATION, $sql , array_values($filtered_query));
-        return $this->make_content($publications_rb, $search_id);
+        return $this->make_contents($publications_rb, $search_id);
 }
 
     /**
@@ -115,7 +187,7 @@ Debug::vdump($sql);
         Debug::vdump($sql);
             $publications_rb = R::find(Database::PUBLICATION, $sql,
                 array_values($query));
-            return $this->make_content($publications_rb, $search_id);
+            return $this->make_contents($publications_rb, $search_id);
     }
 
     /**
@@ -225,6 +297,7 @@ Debug::show("private param filter in switch: ".$parameter.$value.$valid);
     }
 
     /**
+     * get the blocks needed given a page number
      * @param $blocks array all blocks
      * @param $page_number mixed the page number
      * @return array the blocks needed
@@ -232,6 +305,7 @@ Debug::show("private param filter in switch: ".$parameter.$value.$valid);
     private function get_blocks($blocks, $page_number) {
         if (!is_numeric($page_number) || $page_number < 0)
             (new Web)->internal('Something went wrong. We are working on it. '.$page_number);
+        // def is page 1
         if ($page_number === 0) {
             $page_number = 1;
         }
@@ -248,47 +322,57 @@ Debug::show("private param filter in switch: ".$parameter.$value.$valid);
     /**
      * make content for twig rendering
      * @param $publications array publications
+     * @param null $search_id
      * @return array
      */
-    private function make_content($publications, $search_id) {
-        $content = array();
-        foreach ($publications as $p) {
-            $department_name = Database::get_beans_single_param(Database::DEPARTMENT, Database::DEPARTMENT_ID, $p->department)[$p->department][Database::DEPARTMENT_NAME];
-            array_push($content, array(Database::PUBLICATION_TITLE => $p->title,
-                Database::PUBLICATION_TYPE => $p->type, Database::PUBLICATION_AUTHOR => $p->author,
-                Database::PUBLICATION_DEPARTMENT => $department_name, Database::PUBLICATION_CONTENT => $p->content,
-                Database::PUBLICATION_RLYEAR => $p->rlyear, Database::PUBLICATION_UDATE => $p->udate,
-                Database::PUBLICATION_DESCRIPTION => $p->description));
-        }
+    private function make_contents($publications, $search_id = null) {
+            $content = array();
+            foreach ($publications as $p) {
+                 array_push($content, $this->make_content($p));
+            }
         return ['content' => $content, InterfaceValues::SEARCH_HASH => $search_id];
     }
 
-    public function category($context) {
-        $category_abbrv = $context->rest()[0];
-        if (!array_key_exists($category_abbrv, InterfaceValues::CATEGORIES)) {
-            $context->divert('/error/404');
+    private function make_content($publication) {
+        $department_name = Database::get_beans_single_param(Database::DEPARTMENT, Database::DEPARTMENT_ID, $publication->department)[$publication->department][Database::DEPARTMENT_NAME];
+        return array(Database::PUBLICATION_TITLE => $publication->title,
+            Database::PUBLICATION_TYPE => $publication->type, Database::PUBLICATION_AUTHOR => $publication->author,
+            Database::PUBLICATION_DEPARTMENT => $department_name, Database::PUBLICATION_CONTENT => $publication->content,
+            Database::PUBLICATION_RLYEAR => $publication->rlyear, Database::PUBLICATION_UDATE => $publication->udate,
+            Database::PUBLICATION_DESCRIPTION => $publication->description,
+            Database::PUBLICATION_ID => $publication->id);
+    }
+
+
+
+
+
+    private function list_cat($context, $cattype, $catval, $cattype_dbname, $catval_dbval, $cattype_show) {
+        if (!$catval) {
+            $context->divert('/home');
         }
-        $category = InterfaceValues::CATEGORIES[$category_abbrv];
         $page = array_key_exists(1, $context->rest()) ? $context->rest()[1] : 1;
 
-        $full_result = $this->search_publications_query(array(Database::PUBLICATION_TYPE => $category));
+        $full_result = $this->search_publications_query(array($cattype_dbname => $catval_dbval));
 
-        return $this->prepareSearchPage($context, $page, "Category ".$this->categoryName($category), $full_result,
-            array(array('name' => InterfaceValues::CATEGORY_TYPE, 'val' => $category_abbrv)));
+        return $this->prepareSearchPage($context, $page, $cattype_show.' '.$catval, $full_result,
+            array(array('name' => InterfaceValues::CATEGORY_TYPE, 'val' => $cattype),
+                array('name' => InterfaceValues::CATEGORY_VAL, 'val' => $catval)));
     }
 
-    public function full($context, $page) {
-        $full_result = $this->search_publications_query(array(Database::PUBLICATION_TITLE => '.+'));
-        return $this->prepareSearchPage($context, $page , 'Home', $full_result);
-    }
 
-    private function prepareSearchPage($context, $current_page, $page_title, $blockcontents, $additional_attributes = array()) {
+
+    private function prepareSearchPage(Context $context, $current_page, $page_title, $blockcontents, $additional_attributes = array()) {
+        $max_page = ceil(sizeof($blockcontents['content']) / InterfaceValues::BLOCKS_PER_PAGE);
+        if ($max_page > 0 && $current_page > $max_page) {
+            $context->divert("/home");
+        }
+        $page_count = $max_page;
         #@@ add bcontents to twig compatible vars
         $context->local()->addVal(InterfaceValues::BLOCKCONTENTS,
             $this->get_blocks($blockcontents['content'], $current_page));
         #@@ add currentpage to twig compatible vars
         $context->local()->addVal(InterfaceValues::CURRENT_PAGE, $current_page);
-        $page_count = ceil(sizeof($blockcontents['content']) / InterfaceValues::BLOCKS_PER_PAGE);
         $context->local()->addVal(InterfaceValues::PAGES_COUNT, $page_count);
         $context->local()->addval(InterfaceValues::LEFTNAV, true);
         $context->local()->addval(InterfaceValues::PAGINATION, $page_count > 0);
@@ -300,7 +384,6 @@ Debug::show("private param filter in switch: ".$parameter.$value.$valid);
 
         return "search.twig";
     }
-
 
 
     private function categoryName($id) {

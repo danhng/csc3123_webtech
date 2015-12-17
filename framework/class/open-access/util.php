@@ -19,4 +19,12 @@ class Util
 //        return $val;
 //    }
 
+public static function shorten($string, $limit) {
+    $len = strlen($string);
+        if ($len <= $limit) {
+            return $string;
+        }
+    return substr($string, 0, $limit).'...';
+}
+
 }

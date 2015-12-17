@@ -1,0 +1,24 @@
+{% block basicinfo %}
+    <ul class="list-inline list-unstyled">
+        <li><a href={{ base }}/author/{{ bcontent.author|replace({' ': '_'}) }} class="btn btn-primary btn-link" role="button">{{ bcontent.author }}</a></li>
+        <li>|</li>
+        <li><a href={{ base }}/department/{{ bcontent.department|replace({' ': '_'}) }} class="btn btn-primary btn-link" role="button">{{ bcontent.department }}</a></li>
+        <li>|</li>
+        <li><a href={{ base }}/rlyear/{{bcontent.rlyear}} class="btn btn-primary btn-link" role="button">{{ bcontent.rlyear }}</a></li>
+
+    </ul>
+{% endblock basicinfo %}
+
+<div class="well">
+<p>{{ bcontent.description }}</p>
+</div>
+
+{% block actions %}
+    <p class="text-right">
+    <ul class="list-inline list-unstyled text-right">
+        <li><button type="button" class="btn btn-primary btn-link">Go to source</button></li>
+        <li>|</li>
+        <li><button type="button" class="btn btn-primary btn-link">Contact admin</button></li>
+    </ul>
+    </p>
+{% endblock actions %}

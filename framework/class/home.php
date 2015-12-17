@@ -25,7 +25,9 @@
  */
         public function handle($context)
         {
-            $page = array_key_exists(0, $context->rest()) ? $context->rest()[0] : 1;
+            $page = array_key_exists(0, $context->rest()) ? ($context->rest()[0] ? $context->rest()[0] : 1) : 1;
+Debug::show('rest at no page home:');
+Debug::vdump($context->rest());
 Debug::show('page at home :'.$page);
             return (new PublicOperation())->full($context, $page);
         }

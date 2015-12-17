@@ -16,6 +16,7 @@ class InterfaceValues {
     const PAGE_TITLE = "page_title";
     const CATEGORIES = ["doc" => "1", "raw" => "2", "app" => "3", "src" => "4", "home" => "0"];
     const CATEGORY_TYPE = 'cattype';
+    const CATEGORY_VAL = 'catval';
 
 
     # Block content: a typical publication placeholder.
@@ -28,6 +29,7 @@ class InterfaceValues {
     const BLOCKCONTENT_UPLOADDATE = "udate";
     const BLOCKCONTENT_DESCRIPTION = "description";
     const BLOCKCONTENTS = "bcontents";
+    const BLOCKCONTENT = "bcontent";
     const BLOCKCONTENT_DEF = "0";
     const BLOCKCONTENT_PAGE = 'bcontent-page';
 
@@ -45,5 +47,6 @@ class InterfaceValues {
 
     #@@todo
     const BLOCKS_PER_PAGE = 3;
+    const BRIEF_DESCRIPTION_LIMIT = 200;
 
 }

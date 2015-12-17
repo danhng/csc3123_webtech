@@ -14,12 +14,12 @@
                     <a href={{ base }}/searchcontent/{{ searchhash }}/{{ currentpage - 1 }} aria-label="Previous">
                         <span aria-hidden="true">&laquo;</span>
                     </a>
-                {% elseif page == 'category' %}
-                    <a href={{ base }}/category/{{ cattype }}/{{ currentpage - 1 }} aria-label="Previous">
-                        <span aria-hidden="true">&laquo;</span>
-                    </a>
                     {% elseif page == 'home' %}
                     <a href={{ base }}/home/{{ currentpage - 1 }} aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                    </a>
+                {% elseif (page == 'category') or (page == 'author') or (page == 'department') %}
+                    <a href={{ base }}/{{ cattype }}/{{ catval }}/{{ currentpage - 1 }} aria-label="Previous">
                         <span aria-hidden="true">&laquo;</span>
                     </a>
                 {% else %}
@@ -32,10 +32,10 @@
         {% for i in 1..pagescount %}
             {% if page == 'searchcontent' %}
         <li  {% if i == currentpage %} class="active" {% endif %}><a href={{ base }}/searchcontent/{{ searchhash }}/{{ i }}>{{ i }}</a></li>
-            {% elseif page == 'category' %}
-               <li  {% if i == currentpage %} class="active" {% endif %}><a href={{ base }}/category/{{ cattype }}/{{ i }}>{{ i }}</a></li>
             {% elseif page == 'home' %}
                 <li  {% if i == currentpage %} class="active" {% endif %}><a href={{ base }}/home/{{ i }}>{{ i }}</a></li>
+            {% else %}
+                <li  {% if i == currentpage %} class="active" {% endif %}><a href={{ base }}/{{ cattype }}/{{ catval }}/{{ i }}>{{ i }}</a></li>
             {% endif %}
         {% endfor %}
         <li>
@@ -48,16 +48,15 @@
                     <a href={{ base }}/searchcontent/{{ searchhash }}/{{ currentpage + 1 }} aria-label="Next">
                         <span aria-hidden="true">&raquo;</span>
                     </a>
-                {% elseif page == 'category' %}
-                    <a href={{ base }}/category/{{ cattype }}/{{ currentpage + 1 }} aria-label="Next">
-                        <span aria-hidden="true">&raquo;</span>
-
-                    </a>
                 {% elseif page == 'home' %}
                     <a href={{ base }}/home/{{ currentpage + 1 }} aria-label="Next">
                         <span aria-hidden="true">&raquo;</span>
                     </a>
-                    {% else %}
+                {% elseif (page == 'category') or (page == 'author') or (page == 'department') %}
+                    <a href={{ base }}/{{ cattype }}/{{ catval }}/{{ currentpage + 1 }} aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                    </a>
+                {% else %}
                     <a href="#" aria-label="Next">
                         <span aria-hidden="true">&raquo;</span>
                     </a>

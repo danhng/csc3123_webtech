@@ -14,7 +14,7 @@ array of :
 {% for bcontent in bcontents %}
 <div class="well">
     <div class="media">
-            <h3>{% if bcontent.type == "1" %}
+            <h3><a href={{ base }}/content/{{ bcontent.id }}>{% if bcontent.type == "1" %}
                     [DOC]
                 {% elseif bcontent.type == "2" %}
                     [RAW]
@@ -25,16 +25,16 @@ array of :
                 {% else%}
                     [NULL]
                     {% endif %}
-    {{ bcontent.title }}</h3>
+    {{ bcontent.title }} </a></h3>
               <ul class="list-inline list-unstyled">
-                <li><button type="button" class="btn btn-primary btn-sm btn-link">{{ bcontent.author }}</button></li>
+                <li><a href={{ base }}/author/{{ bcontent.author|replace({' ': '_'}) }} class="btn btn-primary btn-sm btn-link" role="button">{{ bcontent.author }}</a></li>
                 <li>|</li>
-                <li><button type="button" class="btn btn-primary btn-sm btn-link">{{ bcontent.department }}</button></li>
+                <li><a href={{ base }}/department/{{ bcontent.department|replace({' ': '_'}) }} class="btn btn-primary btn-sm btn-link" role="button">{{ bcontent.department }}</a></li>
                 <li>|</li>
-                <li><button type="button" class="btn btn-primary btn-sm btn-link">{{ bcontent.rlyear }}</button></li>
+                <li><a href={{ base }}/rlyear/{{bcontent.rlyear}} class="btn btn-primary btn-sm btn-link" role="button">{{ bcontent.rlyear }}</a></li>
             </ul>
             <p>{{ bcontent.description }}</p>
-            <p class="text-right"><a href="#">Learn More</a></p>
+            <p class="text-right"><a href={{ base }}/content/{{ bcontent.id }}>Learn More</a></p>
     </div>
 </div>
 {% endfor %}

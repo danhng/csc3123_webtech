@@ -1,7 +1,7 @@
 beans: 
 array(2) {
   [1]=>
-  object(RedBeanPHP\OODBBean)#27 (10) {
+  object(RedBeanPHP\OODBBean)#30 (10) {
     ["properties":protected]=>
     array(2) {
       ["id"]=>
@@ -47,7 +47,7 @@ array(2) {
     bool(false)
   }
   [2]=>
-  object(RedBeanPHP\OODBBean)#30 (10) {
+  object(RedBeanPHP\OODBBean)#33 (10) {
     ["properties":protected]=>
     array(2) {
       ["id"]=>
@@ -100,3 +100,52 @@ array(1) {
 }
 SQL query:
 string(15) " where type = ?"
+Finding beans department for : id = 2
+array(1) {
+  [2]=>
+  object(RedBeanPHP\OODBBean)#37 (10) {
+    ["properties":protected]=>
+    array(2) {
+      ["id"]=>
+      string(1) "2"
+      ["name"]=>
+      string(15) "Electrical Comp"
+    }
+    ["__info":protected]=>
+    array(5) {
+      ["type"]=>
+      string(10) "department"
+      ["sys.id"]=>
+      string(2) "id"
+      ["sys.orig"]=>
+      array(2) {
+        ["id"]=>
+        string(1) "2"
+        ["name"]=>
+        string(15) "Electrical Comp"
+      }
+      ["tainted"]=>
+      bool(false)
+      ["changed"]=>
+      bool(false)
+    }
+    ["beanHelper":protected]=>
+    object(RedBeanPHP\BeanHelper\SimpleFacadeBeanHelper)#21 (0) {
+    }
+    ["fetchType":protected]=>
+    NULL
+    ["withSql":protected]=>
+    string(0) ""
+    ["withParams":protected]=>
+    array(0) {
+    }
+    ["aliasName":protected]=>
+    NULL
+    ["via":protected]=>
+    NULL
+    ["noLoad":protected]=>
+    bool(false)
+    ["all":protected]=>
+    bool(false)
+  }
+}

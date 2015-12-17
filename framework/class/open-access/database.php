@@ -11,7 +11,9 @@ class Database {
     #todo
     const MAXCHARS = 100; // maximum characters in the brief description of a block content
 
+
     const PUBLICATION = 'publication';
+    const PUBLICATION_ID = "id";
     const PUBLICATION_TITLE = 'title';
     const PUBLICATION_TYPE = 'type';
     const PUBLICATION_AUTHOR = 'author';
