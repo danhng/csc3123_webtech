@@ -1,0 +1,99 @@
+<input type="hidden" name="e-id" value={{ id_def }}/>
+<div class="form-group">
+    <label for="e-tilte-tag">Edit title</label>
+    <input id="e-title-tag" type="text" name="title" class="form-control"
+           value='{% if title_hasdef != null %}{{ title_def }}{% else %}Tittle...{% endif %}'  {% block titlerequired %}{% endblock titlerequired %}>
+</div>
+<div class="form-group">
+    <label for="e-type-tag">Type:</label>
+    <select class="form-control" id="e-type-tag" name="type">
+        <option value = {{ def }}>{{ "Select Type" }}</option>
+        <option value="1">Documents</option>
+        <option value="2">Raw Data</option>
+        <option value="3">Applications</option>
+        <option value="4">Source Code</option>
+    </select>
+</div>
+<div class="form-group">
+    <label for="e-department-tag">Department</label>
+    {#<div class="form-inline department-form">#}
+    <select class="form-control" id="e-department-tag" name="department">
+        {#Departments#}
+        <option value = {{ def }}>{{ "Select department" }}</option>
+        {% for department in departments %}
+            <option value = {{ department.id }}>{{ department.name }}</option>
+        {% endfor %}
+    </select>
+
+    {% block departmentnew %}
+        <div>
+            <input type="text" class="form-control" name="new-department" placeholder="New department (Full name)" id="new-department-tag"/>
+        </div>
+    {% endblock departmentnew %}
+    {#</div>#}
+</div>
+<div class="form-group">
+    <label for="e-author-tag">Edit author</label>
+        <select class="form-control" id="e-author-tag" name="author">
+            {#Authors list for publising#}
+            <option value = {{ def }}>{{ "Select author" }}</option>
+            {% for author in authors %}
+                <option value = {{ author }}>{{ author|replace({'_': ' '}) }}</option>
+            {% endfor %}
+        </select>
+    {% block authornew %}
+        <div>
+            <input type="text" class="form-control" name="new-author" placeholder="New author (Full name)" id="new-author-tag"/>
+        </div>
+    {% endblock authornew %}
+    {#</div>#}
+</div>
+<div class="form-group">
+    <label for="e-rlyear-tag">Release Year:</label>
+    {#<div class="form-inline">#}
+    <select class="form-control" id="e-rlyear-tag" name="rlyear">
+        {#Release Years#}
+        <option value = {{ def }}>{{ "Select release year" }}</option>
+        {% for releaseyear in releaseyears %}
+            <option value = {{ releaseyear }}>{{ releaseyear }}</option>
+        {% endfor %}
+    </select>
+    {% block rlyearnew %}
+        <div class="form-group">
+            <input type="number" class="form-control" name="new-rlyear" placeholder="New release year..." id="new-rlyear-tag"/>
+        </div>
+    {% endblock rlyearnew %}
+    {#</div>#}
+    {% block description %}
+        <div class="form-group">
+            <label for="description-tag">Description:</label>
+            <textarea rows='4' id="description-tag" type="text" name="description" class="form-control">{% if description_hasdef != null %}{{ description_def }}{% else %}Description not available{% endif %}</textarea>
+        </div>
+    {% endblock description %}
+
+    {% block link %}
+        {% if file_def  %}
+            <label for="e-file-tag">Externel link</label>
+        <div class="form-group">
+            <input type="text" name="file-url" class="form-control" text='{{ file_url }}' disabled id="e-file-tag" required >
+        </div>
+        <div class="alert alert-warning" role="alert">File editing feature is in progress. </div>
+    {% endif %}
+        <div class="form-group">
+            <label for="e-url-tag">Externel link</label>
+            <input type="text" name="url" class="form-control" placeholder="Copy the absolute URL..." id="e-url-tag" required >
+        </div>
+    {% endblock link %}
+</div>
+
+
+
+
+
+
+
+
+
+
+
+

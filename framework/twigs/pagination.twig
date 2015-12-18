@@ -22,6 +22,10 @@
                     <a href={{ base }}/{{ cattype }}/{{ catval }}/{{ currentpage - 1 }} aria-label="Previous">
                         <span aria-hidden="true">&laquo;</span>
                     </a>
+                {% elseif (page == 'admin') and (context.rest[0] == 'view') %}
+                    <a href={{ base }}/admin/view/{{ currentpage - 1 }} aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                    </a>
                 {% else %}
                     <a href="#" aria-label="Previous">
                         <span aria-hidden="true">&laquo;</span>
@@ -34,8 +38,10 @@
         <li  {% if i == currentpage %} class="active" {% endif %}><a href={{ base }}/searchcontent/{{ searchhash }}/{{ i }}>{{ i }}</a></li>
             {% elseif page == 'home' %}
                 <li  {% if i == currentpage %} class="active" {% endif %}><a href={{ base }}/home/{{ i }}>{{ i }}</a></li>
-            {% else %}
+            {% elseif (page == 'category') or (page == 'author') or (page == 'department')  %}
                 <li  {% if i == currentpage %} class="active" {% endif %}><a href={{ base }}/{{ cattype }}/{{ catval }}/{{ i }}>{{ i }}</a></li>
+            {% elseif (page == 'admin') and (context.rest[0] == 'view') %}
+                <li  {% if i == currentpage %} class="active" {% endif %}><a href={{ base }}/admin/view/{{ i }}>{{ i }}</a></li>
             {% endif %}
         {% endfor %}
         <li>
@@ -54,6 +60,10 @@
                     </a>
                 {% elseif (page == 'category') or (page == 'author') or (page == 'department') %}
                     <a href={{ base }}/{{ cattype }}/{{ catval }}/{{ currentpage + 1 }} aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                    </a>
+                {% elseif (page == 'admin') and (context.rest[0] == 'view') %}
+                    <a href={{ base }}/admin/view/{{ currentpage + 1 }} aria-label="Next">
                         <span aria-hidden="true">&raquo;</span>
                     </a>
                 {% else %}

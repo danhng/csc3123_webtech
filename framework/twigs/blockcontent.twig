@@ -27,14 +27,23 @@ array of :
                     {% endif %}
     {{ bcontent.title }} </a></h3>
               <ul class="list-inline list-unstyled">
-                <li><a href={{ base }}/author/{{ bcontent.author|replace({' ': '_'}) }} class="btn btn-primary btn-sm btn-link" role="button">{{ bcontent.author }}</a></li>
+                <li><a href={{ base }}/author/{{ bcontent.author|replace({' ': '_'}) }} class="btn btn-primary btn-sm btn-link" role="button">
+                    {% if bcontent.author|length > 0 %}{{ bcontent.author }}{% else %} Author N/A{% endif %}</a></li>
                 <li>|</li>
-                <li><a href={{ base }}/department/{{ bcontent.department|replace({' ': '_'}) }} class="btn btn-primary btn-sm btn-link" role="button">{{ bcontent.department }}</a></li>
+                <li><a href={{ base }}/department/{{ bcontent.department|replace({' ': '_'}) }} class="btn btn-primary btn-sm btn-link" role="button">
+                    {% if bcontent.department|length > 0 %}{{ bcontent.department }}{% else %}Department N/A{% endif %}</a></li>
                 <li>|</li>
-                <li><a href={{ base }}/rlyear/{{bcontent.rlyear}} class="btn btn-primary btn-sm btn-link" role="button">{{ bcontent.rlyear }}</a></li>
+                <li><a href={{ base }}/rlyear/{{bcontent.rlyear}} class="btn btn-primary btn-sm btn-link" role="button">
+                    {% if bcontent.rlyear|length > 0 %}{{ bcontent.rlyear }}{% else %}Year N/A{% endif %}</a></li>
+            </ul>
+        <ul class="list-inline list-unstyled text-right">
+            <li>Posted by {% if context.user.login == bcontent.postby %} you {% else %}{{ bcontent.postby }} {% endif %} on {{ bcontent.udate }}</li>
             </ul>
             <p>{{ bcontent.description }}</p>
-            <p class="text-right"><a href={{ base }}/content/{{ bcontent.id }}>Learn More</a></p>
+
+            <p class="text-right"><a href={{ base }}/content/{{ bcontent.id }}>
+                    {% if context.user.login == bcontent.postby %}  View or edit {% else %} Learn more {% endif %}
+                </a></p>
     </div>
 </div>
 {% endfor %}

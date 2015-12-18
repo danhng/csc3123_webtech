@@ -1,0 +1,62 @@
+<input type="hidden" name="currentpage" value="1"/>
+<div class="form-group">
+    <label for="tilte-tag">Title:</label>
+    <input type="text" name="title" class="form-control"
+           placeholder="Tittle..." id="title-tag" {% block titlerequired %}{% endblock titlerequired %}>
+</div>
+<div class="form-group">
+    <label for="type-tag">Type:</label>
+    <select class="form-control" id="type-tag" name="type">
+        <option value = {{ def }}>{{ "Select Type" }}</option>
+        <option value="1">Documents</option>
+        <option value="2">Raw Data</option>
+        <option value="3">Applications</option>
+        <option value="4">Source Code</option>
+    </select>
+</div>
+<div class="form-group">
+    <label for="department-tag">Department</label>
+    {#<div class="form-inline department-form">#}
+
+    <select class="form-control" id="department-tag" name="department">
+        {#Departments#}
+        <option value = {{ def }}>{{ "Select Department" }}</option>
+        {% for department in departments %}
+            <option value = {{ department.id }}>{{ department.name }}</option>
+        {% endfor %}
+    </select>
+
+    {% block departmentnew %}
+    {% endblock departmentnew %}
+        {#</div>#}
+</div>
+<div class="form-group" >
+    <label for="author-tag">Author:</label>
+    {#<div class="form-inline">#}
+    {% block authorfield %}
+    <input type="text" name="author" class="form-control" placeholder="Author..." id="author-tag">
+    {% endblock authorfield %}
+        {% block authornew %}
+        {% endblock authornew %}
+    {#</div>#}
+</div>
+<div class="form-group">
+    <label for="release-year-tag">Release Year:</label>
+    {#<div class="form-inline">#}
+    <select class="form-control" id="rlyear-tag" name="rlyear">
+        {#Release Years#}
+        <option value = {{ def }}>{{ "Select Release Year" }}</option>
+        {% for releaseyear in releaseyears %}
+            <option value = {{ releaseyear }}>{{ releaseyear }}</option>
+        {% endfor %}
+    </select>
+        {% block rlyearnew %}
+        {% endblock rlyearnew %}
+        {#</div>#}
+
+    {% block description %}
+    {% endblock description %}
+
+    {% block link %}
+    {% endblock link %}
+</div>

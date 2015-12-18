@@ -19,6 +19,15 @@
         <link rel="apple-touch-icon" sizes="72x72" href="{{assets}}/ico/apple-touch-icon-72x72.png">
         <link rel="apple-touch-icon" sizes="114x114" href="{{assets}}/ico/apple-touch-icon-114x114.png">
     #}
+    <!--[if lt IE 9]>
+    <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+    <![endif]-->
+    <!--[if gte IE 9]><!-->
+    <script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+    <!--<![endif]-->
+
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.4.0/bootbox.min.js"></script>
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" media="screen,print"/>
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"/>
     <link rel="stylesheet" href="{{ assets }}/css/layout.css" media="screen"/>
@@ -86,15 +95,7 @@
     </footer>
 {% endblock pagefooter %}
 
-<!--[if lt IE 9]>
-<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
-<![endif]-->
-<!--[if gte IE 9]><!-->
-<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
-<!--<![endif]-->
 
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.4.0/bootbox.min.js"></script>
 
 {% block scripts %}
 {% endblock scripts %}
@@ -105,10 +106,10 @@
     {% block setup %}
     {% endblock setup %}
 
-    $(function () {
-        {% block onload %}
-        {% endblock onload %}
-    })
+//    $(function () {
+    {%  block onload %}
+    {% endblock onload %}
+//    })
 </script>
 </body>
 </html>

@@ -1,0 +1,58 @@
+{% extends 'search.twig' %}
+
+{% block onload %}
+    {% if doedit == true and doedit_ok == true %}
+        bootbox.dialog({
+        message: "The publication has been edited.",
+        title: "Edit successful.",
+        buttons: {
+        success: {
+        label: "View it",
+        className: "btn-success",
+        callback: function() {
+            window.location.replace("{{ base }}/content/{{ id }}");
+        }
+        },
+        {#danger: {#}
+        {#label: "Danger!",#}
+        {#className: "btn-danger",#}
+        {#callback: function() {#}
+
+        {#}#}
+        {#},#}
+        main: {
+        label: "OK",
+        className: "btn-primary",
+        callback: function() {
+        window.location.replace("{{ base }}/admin/edit/{{ id }}");
+        }
+        }
+        }
+        });
+    {% elseif doedit == true and doedit_ok == false %}
+        bootbox.alert("Sorry. That did not work. Make sure you have all fields filled correctly.", function() {
+            window.location.replace("{{ base }}/admin/edit/{{ old_id }}");
+        });
+    {% endif %}
+
+    $("#e-type-tag").val({{ type_def }});
+    $("#e-department-tag").val({{ department_def }});
+    $("#e-rlyear-tag").val({{ rlyear_def }});
+    var a = '{{ author_def }}';
+    $("#e-author-tag").val(a);
+    var b = '{{ url_def }}';
+    $("#e-url-tag").val(b);
+    var c = '{{ file_def }}';
+    $("#e-file-tag").val(c);
+
+{% endblock onload %}
+{% block contentblocks %}
+    <form role="form" action="{{base}}/admin/edit/" method="post">
+        {% include 'editform.twig' %}
+        {#TODO add review button#}
+        <button type="submit" name="editaction" value ="1" class="btn btn-lg btn-primary col-md-offset-5">Edit</button>
+    </form>
+{% endblock contentblocks %}
+{#No need for pagination in publication page#}
+{% block pagination %}
+{% endblock pagination %}

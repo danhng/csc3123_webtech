@@ -1,5 +1,16 @@
 {% extends 'search.twig' %}
+{% block onload %}
+    $("#remove").click(function(){
+    bootbox.confirm("Are you sure you would like to remove this publication?", function(result) {
+    if (result) {
+    bootbox.alert("Removed", function () {
+    window.location.href = '{{ base }}/admin/remove/{{ bcontent.id }}'
+    });
+    }
+    });
+    });
 
+{% endblock onload %}
 {% block contentblocks %}
 {% include 'pubcontent.twig' %}
     {% endblock contentblocks %}

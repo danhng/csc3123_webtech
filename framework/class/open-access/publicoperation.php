@@ -49,7 +49,7 @@ Debug::vdump($filtered_query);
                 }
                 else {
                     Debug::show("Entry method query empty ");
-                    $full_result = $this->make_contents(array(), 0);
+                    $full_result = $this->make_contents(array(), 0, false);
                 }
                 break;
             }
@@ -62,7 +62,7 @@ Debug::vdump($filtered_query);
                     $currentpage = array_key_exists(1, $context->rest() ) ? $context->rest()[1] : 1;
                 }
                 else {
-                    (new Web)->bad(Util::ERROR_MESSAGE_500);
+                    $context->divert('/home/');
                 }
                 break;
             }
@@ -77,14 +77,13 @@ Debug::vdump($filtered_query);
     public function author(Context $context) {
         $author = str_replace('_', ' ', trim($context->rest()[0]));
         return $this->list_cat($context, 'author', $author,
-            Database::PUBLICATION_AUTHOR, $author, 'Author');
-
+            Database::PUBLICATION_AUTHOR, $author, 'Author '.$author);
     }
 
     public function rlyear(Context $context) {
         $rlyear = str_replace('_', ' ', trim($context->rest()[0]));
         return $this->list_cat($context, 'rlyear', $rlyear,
-            Database::PUBLICATION_RLYEAR, $rlyear, 'Release year');
+            Database::PUBLICATION_RLYEAR, $rlyear, 'Release year '.$rlyear);
 
     }
 
@@ -92,7 +91,7 @@ Debug::vdump($filtered_query);
         $department = str_replace('_', ' ', trim($context->rest()[0]));
         $department_id = Database::get_beans_single_param(Database::DEPARTMENT, Database::DEPARTMENT_NAME, $department, true)['id'];
         return $this->list_cat($context, 'department', str_replace('_', ' ', trim($context->rest()[0])),
-            Database::PUBLICATION_DEPARTMENT, $department_id, 'Department');
+            Database::PUBLICATION_DEPARTMENT, $department_id, 'Department '.$department);
     }
 
     public function category($context) {
@@ -101,12 +100,21 @@ Debug::vdump($filtered_query);
         if (!array_key_exists($category_abbrv, InterfaceValues::CATEGORIES)) {
             $context->divert('/error/404');
         }
-        return $this->list_cat($context, 'category', $category_abbrv, Database::PUBLICATION_TYPE, $category, 'Category');
+        return $this->list_cat($context, 'category', $category_abbrv, Database::PUBLICATION_TYPE, $category, 'Category', 'Category '.$category_abbrv);
     }
 
     public function full($context, $page) {
         $full_result = $this->search_publications_query(array(Database::PUBLICATION_TITLE => '.+'));
         return $this->prepareSearchPage($context, $page , 'Home', $full_result);
+    }
+
+    public function download(Context $context) {
+Debug::show('download operation triggered');
+        $filepath = "assets/uploads/".$context->rest()[0];
+        if (!$filepath) {
+            $context->divert('/home/');
+        }
+        $context->sendfile($filepath);
     }
 
     /**
@@ -121,7 +129,7 @@ Debug::vdump($filtered_query);
             $context->divert("/error/404");
         }
         $pub_bean = $context->load(Database::PUBLICATION, $pub_id);
-        $pub_content = $this->make_content($pub_bean);
+        $pub_content = $this->make_content($pub_bean, true);
 
         $context->local()->addval(InterfaceValues::LEFTNAV, true);
         $context->local()->addval(InterfaceValues::PAGE_TITLE, $pub_bean->title);
@@ -153,7 +161,7 @@ Debug::vdump($filtered_query);
 Debug::show("SQL query:");
 Debug::vdump($sql);
         $publications_rb = R::find(Database::PUBLICATION, $sql , array_values($filtered_query));
-        return $this->make_contents($publications_rb, $search_id);
+        return $this->make_contents($publications_rb, $search_id, false);
 }
 
     /**
@@ -187,7 +195,7 @@ Debug::vdump($sql);
         Debug::vdump($sql);
             $publications_rb = R::find(Database::PUBLICATION, $sql,
                 array_values($query));
-            return $this->make_contents($publications_rb, $search_id);
+            return $this->make_contents($publications_rb, $search_id, false);
     }
 
     /**
@@ -325,29 +333,33 @@ Debug::show("private param filter in switch: ".$parameter.$value.$valid);
      * @param null $search_id
      * @return array
      */
-    private function make_contents($publications, $search_id = null) {
+    private function make_contents($publications, $search_id = null, $full_description = true) {
             $content = array();
             foreach ($publications as $p) {
-                 array_push($content, $this->make_content($p));
+                 array_push($content, $this->make_content($p, $full_description));
             }
         return ['content' => $content, InterfaceValues::SEARCH_HASH => $search_id];
     }
 
-    private function make_content($publication) {
+    private function make_content($publication, $full_description = true) {
         $department_name = Database::get_beans_single_param(Database::DEPARTMENT, Database::DEPARTMENT_ID, $publication->department)[$publication->department][Database::DEPARTMENT_NAME];
         return array(Database::PUBLICATION_TITLE => $publication->title,
-            Database::PUBLICATION_TYPE => $publication->type, Database::PUBLICATION_AUTHOR => $publication->author,
-            Database::PUBLICATION_DEPARTMENT => $department_name, Database::PUBLICATION_CONTENT => $publication->content,
-            Database::PUBLICATION_RLYEAR => $publication->rlyear, Database::PUBLICATION_UDATE => $publication->udate,
-            Database::PUBLICATION_DESCRIPTION => $publication->description,
-            Database::PUBLICATION_ID => $publication->id);
+            Database::PUBLICATION_TYPE => $publication->type,
+            Database::PUBLICATION_AUTHOR => $publication->author,
+            Database::PUBLICATION_DEPARTMENT => $department_name,
+            Database::PUBLICATION_CONTENT => $publication->content,
+            Database::PUBLICATION_RLYEAR => $publication->rlyear,
+            Database::PUBLICATION_UDATE => $publication->udate,
+            Database::PUBLICATION_DESCRIPTION => $full_description ? $publication->description : Util::shorten($publication->description, InterfaceValues::BRIEF_DESCRIPTION_LIMIT),
+            Database::PUBLICATION_ID => $publication->id,
+            Database::PUBLICATION_UDATE => date('d F Y', strtotime($publication->udate)),
+            Database::PUBLICATION_POSTBY => $publication->postby,
+            'file' => $publication->file,
+            'url' => $publication->url);
     }
 
 
-
-
-
-    private function list_cat($context, $cattype, $catval, $cattype_dbname, $catval_dbval, $cattype_show) {
+     function list_cat($context, $cattype, $catval, $cattype_dbname, $catval_dbval, $page_title) {
         if (!$catval) {
             $context->divert('/home');
         }
@@ -355,7 +367,7 @@ Debug::show("private param filter in switch: ".$parameter.$value.$valid);
 
         $full_result = $this->search_publications_query(array($cattype_dbname => $catval_dbval));
 
-        return $this->prepareSearchPage($context, $page, $cattype_show.' '.$catval, $full_result,
+        return $this->prepareSearchPage($context, $page, $page_title, $full_result,
             array(array('name' => InterfaceValues::CATEGORY_TYPE, 'val' => $cattype),
                 array('name' => InterfaceValues::CATEGORY_VAL, 'val' => $catval)));
     }
@@ -376,6 +388,7 @@ Debug::show("private param filter in switch: ".$parameter.$value.$valid);
         $context->local()->addVal(InterfaceValues::PAGES_COUNT, $page_count);
         $context->local()->addval(InterfaceValues::LEFTNAV, true);
         $context->local()->addval(InterfaceValues::PAGINATION, $page_count > 0);
+Debug::show('page count for admin posts'. $page_count);
         $context->local()->addval(InterfaceValues::PAGE_TITLE, $page_title);
 
         foreach ($additional_attributes as $attribute) {

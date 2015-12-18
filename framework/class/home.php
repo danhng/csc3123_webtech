@@ -29,6 +29,11 @@
 Debug::show('rest at no page home:');
 Debug::vdump($context->rest());
 Debug::show('page at home :'.$page);
+
+            if ($context->hasadmin()) {
+Debug::show('admin id is: '.$context->user()->id);
+            }
+
             return (new PublicOperation())->full($context, $page);
         }
     }

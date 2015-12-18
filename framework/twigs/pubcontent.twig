@@ -1,11 +1,17 @@
+
 {% block basicinfo %}
     <ul class="list-inline list-unstyled">
-        <li><a href={{ base }}/author/{{ bcontent.author|replace({' ': '_'}) }} class="btn btn-primary btn-link" role="button">{{ bcontent.author }}</a></li>
+        <li><a role="button" href={{ base }}/author/{{ bcontent.author|replace({' ': '_'}) }} class="btn btn-primary btn-link" >
+            {% if bcontent.author|length > 0 %}{{ bcontent.author }}{% else %} Author N/A{% endif %}</a></li>
         <li>|</li>
-        <li><a href={{ base }}/department/{{ bcontent.department|replace({' ': '_'}) }} class="btn btn-primary btn-link" role="button">{{ bcontent.department }}</a></li>
+        <li><a role="button" href={{ base }}/department/{{ bcontent.department|replace({' ': '_'}) }} class="btn btn-primary btn-link" >
+            {% if bcontent.department|length > 0 %}{{ bcontent.department }}{% else %}Department N/A{% endif %}</a></li>
         <li>|</li>
-        <li><a href={{ base }}/rlyear/{{bcontent.rlyear}} class="btn btn-primary btn-link" role="button">{{ bcontent.rlyear }}</a></li>
-
+        <li><a role="button" href='{{ base }}/rlyear/{{bcontent.rlyear}}' class="btn btn-primary btn-link" >
+                {% if bcontent.rlyear|length > 0 %}{{ bcontent.rlyear }}{% else %}Year N/A{% endif %}</a></li>
+    </ul>
+    <ul class="list-inline list-unstyled text-right">
+        <li>Posted by {{ bcontent.postby }} on {{ bcontent.udate }}</li>
     </ul>
 {% endblock basicinfo %}
 
@@ -16,9 +22,33 @@
 {% block actions %}
     <p class="text-right">
     <ul class="list-inline list-unstyled text-right">
-        <li><button type="button" class="btn btn-primary btn-link">Go to source</button></li>
+         {#<li><button id="gotosource" type="button" class="btn btn-primary" class="btn btn-primary btn-link" role="button">Go to source</button></li>#}
+        <li><div class="btn-group">
+  <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Go to source <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu">
+  {% if bcontent.file %}
+    <li><a href={{ base }}/download/{{ bcontent.file }}>Download</a></li>
+      {% endif %}
+      {% if bcontent.url %}
+    <li><a href={{ bcontent.url }}>External link</a></li>
+      {% endif %}
+      {% if (bcontent.url == false) and (bcontent.link == false) %}
+    <li><a href="#">Resource N/A</a></li>
+    {% endif %}
+  </ul>
+</div>
+</li>
         <li>|</li>
-        <li><button type="button" class="btn btn-primary btn-link">Contact admin</button></li>
+         {% if context.user.login == bcontent.postby %}
+         <li><button id="edit" type="button" class="btn btn-success" onclick="location.href='{{ base }}/admin/edit/{{bcontent.id}}'">Edit</button></li>
+         <li>|</li>
+         <li><button id="remove" type="button" class="btn btn-danger" >Remove</button></li>
+         {% else %}
+         <li><button id="contact" type="button" class="btn btn-primary" onclick="location.href='{{ base }}/contact/post/{{bcontent.id}}'" role="button">Contact admin</button></li>
+         {% endif %}
     </ul>
     </p>
 {% endblock actions %}
+

@@ -311,7 +311,7 @@
 	    if ($mime === '')
 	    {
                 $finfo = finfo_open(FILEINFO_MIME_TYPE);
-		$mime = finfo_file($finfo, $path);
+		        $mime = finfo_file($finfo, $path);
                 finfo_close($finfo);
 	    }
             header('Content-Type: '.$mime);
@@ -328,6 +328,7 @@
 	    {
                 header('ETag: "'.$cache.'"');
 	    }
+            ob_end_clean();
             readfile($path);
 	}
 /**
@@ -382,6 +383,7 @@
         {
             return $this->hasuser() && $this->user()->isdeveloper();
         }
+ /**
 /**
  * Find out if this was validated using a token, if so, it is coming from a device not a browser
  *

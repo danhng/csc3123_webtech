@@ -75,6 +75,7 @@
 	$context->divert('/error/403');
     }
 
+
     $local->addval('context', $context);
     $local->addval('page', $action);
     $local->addval('siteinfo', new Siteinfo($local));

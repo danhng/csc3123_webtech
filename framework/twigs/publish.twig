@@ -1,0 +1,43 @@
+{% extends 'search.twig' %}
+
+{% block onload %}
+{% if dopublish == true and dopublish_ok == true %}
+    bootbox.dialog({
+    message: "The publication has been added.",
+    title: "Success.",
+    buttons: {
+    success: {
+    label: "View it",
+    className: "btn-success",
+    callback: function() {
+        window.location.replace("{{ base }}/content/{{ id }}")
+    }
+    },
+    {#danger: {#}
+    {#label: "Danger!",#}
+    {#className: "btn-danger",#}
+    {#callback: function() {#}
+    {#}#}
+    {#},#}
+    main: {
+    label: "OK",
+    className: "btn-primary",
+    callback: function() {
+    }
+    }
+    }
+    });
+        {% elseif dopublish == true and dopublish_ok == false %}
+                bootbox.alert("Sorry. That did not work. Make sure you have all fields filled correctly.");
+        {% endif %}
+    {% endblock onload %}
+{% block contentblocks %}
+    <form role="form" action="{{base}}/admin/publish" method="post" enctype="multipart/form-data">
+        {% include 'publishform.twig' %}
+        {#TODO add review button#}
+        <button type="submit" name="publishaction" value ="1" class="btn btn-lg btn-primary col-md-offset-5">Publish</button>
+    </form>
+{% endblock contentblocks %}
+{#No need for pagination in publication page#}
+{% block pagination %}
+{% endblock pagination %}

@@ -12,6 +12,8 @@
  */
     class Admin extends Siteaction
     {
+
+
 /**
  * Handle various admin operations /admin/xxxx
  *
@@ -23,8 +25,117 @@
 	{
 	    $tpl = 'support/admin.twig';
 	    $rest = $context->rest();
-	    switch ($rest[0])
-	    {
+Debug::show('rest for publish post ');
+Debug::vdump($rest);
+	    switch ($rest[0]) {
+
+            case 'publish': {
+                $tpl = 'publish.twig';
+                if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+                    $dopublish = $context->postpar(InterfaceValues::PUBLISH_BUTTON_NAME, '0');
+                    Debug::show('do publish ' . $dopublish);
+
+                        $id = (new PrivateOperation())->dopublish($context);
+                        Debug::show('id of new publication ' . $id);
+                        $context->local()->addVal(InterfaceValues::PUBLISH_DO, true);
+                        $context->local()->addVal(InterfaceValues::PUBLISH_DO_OK, $id);
+                        $context->local()->addVal(InterfaceValues::CONTENT_ID, $id);
+                    }
+                else {
+                    $context->local()->addVal(InterfaceValues::PUBLISH_DO, false);
+                }
+                $context->local()->addVal(InterfaceValues::PAGE_TITLE, 'Publish a new content.');
+                break;
+            }
+
+            case 'view': {
+                $login = $context->user()->login;
+                $tpl = (new PublicOperation())->list_cat($context, 'admin', $login , 'postby', $login, 'Your posts');
+                break;
+            }
+
+            case 'remove': {
+                $content_id = $context->rest()[1];
+Debug::show('Rest at remove: '.$context->rest()[1]);
+                (new PrivateOperation())->remove($context, $content_id);
+                $context->divert('/admin/view/');
+                break;
+            }
+
+            case 'edit': {
+                $tpl = 'edit.twig';
+
+                if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+                    $old_id = $context->postpar('e-id', '');
+                    $doedit = $context->postpar(InterfaceValues::EDIT_BUTTON_NAME, '0');
+Debug::show('do edit old id ' . $old_id);
+Debug::show('do edit ' . $doedit);
+                    if ($doedit !== '0') {
+                        $id = (new PrivateOperation())->doedit($context, $old_id);
+Debug::show('id of edited publication ' . $id);
+                        $context->local()->addVal(InterfaceValues::EDIT_DO, true);
+                        $context->local()->addVal(InterfaceValues::EDIT_DO_OK, $id);
+                        $context->local()->addVal(InterfaceValues::CONTENT_ID, $id);
+                        $context->local()->addVal(InterfaceValues::PAGE_TITLE, 'Editing publication...');
+                        if (!$id) {
+                            $context->local()->addVal('old_id', $old_id);
+                        }
+Debug::show('doedit . doedit_ok' .  $id !== false);
+                    }
+                    else {
+                        $context->local()->addVal(InterfaceValues::EDIT_DO, false);
+                        $context->local()->addVal(InterfaceValues::PAGE_TITLE, 'Editing publication...');
+                    }
+                }
+                else {
+                    $old_id = array_key_exists(1, $context->rest()) ? $context->rest()[1] : '';
+
+                    if (!$old_id) {
+                        $context->divert('/admin/view/');
+                    }
+
+                    $old_content = R::load(Database::PUBLICATION, $old_id);
+                    $context->local()->addVal(InterfaceValues::EDIT_DO, false);
+
+                    // update content in edit forms
+                    $context->local()->addVal('description_hasdef', true);
+                    $context->local()->addVal('description_def', $old_content[Database::PUBLICATION_DESCRIPTION]);
+
+                    $context->local()->addVal('author_hasdef', true);
+                    $context->local()->addVal('author_def', str_replace(' ', '_', $old_content[Database::PUBLICATION_AUTHOR]));
+
+                    $context->local()->addVal('type_hasdef', true);
+                    $context->local()->addVal('type_def', $old_content[Database::PUBLICATION_TYPE]);
+
+                    $context->local()->addVal('department_hasdef', true);
+                    $context->local()->addVal('department_def', $old_content[Database::PUBLICATION_DEPARTMENT]);
+
+                    $context->local()->addVal('rlyear_hasdef', true);
+                    $context->local()->addVal('rlyear_def', $old_content[Database::PUBLICATION_RLYEAR]);
+
+                    $context->local()->addVal('title_hasdef', true);
+                    $context->local()->addVal('title_def', $old_content[Database::PUBLICATION_TITLE]);
+
+                    $context->local()->addVal('id_def', $old_content->getID());
+
+                    $context->local()->addVal('url_def', $old_content->url);
+
+                    $context->local()->addVal('file_def', $old_content->file);
+
+                    Debug::show('Edit old content');
+                    Debug::show($old_content[Database::PUBLICATION_DESCRIPTION]);
+                    Debug::show(str_replace(' ', '_', $old_content[Database::PUBLICATION_AUTHOR]));
+                    Debug::show($old_content[Database::PUBLICATION_TYPE]);
+                    Debug::show($old_content[Database::PUBLICATION_TITLE]);
+                    Debug::show($old_content[Database::PUBLICATION_DEPARTMENT]);
+                    Debug::show($old_content[Database::PUBLICATION_RLYEAR]);
+                    $context->local()->addVal(InterfaceValues::PAGE_TITLE, 'Edit publication \''. $old_content[Database::PUBLICATION_TITLE].'\'');
+
+                }
+
+                 break;
+            }
+
 	    case 'pages':
 		$tpl = 'support/pages.twig';
 		break;
