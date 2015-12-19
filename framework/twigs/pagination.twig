@@ -1,6 +1,7 @@
 {#pagination. What is needed:
 1. how many pages - pagecount
 2. current pages - currentpage
+3. information about current pages, actions and contents in order to render conrrect links.
 #}
 <nav>
     <ul class="pagination">
@@ -14,7 +15,7 @@
                     <a href={{ base }}/searchcontent/{{ searchhash }}/{{ currentpage - 1 }} aria-label="Previous">
                         <span aria-hidden="true">&laquo;</span>
                     </a>
-                    {% elseif page == 'home' %}
+                {% elseif page == 'home' %}
                     <a href={{ base }}/home/{{ currentpage - 1 }} aria-label="Previous">
                         <span aria-hidden="true">&laquo;</span>
                     </a>
@@ -35,13 +36,17 @@
         </li>
         {% for i in 1..pagescount %}
             {% if page == 'searchcontent' %}
-        <li  {% if i == currentpage %} class="active" {% endif %}><a href={{ base }}/searchcontent/{{ searchhash }}/{{ i }}>{{ i }}</a></li>
+                <li {% if i == currentpage %} class="active" {% endif %}><a
+                            href={{ base }}/searchcontent/{{ searchhash }}/{{ i }}>{{ i }}</a></li>
             {% elseif page == 'home' %}
-                <li  {% if i == currentpage %} class="active" {% endif %}><a href={{ base }}/home/{{ i }}>{{ i }}</a></li>
-            {% elseif (page == 'category') or (page == 'author') or (page == 'department')  %}
-                <li  {% if i == currentpage %} class="active" {% endif %}><a href={{ base }}/{{ cattype }}/{{ catval }}/{{ i }}>{{ i }}</a></li>
+                <li {% if i == currentpage %} class="active" {% endif %}><a href={{ base }}/home/{{ i }}>{{ i }}</a>
+                </li>
+            {% elseif (page == 'category') or (page == 'author') or (page == 'department') %}
+                <li {% if i == currentpage %} class="active" {% endif %}><a
+                            href={{ base }}/{{ cattype }}/{{ catval }}/{{ i }}>{{ i }}</a></li>
             {% elseif (page == 'admin') and (context.rest[0] == 'view') %}
-                <li  {% if i == currentpage %} class="active" {% endif %}><a href={{ base }}/admin/view/{{ i }}>{{ i }}</a></li>
+                <li {% if i == currentpage %} class="active" {% endif %}><a
+                            href={{ base }}/admin/view/{{ i }}>{{ i }}</a></li>
             {% endif %}
         {% endfor %}
         <li>

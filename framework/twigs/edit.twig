@@ -10,16 +10,9 @@
         label: "View it",
         className: "btn-success",
         callback: function() {
-            window.location.replace("{{ base }}/content/{{ id }}");
+        window.location.replace("{{ base }}/content/{{ id }}");
         }
         },
-        {#danger: {#}
-        {#label: "Danger!",#}
-        {#className: "btn-danger",#}
-        {#callback: function() {#}
-
-        {#}#}
-        {#},#}
         main: {
         label: "OK",
         className: "btn-primary",
@@ -31,7 +24,7 @@
         });
     {% elseif doedit == true and doedit_ok == false %}
         bootbox.alert("Sorry. That did not work. Make sure you have all fields filled correctly.", function() {
-            window.location.replace("{{ base }}/admin/edit/{{ old_id }}");
+        window.location.replace("{{ base }}/admin/edit/{{ old_id }}");
         });
     {% endif %}
 
@@ -47,10 +40,10 @@
 
 {% endblock onload %}
 {% block contentblocks %}
-    <form role="form" action="{{base}}/admin/edit/" method="post">
+    <form role="form" action="{{ base }}/admin/edit/" method="post">
         {% include 'editform.twig' %}
         {#TODO add review button#}
-        <button type="submit" name="editaction" value ="1" class="btn btn-lg btn-primary col-md-offset-5">Edit</button>
+        <button type="submit" name="editaction" value="1" class="btn btn-lg btn-primary col-md-offset-5">Edit</button>
     </form>
 {% endblock contentblocks %}
 {#No need for pagination in publication page#}

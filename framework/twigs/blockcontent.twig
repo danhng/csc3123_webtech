@@ -1,50 +1,47 @@
-{#What's needed:
-array of :
-1. Content type DB
-2. Content Title (Full) DB
-3. Author DB
-4. Department DB
-5. Release year DB
-6. Brief Description (For showing at page result)
-7. Full Description DB
-#}
 {% if bcontents|length == 0 %}
-            <h3 style="padding-bottom: 10px">Nothing to show...</h3>
+    <h3 style="padding-bottom: 10px">Nothing to show...</h3>
 {% else %}
-{% for bcontent in bcontents %}
-<div class="well">
-    <div class="media">
-            <h3><a href={{ base }}/content/{{ bcontent.id }}>{% if bcontent.type == "1" %}
-                    [DOC]
-                {% elseif bcontent.type == "2" %}
-                    [RAW]
-                {% elseif bcontent.type == "3" %}
-                    [APP]
-                {% elseif bcontent.type == "4" %}
-                    [SRC]
-                {% else%}
-                    [NULL]
-                    {% endif %}
-    {{ bcontent.title }} </a></h3>
-              <ul class="list-inline list-unstyled">
-                <li><a href={{ base }}/author/{{ bcontent.author|replace({' ': '_'}) }} class="btn btn-primary btn-sm btn-link" role="button">
-                    {% if bcontent.author|length > 0 %}{{ bcontent.author }}{% else %} Author N/A{% endif %}</a></li>
-                <li>|</li>
-                <li><a href={{ base }}/department/{{ bcontent.department|replace({' ': '_'}) }} class="btn btn-primary btn-sm btn-link" role="button">
-                    {% if bcontent.department|length > 0 %}{{ bcontent.department }}{% else %}Department N/A{% endif %}</a></li>
-                <li>|</li>
-                <li><a href={{ base }}/rlyear/{{bcontent.rlyear}} class="btn btn-primary btn-sm btn-link" role="button">
-                    {% if bcontent.rlyear|length > 0 %}{{ bcontent.rlyear }}{% else %}Year N/A{% endif %}</a></li>
-            </ul>
-        <ul class="list-inline list-unstyled text-right">
-            <li>Posted by {% if context.user.login == bcontent.postby %} you {% else %}{{ bcontent.postby }} {% endif %} on {{ bcontent.udate }}</li>
-            </ul>
-            <p>{{ bcontent.description }}</p>
+    {% for bcontent in bcontents %}
+        <div class="well">
+            <div class="media">
+                <h3><a href={{ base }}/content/{{ bcontent.id }}>{% if bcontent.type == "1" %}
+                            [DOC]
+                        {% elseif bcontent.type == "2" %}
+                            [RAW]
+                        {% elseif bcontent.type == "3" %}
+                            [APP]
+                        {% elseif bcontent.type == "4" %}
+                            [SRC]
+                        {% else %}
+                            [NULL]
+                        {% endif %}
+                        {{ bcontent.title }} </a></h3>
+                <ul class="list-inline list-unstyled">
+                    <li><a href={{ base }}/author/{{ bcontent.author|replace({' ': '_'}) }} class="btn btn-primary
+                           btn-sm btn-link" role="button">
+                        {% if bcontent.author|length > 0 %}{{ bcontent.author }}{% else %} Author N/A{% endif %}</a>
+                    </li>
+                    <li>|</li>
+                    <li><a href={{ base }}/department/{{ bcontent.department|replace({' ': '_'}) }} class="btn
+                           btn-primary btn-sm btn-link" role="button">
+                        {% if bcontent.department|length > 0 %}{{ bcontent.department }}{% else %}Department
+                        N/A{% endif %}</a></li>
+                    <li>|</li>
+                    <li><a href={{ base }}/rlyear/{{ bcontent.rlyear }} class="btn btn-primary btn-sm btn-link"
+                        role="button">
+                        {% if bcontent.rlyear|length > 0 %}{{ bcontent.rlyear }}{% else %}Year N/A{% endif %}</a></li>
+                </ul>
+                <ul class="list-inline list-unstyled text-right">
+                    <li>Posted
+                        by {% if context.user.login == bcontent.postby %} you {% else %}{{ bcontent.postby }} {% endif %}
+                        on {{ bcontent.udate }}</li>
+                </ul>
+                <p>{{ bcontent.description }}</p>
 
-            <p class="text-right"><a href={{ base }}/content/{{ bcontent.id }}>
-                    {% if context.user.login == bcontent.postby %}  View or edit {% else %} Learn more {% endif %}
-                </a></p>
-    </div>
-</div>
-{% endfor %}
+                <p class="text-right"><a href={{ base }}/content/{{ bcontent.id }}>
+                        {% if context.user.login == bcontent.postby %}  View or edit {% else %} Learn more {% endif %}
+                    </a></p>
+            </div>
+        </div>
+    {% endfor %}
 {% endif %}

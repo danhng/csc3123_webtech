@@ -1,49 +1,53 @@
 {% extends 'contentform.twig' %}
 {% block titlerequired %}
-required
+    required
 {% endblock titlerequired %}
 {% block departmentnew %}
-        <div>
-        <input type="text" class="form-control" name="new-department" placeholder="New department (Full name)" id="new-department-tag"/>
-        </div>
-            {% endblock departmentnew %}
+    <div>
+        <input type="text" class="form-control" name="new-department" placeholder="New department (Full name)"
+               id="new-department-tag"/>
+    </div>
+{% endblock departmentnew %}
 {% block authorfield %}
     <select class="form-control" id="department-tag" name="author">
         {#Authors list for publising#}
-        <option value = {{ def }}>{{ "Select an author" }}</option>
+        <option value= {{ def }}>{{ "Select an author" }}</option>
         {% for author in authors %}
-            <option value = {{ author }}>{{ author|replace({'_': ' '}) }}</option>
+            <option value= {{ author }}>{{ author|replace({'_': ' '}) }}</option>
         {% endfor %}
     </select>
 {% endblock authorfield %}
 
 {% block authornew %}
     <div>
-    <input type="text" class="form-control" name="new-author" placeholder="New author (Full name)" id="new-author-tag"/>
+        <input type="text" class="form-control" name="new-author" placeholder="New author (Full name)"
+               id="new-author-tag"/>
     </div>
-        {% endblock authornew %}
+{% endblock authornew %}
 {% block rlyearnew %}
     <div class="form-group">
-    <input type="number" class="form-control" name="new-rlyear" placeholder="New release year..." id="new-rlyear-tag"/>
+        <input type="number" class="form-control" name="new-rlyear" placeholder="New release year..."
+               id="new-rlyear-tag"/>
     </div>
 {% endblock rlyearnew %}
 
 {% block description %}
     <div class="form-group">
         <label for="description-tag">Description:</label>
-        <input type="text" name="description" class="form-control" placeholder="Description..." id="description-tag" required >
+        <input type="text" name="description" class="form-control" placeholder="Description..." id="description-tag"
+               required>
     </div>
 {% endblock description %}
 
 {% block link %}
-<div class="form-group">
-    <label for="description-tag">Upload a file</label>
+    <div class="form-group">
+        <label for="description-tag">Upload a file</label>
         <input type="file" name="file-id" id="file-id">
         {#<input type="submit" value="Upload File" name="upload-tag" value = '1'>#}
     </div>
     <div class="form-group">
         Select an external link
-        <input type="text" name="url" class="form-control" placeholder="Copy the absolute URL..." id="url-tag" required >
+        <input type="text" name="url" class="form-control" placeholder="Copy the absolute URL..." id="url-tag" required>
     </div>
 {% endblock link %}
 

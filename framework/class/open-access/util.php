@@ -12,71 +12,80 @@ class Util
 {
     const ERROR_MESSAGE_500 = 'Something went wrong. We are working on it.';
 
-//    public static function get_left_search_bar_params($attribute) {
-//        $val = Database::get_all_beans($attribute);
-//Debug::show("Departments for left search bar:");
-//Debug::vdump($val);
-//        return $val;
-//    }
-
-public static function shorten($string, $limit) {
+    /**
+     * Shorten a string to a defined limit
+     *
+     * Used mostly for shortening descriptions shown in search pages
+     *
+     * @param $string string the string to be shorted
+     * @param $limit int the limit of the output string that contains significant characters
+     * @return string the output string
+     */
+    public static function shorten($string, $limit)
+    {
     $len = strlen($string);
-        if ($len <= $limit) {
+        if ($len <= $limit)
+        {
             return $string;
         }
     return substr($string, 0, $limit).'[TO BE CONTINUED]';
 }
 
+    /**
+     * upload a file to the directory
+     *
+     * see: http://www.w3schools.com/php/php_file_upload.asp
+     *
+     * @return int|string error codes (int) or the file name if the file is uploaded
+     */
 public static function upload()
 {
     $target_dir = "assets/uploads/";
     $target_file = $target_dir . basename($_FILES["file-id"]["name"]);
     $uploadOk = 1;
-    $fileType = pathinfo($target_file, PATHINFO_EXTENSION);
-// Check if image file is a actual image or fake image
-//if(isset($_POST["submit"])) {
-//$check = filesize($_FILES["fileToUpload"]["tmp_name"]);
-//if($check !== false) {
-//echo "File is an image - " . $check["mime"] . ".";
-//$uploadOk = 1;
-//} else {
-//    echo "File is not an image.";
-//    $uploadOk = 0;
-//}
-//}
-// Check if file already exists
-    if (file_exists($target_file)) {
-Debug::show('file'.$target_file.'exists');
+    $file_type = pathinfo($target_file, PATHINFO_EXTENSION);
+
+    // Check if file already exists
+    if (file_exists($target_file))
+    {
+Debug::show('file '.$target_file.'exists');
         return 1;
     }
-// Check file size
-    if ($_FILES["file-id"]["size"] > InterfaceValues::FILE_LIMIT_B) {
-Debug::show('file'.$target_file.'too large');
+    // Check file size
+    if ($_FILES["file-id"]["size"] > InterfaceValues::FILE_LIMIT_B)
+    {
+Debug::show('file '.$target_file.'too large');
         return 2;
     }
-// Allow certain file formats
-    if ($fileType != "txt" && $fileType != "pdf" && $fileType != "doc" && $fileType != "docx"
-        && $fileType != "pdf" && $fileType != "xls" && $fileType != "xlsx" && $fileType != "odt" && $fileType != "rtf"
-        && $fileType != "zip" && $fileType != "tar.gz"
-    ) {
-Debug::show('file'.$target_file.' format not supported');
+    // Allow certain file formats
+    if ($file_type != "txt" && $file_type != "pdf" && $file_type != "doc" && $file_type != "docx"
+        && $file_type != "pdf" && $file_type != "xls" && $file_type != "xlsx" && $file_type != "odt" && $file_type != "rtf"
+        && $file_type != "zip" && $file_type != "tar.gz")
+    {
+Debug::show('file '.$target_file.' format not supported');
         return 3;
     }
-// Check if $uploadOk is set to 0 by an error
-    if ($uploadOk == 0) {
-Debug::show('file'.$target_file.' format not supported');
+    // Check if $uploadOk is set to 0 by an error
+    if ($uploadOk == 0)
+    {
+Debug::show('uploading file '.$target_file.' fails');
         return 4;
-// if everything is ok, try to upload file
-    } else {
+    // if everything is ok, try to upload file
+    }
+    else
+    {
+        // move uploaded
         $r = move_uploaded_file($_FILES["file-id"]["tmp_name"], $target_file);
 Debug::vdump($r);
-        if ($r) {
+        if ($r)
+        {
             return basename($_FILES["file-id"]["name"]);
-        } else {
+        }
+        else
+        {
 Debug::show('file'.$target_file.' upload failed.');
             return 5;
         }
     }
 }
-
 }

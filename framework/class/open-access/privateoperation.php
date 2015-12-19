@@ -7,6 +7,7 @@
 
 /**
  * Class PrivateOperation provides login and admin required operations. (Staff)
+ *
  */
 class PrivateOperation
 {
@@ -27,7 +28,7 @@ class PrivateOperation
         // is the department id ready yet or the content being published brings in a new department?
         $departmentid_ready = true;
         // does the content require file upload?
-        $hasfile = $_FILES['file-id'];
+        $hasfile = $_FILES['file-id']['name'];
 
 Debug::show('$files');
 Debug::vdump($_FILES);
@@ -176,37 +177,55 @@ Debug::show('fail input filter check');
      * @param $content_id
      * @return bool
      */
-    private function own($context, $content_id) {
+    private function own($context, $content_id)
+    {
         $content_id = trim($content_id);
         if (!$content_id) {
+
             return false;
         }
-
         $content_bean = R::load(Database::PUBLICATION, $content_id);
-        if (!$content_bean->id) {
+        if (!$content_bean->id)
+        {
 Debug::show('warning. content id '.$content_id.' is not found.');
             return false;
         }
-        if ($context->user()->login !== $content_bean[Database::PUBLICATION_POSTBY]) {
+        if ($context->user()->login !== $content_bean[Database::PUBLICATION_POSTBY])
+        {
 Debug::show('warning. '. $context->user()->login. ' does not own content ' .$content_id);
             return false;
         }
         return true;
     }
 
-    private function remove_inner($content_id) {
+    /**
+     * Content removing inner operation
+     *
+     * @param $content_id string the id of the content to be removed
+     * @return bool true if the content is removed, false otherwise
+     */
+    private function remove_inner($content_id)
+    {
         $content = R::load(Database::PUBLICATION, $content_id);
-        try {
+        try
+        {
             R::trash($content);
             return true;
-        } catch (Exception $e) {
+        } catch (Exception $e)
+        {
 Debug::show('Caught exception: '.$e->getMessage());
             return false;
         }
     }
 
-
-
+    /**
+     * Content editing inner operation
+     *
+     * @param $content_id string the id of the content to be edited
+     * @param $new_pub array the edited version of the content
+     * @param $has_department_id bool does the new version bring in a new department?
+     * @return bool|int|string the id of the edited version, false or 0 otherwise.
+     */
     private function edit_inner($content_id, $new_pub, $has_department_id)
     {
         $content_id = trim($content_id);
@@ -215,6 +234,7 @@ Debug::show('Caught exception: '.$e->getMessage());
             return false;
         }
         $content = R::load(Database::PUBLICATION, $content_id, $has_department_id);
+        // this involves move than one operation so we need to ensure the consistency of the data.
         R::begin();
         try
         {
@@ -228,38 +248,52 @@ Debug::show('Caught exception: '.$e->getMessage());
         }
     }
 
+    /**
+     * Content publishing inner operation
+     *
+     * @param $what array the content to be added
+     * @param bool|false $department_id_ready is the department a known one? default is false
+     * @return bool|int|string return the id of the newly published content, false or 0 otherwise
+     */
     private function publish_inner($what, $department_id_ready = false)
     {
-        $fileupload = 0;
-        if (array_key_exists('hasfile', $what) && $what['hasfile']) {
+        $fileupload = '';
+        if (array_key_exists('hasfile', $what) && $what['hasfile'])
+        {
             $fileupload = Util::upload();
-            if ($fileupload === 0 || $fileupload === 1 || $fileupload === 2 || $fileupload === 3 || $fileupload === 4 || $fileupload === 5) {
+            //todo make these error codes constants
+            if ($fileupload === 0 || $fileupload === 1 || $fileupload === 2 || $fileupload === 3 || $fileupload === 4 || $fileupload === 5)
+            {
                     return false;
             }
         }
-Debug::show('file upload status 0. '.$fileupload);
-
 Debug::show('file upload status. '.$fileupload);
-        $publication = R::dispense(Database::PUBLICATION);
 
+        $publication = R::dispense(Database::PUBLICATION);
+        // create a new department or retrieve the correct department.
         $department_bean = Database::get_beans_single_param(Database::DEPARTMENT, Database::DEPARTMENT_NAME, $what[Database::PUBLICATION_DEPARTMENT], true);
+       // department id to be retrieved.
         $d_id = null;
         R::begin();
         try {
-            if (!$department_id_ready) {
-                if (empty($department_bean)) {
+            if (!$department_id_ready)
+            {
+                if (empty($department_bean))
+                {
                     $department_bean = R::dispense(Database::DEPARTMENT);
                     $department_bean->name = $what[Database::PUBLICATION_DEPARTMENT];
                     $d_id = R::store($department_bean);
-
                     Debug::show("No department has been stored for this department. New id " . $d_id);
-                } else {
+                } else
+                {
                     $d_id = $department_bean->id;
                 }
             }
-            else {
+            else
+            {
                 $d_id = $what[Database::DEPARTMENT];
             }
+            // todo another mess which needs cleaning up
             $publication->title = $what[Database::PUBLICATION_TITLE];
             $publication->type = $what[Database::PUBLICATION_TYPE];
             $publication->author = $what[Database::PUBLICATION_AUTHOR];
@@ -273,13 +307,12 @@ Debug::show('file upload status. '.$fileupload);
             $id = R::store($publication);
             R::commit();
             return $id;
-        } catch (Exception $e) {
+        } catch (Exception $e)
+        {
             R::rollback();
             Debug::show("Exception caught for transaction: ");
             Debug::vdump($e->getMessage());
             return false;
         }
     }
-
-
 }

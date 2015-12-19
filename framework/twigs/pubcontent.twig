@@ -1,13 +1,14 @@
-
 {% block basicinfo %}
     <ul class="list-inline list-unstyled">
-        <li><a role="button" href={{ base }}/author/{{ bcontent.author|replace({' ': '_'}) }} class="btn btn-primary btn-link" >
+        <li><a role="button" href={{ base }}/author/{{ bcontent.author|replace({' ': '_'}) }} class="btn btn-primary
+               btn-link" >
             {% if bcontent.author|length > 0 %}{{ bcontent.author }}{% else %} Author N/A{% endif %}</a></li>
         <li>|</li>
-        <li><a role="button" href={{ base }}/department/{{ bcontent.department|replace({' ': '_'}) }} class="btn btn-primary btn-link" >
+        <li><a role="button" href={{ base }}/department/{{ bcontent.department|replace({' ': '_'}) }} class="btn
+               btn-primary btn-link" >
             {% if bcontent.department|length > 0 %}{{ bcontent.department }}{% else %}Department N/A{% endif %}</a></li>
         <li>|</li>
-        <li><a role="button" href='{{ base }}/rlyear/{{bcontent.rlyear}}' class="btn btn-primary btn-link" >
+        <li><a role="button" href='{{ base }}/rlyear/{{ bcontent.rlyear }}' class="btn btn-primary btn-link">
                 {% if bcontent.rlyear|length > 0 %}{{ bcontent.rlyear }}{% else %}Year N/A{% endif %}</a></li>
     </ul>
     <ul class="list-inline list-unstyled text-right">
@@ -16,7 +17,7 @@
 {% endblock basicinfo %}
 
 <div class="well">
-<p>{{ bcontent.description }}</p>
+    <p>{{ bcontent.description }}</p>
 </div>
 
 {% block actions %}

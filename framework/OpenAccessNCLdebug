@@ -232,13 +232,11 @@ array(5) {
   }
 }
 all authors loaded: 
-array(3) {
+array(2) {
   [0]=>
-  string(0) ""
+  string(14) "Juan_Rodriguez"
   [1]=>
   string(4) "Juan"
-  [2]=>
-  string(14) "Juan_Rodriguez"
 }
 all release years beans:
 array(2) {
@@ -248,860 +246,23 @@ array(2) {
   string(4) "2015"
 }
 all author beans:
-array(3) {
+array(2) {
   [0]=>
-  string(0) ""
+  string(14) "Juan_Rodriguez"
   [1]=>
   string(4) "Juan"
-  [2]=>
-  string(14) "Juan_Rodriguez"
 }
 rest at no page home:
-array(1) {
-  [0]=>
-  string(1) "6"
+array(0) {
 }
-page at home :6
+page at home :1
 admin id is: 1
 SQL query:
 string(21) " where title regexp ?"
-Finding beans department for : id = 4
-array(1) {
-  [4]=>
-  object(RedBeanPHP\OODBBean)#63 (10) {
-    ["properties":protected]=>
-    array(2) {
-      ["id"]=>
-      string(1) "4"
-      ["name"]=>
-      string(4) "Juan"
-    }
-    ["__info":protected]=>
-    array(5) {
-      ["type"]=>
-      string(10) "department"
-      ["sys.id"]=>
-      string(2) "id"
-      ["sys.orig"]=>
-      array(2) {
-        ["id"]=>
-        string(1) "4"
-        ["name"]=>
-        string(4) "Juan"
-      }
-      ["tainted"]=>
-      bool(false)
-      ["changed"]=>
-      bool(false)
-    }
-    ["beanHelper":protected]=>
-    object(RedBeanPHP\BeanHelper\SimpleFacadeBeanHelper)#21 (0) {
-    }
-    ["fetchType":protected]=>
-    NULL
-    ["withSql":protected]=>
-    string(0) ""
-    ["withParams":protected]=>
-    array(0) {
-    }
-    ["aliasName":protected]=>
-    NULL
-    ["via":protected]=>
-    NULL
-    ["noLoad":protected]=>
-    bool(false)
-    ["all":protected]=>
-    bool(false)
-  }
-}
-Finding beans department for : id = 4
-array(1) {
-  [4]=>
-  object(RedBeanPHP\OODBBean)#63 (10) {
-    ["properties":protected]=>
-    array(2) {
-      ["id"]=>
-      string(1) "4"
-      ["name"]=>
-      string(4) "Juan"
-    }
-    ["__info":protected]=>
-    array(5) {
-      ["type"]=>
-      string(10) "department"
-      ["sys.id"]=>
-      string(2) "id"
-      ["sys.orig"]=>
-      array(2) {
-        ["id"]=>
-        string(1) "4"
-        ["name"]=>
-        string(4) "Juan"
-      }
-      ["tainted"]=>
-      bool(false)
-      ["changed"]=>
-      bool(false)
-    }
-    ["beanHelper":protected]=>
-    object(RedBeanPHP\BeanHelper\SimpleFacadeBeanHelper)#21 (0) {
-    }
-    ["fetchType":protected]=>
-    NULL
-    ["withSql":protected]=>
-    string(0) ""
-    ["withParams":protected]=>
-    array(0) {
-    }
-    ["aliasName":protected]=>
-    NULL
-    ["via":protected]=>
-    NULL
-    ["noLoad":protected]=>
-    bool(false)
-    ["all":protected]=>
-    bool(false)
-  }
-}
 Finding beans department for : id = 1
 array(1) {
   [1]=>
-  object(RedBeanPHP\OODBBean)#63 (10) {
-    ["properties":protected]=>
-    array(2) {
-      ["id"]=>
-      string(1) "1"
-      ["name"]=>
-      string(14) "Electrical Eng"
-    }
-    ["__info":protected]=>
-    array(5) {
-      ["type"]=>
-      string(10) "department"
-      ["sys.id"]=>
-      string(2) "id"
-      ["sys.orig"]=>
-      array(2) {
-        ["id"]=>
-        string(1) "1"
-        ["name"]=>
-        string(14) "Electrical Eng"
-      }
-      ["tainted"]=>
-      bool(false)
-      ["changed"]=>
-      bool(false)
-    }
-    ["beanHelper":protected]=>
-    object(RedBeanPHP\BeanHelper\SimpleFacadeBeanHelper)#21 (0) {
-    }
-    ["fetchType":protected]=>
-    NULL
-    ["withSql":protected]=>
-    string(0) ""
-    ["withParams":protected]=>
-    array(0) {
-    }
-    ["aliasName":protected]=>
-    NULL
-    ["via":protected]=>
-    NULL
-    ["noLoad":protected]=>
-    bool(false)
-    ["all":protected]=>
-    bool(false)
-  }
-}
-Finding beans department for : id = 1
-array(1) {
-  [1]=>
-  object(RedBeanPHP\OODBBean)#63 (10) {
-    ["properties":protected]=>
-    array(2) {
-      ["id"]=>
-      string(1) "1"
-      ["name"]=>
-      string(14) "Electrical Eng"
-    }
-    ["__info":protected]=>
-    array(5) {
-      ["type"]=>
-      string(10) "department"
-      ["sys.id"]=>
-      string(2) "id"
-      ["sys.orig"]=>
-      array(2) {
-        ["id"]=>
-        string(1) "1"
-        ["name"]=>
-        string(14) "Electrical Eng"
-      }
-      ["tainted"]=>
-      bool(false)
-      ["changed"]=>
-      bool(false)
-    }
-    ["beanHelper":protected]=>
-    object(RedBeanPHP\BeanHelper\SimpleFacadeBeanHelper)#21 (0) {
-    }
-    ["fetchType":protected]=>
-    NULL
-    ["withSql":protected]=>
-    string(0) ""
-    ["withParams":protected]=>
-    array(0) {
-    }
-    ["aliasName":protected]=>
-    NULL
-    ["via":protected]=>
-    NULL
-    ["noLoad":protected]=>
-    bool(false)
-    ["all":protected]=>
-    bool(false)
-  }
-}
-Finding beans department for : id = 1
-array(1) {
-  [1]=>
-  object(RedBeanPHP\OODBBean)#63 (10) {
-    ["properties":protected]=>
-    array(2) {
-      ["id"]=>
-      string(1) "1"
-      ["name"]=>
-      string(14) "Electrical Eng"
-    }
-    ["__info":protected]=>
-    array(5) {
-      ["type"]=>
-      string(10) "department"
-      ["sys.id"]=>
-      string(2) "id"
-      ["sys.orig"]=>
-      array(2) {
-        ["id"]=>
-        string(1) "1"
-        ["name"]=>
-        string(14) "Electrical Eng"
-      }
-      ["tainted"]=>
-      bool(false)
-      ["changed"]=>
-      bool(false)
-    }
-    ["beanHelper":protected]=>
-    object(RedBeanPHP\BeanHelper\SimpleFacadeBeanHelper)#21 (0) {
-    }
-    ["fetchType":protected]=>
-    NULL
-    ["withSql":protected]=>
-    string(0) ""
-    ["withParams":protected]=>
-    array(0) {
-    }
-    ["aliasName":protected]=>
-    NULL
-    ["via":protected]=>
-    NULL
-    ["noLoad":protected]=>
-    bool(false)
-    ["all":protected]=>
-    bool(false)
-  }
-}
-Finding beans department for : id = 1
-array(1) {
-  [1]=>
-  object(RedBeanPHP\OODBBean)#63 (10) {
-    ["properties":protected]=>
-    array(2) {
-      ["id"]=>
-      string(1) "1"
-      ["name"]=>
-      string(14) "Electrical Eng"
-    }
-    ["__info":protected]=>
-    array(5) {
-      ["type"]=>
-      string(10) "department"
-      ["sys.id"]=>
-      string(2) "id"
-      ["sys.orig"]=>
-      array(2) {
-        ["id"]=>
-        string(1) "1"
-        ["name"]=>
-        string(14) "Electrical Eng"
-      }
-      ["tainted"]=>
-      bool(false)
-      ["changed"]=>
-      bool(false)
-    }
-    ["beanHelper":protected]=>
-    object(RedBeanPHP\BeanHelper\SimpleFacadeBeanHelper)#21 (0) {
-    }
-    ["fetchType":protected]=>
-    NULL
-    ["withSql":protected]=>
-    string(0) ""
-    ["withParams":protected]=>
-    array(0) {
-    }
-    ["aliasName":protected]=>
-    NULL
-    ["via":protected]=>
-    NULL
-    ["noLoad":protected]=>
-    bool(false)
-    ["all":protected]=>
-    bool(false)
-  }
-}
-Finding beans department for : id = 1
-array(1) {
-  [1]=>
-  object(RedBeanPHP\OODBBean)#63 (10) {
-    ["properties":protected]=>
-    array(2) {
-      ["id"]=>
-      string(1) "1"
-      ["name"]=>
-      string(14) "Electrical Eng"
-    }
-    ["__info":protected]=>
-    array(5) {
-      ["type"]=>
-      string(10) "department"
-      ["sys.id"]=>
-      string(2) "id"
-      ["sys.orig"]=>
-      array(2) {
-        ["id"]=>
-        string(1) "1"
-        ["name"]=>
-        string(14) "Electrical Eng"
-      }
-      ["tainted"]=>
-      bool(false)
-      ["changed"]=>
-      bool(false)
-    }
-    ["beanHelper":protected]=>
-    object(RedBeanPHP\BeanHelper\SimpleFacadeBeanHelper)#21 (0) {
-    }
-    ["fetchType":protected]=>
-    NULL
-    ["withSql":protected]=>
-    string(0) ""
-    ["withParams":protected]=>
-    array(0) {
-    }
-    ["aliasName":protected]=>
-    NULL
-    ["via":protected]=>
-    NULL
-    ["noLoad":protected]=>
-    bool(false)
-    ["all":protected]=>
-    bool(false)
-  }
-}
-Finding beans department for : id = 1
-array(1) {
-  [1]=>
-  object(RedBeanPHP\OODBBean)#63 (10) {
-    ["properties":protected]=>
-    array(2) {
-      ["id"]=>
-      string(1) "1"
-      ["name"]=>
-      string(14) "Electrical Eng"
-    }
-    ["__info":protected]=>
-    array(5) {
-      ["type"]=>
-      string(10) "department"
-      ["sys.id"]=>
-      string(2) "id"
-      ["sys.orig"]=>
-      array(2) {
-        ["id"]=>
-        string(1) "1"
-        ["name"]=>
-        string(14) "Electrical Eng"
-      }
-      ["tainted"]=>
-      bool(false)
-      ["changed"]=>
-      bool(false)
-    }
-    ["beanHelper":protected]=>
-    object(RedBeanPHP\BeanHelper\SimpleFacadeBeanHelper)#21 (0) {
-    }
-    ["fetchType":protected]=>
-    NULL
-    ["withSql":protected]=>
-    string(0) ""
-    ["withParams":protected]=>
-    array(0) {
-    }
-    ["aliasName":protected]=>
-    NULL
-    ["via":protected]=>
-    NULL
-    ["noLoad":protected]=>
-    bool(false)
-    ["all":protected]=>
-    bool(false)
-  }
-}
-Finding beans department for : id = 1
-array(1) {
-  [1]=>
-  object(RedBeanPHP\OODBBean)#63 (10) {
-    ["properties":protected]=>
-    array(2) {
-      ["id"]=>
-      string(1) "1"
-      ["name"]=>
-      string(14) "Electrical Eng"
-    }
-    ["__info":protected]=>
-    array(5) {
-      ["type"]=>
-      string(10) "department"
-      ["sys.id"]=>
-      string(2) "id"
-      ["sys.orig"]=>
-      array(2) {
-        ["id"]=>
-        string(1) "1"
-        ["name"]=>
-        string(14) "Electrical Eng"
-      }
-      ["tainted"]=>
-      bool(false)
-      ["changed"]=>
-      bool(false)
-    }
-    ["beanHelper":protected]=>
-    object(RedBeanPHP\BeanHelper\SimpleFacadeBeanHelper)#21 (0) {
-    }
-    ["fetchType":protected]=>
-    NULL
-    ["withSql":protected]=>
-    string(0) ""
-    ["withParams":protected]=>
-    array(0) {
-    }
-    ["aliasName":protected]=>
-    NULL
-    ["via":protected]=>
-    NULL
-    ["noLoad":protected]=>
-    bool(false)
-    ["all":protected]=>
-    bool(false)
-  }
-}
-Finding beans department for : id = 1
-array(1) {
-  [1]=>
-  object(RedBeanPHP\OODBBean)#63 (10) {
-    ["properties":protected]=>
-    array(2) {
-      ["id"]=>
-      string(1) "1"
-      ["name"]=>
-      string(14) "Electrical Eng"
-    }
-    ["__info":protected]=>
-    array(5) {
-      ["type"]=>
-      string(10) "department"
-      ["sys.id"]=>
-      string(2) "id"
-      ["sys.orig"]=>
-      array(2) {
-        ["id"]=>
-        string(1) "1"
-        ["name"]=>
-        string(14) "Electrical Eng"
-      }
-      ["tainted"]=>
-      bool(false)
-      ["changed"]=>
-      bool(false)
-    }
-    ["beanHelper":protected]=>
-    object(RedBeanPHP\BeanHelper\SimpleFacadeBeanHelper)#21 (0) {
-    }
-    ["fetchType":protected]=>
-    NULL
-    ["withSql":protected]=>
-    string(0) ""
-    ["withParams":protected]=>
-    array(0) {
-    }
-    ["aliasName":protected]=>
-    NULL
-    ["via":protected]=>
-    NULL
-    ["noLoad":protected]=>
-    bool(false)
-    ["all":protected]=>
-    bool(false)
-  }
-}
-Finding beans department for : id = 1
-array(1) {
-  [1]=>
-  object(RedBeanPHP\OODBBean)#63 (10) {
-    ["properties":protected]=>
-    array(2) {
-      ["id"]=>
-      string(1) "1"
-      ["name"]=>
-      string(14) "Electrical Eng"
-    }
-    ["__info":protected]=>
-    array(5) {
-      ["type"]=>
-      string(10) "department"
-      ["sys.id"]=>
-      string(2) "id"
-      ["sys.orig"]=>
-      array(2) {
-        ["id"]=>
-        string(1) "1"
-        ["name"]=>
-        string(14) "Electrical Eng"
-      }
-      ["tainted"]=>
-      bool(false)
-      ["changed"]=>
-      bool(false)
-    }
-    ["beanHelper":protected]=>
-    object(RedBeanPHP\BeanHelper\SimpleFacadeBeanHelper)#21 (0) {
-    }
-    ["fetchType":protected]=>
-    NULL
-    ["withSql":protected]=>
-    string(0) ""
-    ["withParams":protected]=>
-    array(0) {
-    }
-    ["aliasName":protected]=>
-    NULL
-    ["via":protected]=>
-    NULL
-    ["noLoad":protected]=>
-    bool(false)
-    ["all":protected]=>
-    bool(false)
-  }
-}
-Finding beans department for : id = 1
-array(1) {
-  [1]=>
-  object(RedBeanPHP\OODBBean)#63 (10) {
-    ["properties":protected]=>
-    array(2) {
-      ["id"]=>
-      string(1) "1"
-      ["name"]=>
-      string(14) "Electrical Eng"
-    }
-    ["__info":protected]=>
-    array(5) {
-      ["type"]=>
-      string(10) "department"
-      ["sys.id"]=>
-      string(2) "id"
-      ["sys.orig"]=>
-      array(2) {
-        ["id"]=>
-        string(1) "1"
-        ["name"]=>
-        string(14) "Electrical Eng"
-      }
-      ["tainted"]=>
-      bool(false)
-      ["changed"]=>
-      bool(false)
-    }
-    ["beanHelper":protected]=>
-    object(RedBeanPHP\BeanHelper\SimpleFacadeBeanHelper)#21 (0) {
-    }
-    ["fetchType":protected]=>
-    NULL
-    ["withSql":protected]=>
-    string(0) ""
-    ["withParams":protected]=>
-    array(0) {
-    }
-    ["aliasName":protected]=>
-    NULL
-    ["via":protected]=>
-    NULL
-    ["noLoad":protected]=>
-    bool(false)
-    ["all":protected]=>
-    bool(false)
-  }
-}
-Finding beans department for : id = 1
-array(1) {
-  [1]=>
-  object(RedBeanPHP\OODBBean)#63 (10) {
-    ["properties":protected]=>
-    array(2) {
-      ["id"]=>
-      string(1) "1"
-      ["name"]=>
-      string(14) "Electrical Eng"
-    }
-    ["__info":protected]=>
-    array(5) {
-      ["type"]=>
-      string(10) "department"
-      ["sys.id"]=>
-      string(2) "id"
-      ["sys.orig"]=>
-      array(2) {
-        ["id"]=>
-        string(1) "1"
-        ["name"]=>
-        string(14) "Electrical Eng"
-      }
-      ["tainted"]=>
-      bool(false)
-      ["changed"]=>
-      bool(false)
-    }
-    ["beanHelper":protected]=>
-    object(RedBeanPHP\BeanHelper\SimpleFacadeBeanHelper)#21 (0) {
-    }
-    ["fetchType":protected]=>
-    NULL
-    ["withSql":protected]=>
-    string(0) ""
-    ["withParams":protected]=>
-    array(0) {
-    }
-    ["aliasName":protected]=>
-    NULL
-    ["via":protected]=>
-    NULL
-    ["noLoad":protected]=>
-    bool(false)
-    ["all":protected]=>
-    bool(false)
-  }
-}
-Finding beans department for : id = 1
-array(1) {
-  [1]=>
-  object(RedBeanPHP\OODBBean)#63 (10) {
-    ["properties":protected]=>
-    array(2) {
-      ["id"]=>
-      string(1) "1"
-      ["name"]=>
-      string(14) "Electrical Eng"
-    }
-    ["__info":protected]=>
-    array(5) {
-      ["type"]=>
-      string(10) "department"
-      ["sys.id"]=>
-      string(2) "id"
-      ["sys.orig"]=>
-      array(2) {
-        ["id"]=>
-        string(1) "1"
-        ["name"]=>
-        string(14) "Electrical Eng"
-      }
-      ["tainted"]=>
-      bool(false)
-      ["changed"]=>
-      bool(false)
-    }
-    ["beanHelper":protected]=>
-    object(RedBeanPHP\BeanHelper\SimpleFacadeBeanHelper)#21 (0) {
-    }
-    ["fetchType":protected]=>
-    NULL
-    ["withSql":protected]=>
-    string(0) ""
-    ["withParams":protected]=>
-    array(0) {
-    }
-    ["aliasName":protected]=>
-    NULL
-    ["via":protected]=>
-    NULL
-    ["noLoad":protected]=>
-    bool(false)
-    ["all":protected]=>
-    bool(false)
-  }
-}
-Finding beans department for : id = 1
-array(1) {
-  [1]=>
-  object(RedBeanPHP\OODBBean)#63 (10) {
-    ["properties":protected]=>
-    array(2) {
-      ["id"]=>
-      string(1) "1"
-      ["name"]=>
-      string(14) "Electrical Eng"
-    }
-    ["__info":protected]=>
-    array(5) {
-      ["type"]=>
-      string(10) "department"
-      ["sys.id"]=>
-      string(2) "id"
-      ["sys.orig"]=>
-      array(2) {
-        ["id"]=>
-        string(1) "1"
-        ["name"]=>
-        string(14) "Electrical Eng"
-      }
-      ["tainted"]=>
-      bool(false)
-      ["changed"]=>
-      bool(false)
-    }
-    ["beanHelper":protected]=>
-    object(RedBeanPHP\BeanHelper\SimpleFacadeBeanHelper)#21 (0) {
-    }
-    ["fetchType":protected]=>
-    NULL
-    ["withSql":protected]=>
-    string(0) ""
-    ["withParams":protected]=>
-    array(0) {
-    }
-    ["aliasName":protected]=>
-    NULL
-    ["via":protected]=>
-    NULL
-    ["noLoad":protected]=>
-    bool(false)
-    ["all":protected]=>
-    bool(false)
-  }
-}
-Finding beans department for : id = 1
-array(1) {
-  [1]=>
-  object(RedBeanPHP\OODBBean)#63 (10) {
-    ["properties":protected]=>
-    array(2) {
-      ["id"]=>
-      string(1) "1"
-      ["name"]=>
-      string(14) "Electrical Eng"
-    }
-    ["__info":protected]=>
-    array(5) {
-      ["type"]=>
-      string(10) "department"
-      ["sys.id"]=>
-      string(2) "id"
-      ["sys.orig"]=>
-      array(2) {
-        ["id"]=>
-        string(1) "1"
-        ["name"]=>
-        string(14) "Electrical Eng"
-      }
-      ["tainted"]=>
-      bool(false)
-      ["changed"]=>
-      bool(false)
-    }
-    ["beanHelper":protected]=>
-    object(RedBeanPHP\BeanHelper\SimpleFacadeBeanHelper)#21 (0) {
-    }
-    ["fetchType":protected]=>
-    NULL
-    ["withSql":protected]=>
-    string(0) ""
-    ["withParams":protected]=>
-    array(0) {
-    }
-    ["aliasName":protected]=>
-    NULL
-    ["via":protected]=>
-    NULL
-    ["noLoad":protected]=>
-    bool(false)
-    ["all":protected]=>
-    bool(false)
-  }
-}
-Finding beans department for : id = 1
-array(1) {
-  [1]=>
-  object(RedBeanPHP\OODBBean)#63 (10) {
-    ["properties":protected]=>
-    array(2) {
-      ["id"]=>
-      string(1) "1"
-      ["name"]=>
-      string(14) "Electrical Eng"
-    }
-    ["__info":protected]=>
-    array(5) {
-      ["type"]=>
-      string(10) "department"
-      ["sys.id"]=>
-      string(2) "id"
-      ["sys.orig"]=>
-      array(2) {
-        ["id"]=>
-        string(1) "1"
-        ["name"]=>
-        string(14) "Electrical Eng"
-      }
-      ["tainted"]=>
-      bool(false)
-      ["changed"]=>
-      bool(false)
-    }
-    ["beanHelper":protected]=>
-    object(RedBeanPHP\BeanHelper\SimpleFacadeBeanHelper)#21 (0) {
-    }
-    ["fetchType":protected]=>
-    NULL
-    ["withSql":protected]=>
-    string(0) ""
-    ["withParams":protected]=>
-    array(0) {
-    }
-    ["aliasName":protected]=>
-    NULL
-    ["via":protected]=>
-    NULL
-    ["noLoad":protected]=>
-    bool(false)
-    ["all":protected]=>
-    bool(false)
-  }
-}
-Finding beans department for : id = 1
-array(1) {
-  [1]=>
-  object(RedBeanPHP\OODBBean)#63 (10) {
+  object(RedBeanPHP\OODBBean)#55 (10) {
     ["properties":protected]=>
     array(2) {
       ["id"]=>
@@ -1150,7 +311,7 @@ array(1) {
 Finding beans department for : id = 2
 array(1) {
   [2]=>
-  object(RedBeanPHP\OODBBean)#63 (10) {
+  object(RedBeanPHP\OODBBean)#55 (10) {
     ["properties":protected]=>
     array(2) {
       ["id"]=>
@@ -1199,7 +360,7 @@ array(1) {
 Finding beans department for : id = 5
 array(1) {
   [5]=>
-  object(RedBeanPHP\OODBBean)#63 (10) {
+  object(RedBeanPHP\OODBBean)#55 (10) {
     ["properties":protected]=>
     array(2) {
       ["id"]=>
@@ -1248,7 +409,7 @@ array(1) {
 Finding beans department for : id = 1
 array(1) {
   [1]=>
-  object(RedBeanPHP\OODBBean)#63 (10) {
+  object(RedBeanPHP\OODBBean)#55 (10) {
     ["properties":protected]=>
     array(2) {
       ["id"]=>
@@ -1294,4 +455,445 @@ array(1) {
     bool(false)
   }
 }
-page count for admin posts7
+Finding beans department for : id = 4
+array(1) {
+  [4]=>
+  object(RedBeanPHP\OODBBean)#55 (10) {
+    ["properties":protected]=>
+    array(2) {
+      ["id"]=>
+      string(1) "4"
+      ["name"]=>
+      string(4) "Juan"
+    }
+    ["__info":protected]=>
+    array(5) {
+      ["type"]=>
+      string(10) "department"
+      ["sys.id"]=>
+      string(2) "id"
+      ["sys.orig"]=>
+      array(2) {
+        ["id"]=>
+        string(1) "4"
+        ["name"]=>
+        string(4) "Juan"
+      }
+      ["tainted"]=>
+      bool(false)
+      ["changed"]=>
+      bool(false)
+    }
+    ["beanHelper":protected]=>
+    object(RedBeanPHP\BeanHelper\SimpleFacadeBeanHelper)#21 (0) {
+    }
+    ["fetchType":protected]=>
+    NULL
+    ["withSql":protected]=>
+    string(0) ""
+    ["withParams":protected]=>
+    array(0) {
+    }
+    ["aliasName":protected]=>
+    NULL
+    ["via":protected]=>
+    NULL
+    ["noLoad":protected]=>
+    bool(false)
+    ["all":protected]=>
+    bool(false)
+  }
+}
+Finding beans department for : id = 1
+array(1) {
+  [1]=>
+  object(RedBeanPHP\OODBBean)#55 (10) {
+    ["properties":protected]=>
+    array(2) {
+      ["id"]=>
+      string(1) "1"
+      ["name"]=>
+      string(14) "Electrical Eng"
+    }
+    ["__info":protected]=>
+    array(5) {
+      ["type"]=>
+      string(10) "department"
+      ["sys.id"]=>
+      string(2) "id"
+      ["sys.orig"]=>
+      array(2) {
+        ["id"]=>
+        string(1) "1"
+        ["name"]=>
+        string(14) "Electrical Eng"
+      }
+      ["tainted"]=>
+      bool(false)
+      ["changed"]=>
+      bool(false)
+    }
+    ["beanHelper":protected]=>
+    object(RedBeanPHP\BeanHelper\SimpleFacadeBeanHelper)#21 (0) {
+    }
+    ["fetchType":protected]=>
+    NULL
+    ["withSql":protected]=>
+    string(0) ""
+    ["withParams":protected]=>
+    array(0) {
+    }
+    ["aliasName":protected]=>
+    NULL
+    ["via":protected]=>
+    NULL
+    ["noLoad":protected]=>
+    bool(false)
+    ["all":protected]=>
+    bool(false)
+  }
+}
+Finding beans department for : id = 1
+array(1) {
+  [1]=>
+  object(RedBeanPHP\OODBBean)#55 (10) {
+    ["properties":protected]=>
+    array(2) {
+      ["id"]=>
+      string(1) "1"
+      ["name"]=>
+      string(14) "Electrical Eng"
+    }
+    ["__info":protected]=>
+    array(5) {
+      ["type"]=>
+      string(10) "department"
+      ["sys.id"]=>
+      string(2) "id"
+      ["sys.orig"]=>
+      array(2) {
+        ["id"]=>
+        string(1) "1"
+        ["name"]=>
+        string(14) "Electrical Eng"
+      }
+      ["tainted"]=>
+      bool(false)
+      ["changed"]=>
+      bool(false)
+    }
+    ["beanHelper":protected]=>
+    object(RedBeanPHP\BeanHelper\SimpleFacadeBeanHelper)#21 (0) {
+    }
+    ["fetchType":protected]=>
+    NULL
+    ["withSql":protected]=>
+    string(0) ""
+    ["withParams":protected]=>
+    array(0) {
+    }
+    ["aliasName":protected]=>
+    NULL
+    ["via":protected]=>
+    NULL
+    ["noLoad":protected]=>
+    bool(false)
+    ["all":protected]=>
+    bool(false)
+  }
+}
+Finding beans department for : id = 1
+array(1) {
+  [1]=>
+  object(RedBeanPHP\OODBBean)#55 (10) {
+    ["properties":protected]=>
+    array(2) {
+      ["id"]=>
+      string(1) "1"
+      ["name"]=>
+      string(14) "Electrical Eng"
+    }
+    ["__info":protected]=>
+    array(5) {
+      ["type"]=>
+      string(10) "department"
+      ["sys.id"]=>
+      string(2) "id"
+      ["sys.orig"]=>
+      array(2) {
+        ["id"]=>
+        string(1) "1"
+        ["name"]=>
+        string(14) "Electrical Eng"
+      }
+      ["tainted"]=>
+      bool(false)
+      ["changed"]=>
+      bool(false)
+    }
+    ["beanHelper":protected]=>
+    object(RedBeanPHP\BeanHelper\SimpleFacadeBeanHelper)#21 (0) {
+    }
+    ["fetchType":protected]=>
+    NULL
+    ["withSql":protected]=>
+    string(0) ""
+    ["withParams":protected]=>
+    array(0) {
+    }
+    ["aliasName":protected]=>
+    NULL
+    ["via":protected]=>
+    NULL
+    ["noLoad":protected]=>
+    bool(false)
+    ["all":protected]=>
+    bool(false)
+  }
+}
+Finding beans department for : id = 1
+array(1) {
+  [1]=>
+  object(RedBeanPHP\OODBBean)#55 (10) {
+    ["properties":protected]=>
+    array(2) {
+      ["id"]=>
+      string(1) "1"
+      ["name"]=>
+      string(14) "Electrical Eng"
+    }
+    ["__info":protected]=>
+    array(5) {
+      ["type"]=>
+      string(10) "department"
+      ["sys.id"]=>
+      string(2) "id"
+      ["sys.orig"]=>
+      array(2) {
+        ["id"]=>
+        string(1) "1"
+        ["name"]=>
+        string(14) "Electrical Eng"
+      }
+      ["tainted"]=>
+      bool(false)
+      ["changed"]=>
+      bool(false)
+    }
+    ["beanHelper":protected]=>
+    object(RedBeanPHP\BeanHelper\SimpleFacadeBeanHelper)#21 (0) {
+    }
+    ["fetchType":protected]=>
+    NULL
+    ["withSql":protected]=>
+    string(0) ""
+    ["withParams":protected]=>
+    array(0) {
+    }
+    ["aliasName":protected]=>
+    NULL
+    ["via":protected]=>
+    NULL
+    ["noLoad":protected]=>
+    bool(false)
+    ["all":protected]=>
+    bool(false)
+  }
+}
+Finding beans department for : id = 1
+array(1) {
+  [1]=>
+  object(RedBeanPHP\OODBBean)#55 (10) {
+    ["properties":protected]=>
+    array(2) {
+      ["id"]=>
+      string(1) "1"
+      ["name"]=>
+      string(14) "Electrical Eng"
+    }
+    ["__info":protected]=>
+    array(5) {
+      ["type"]=>
+      string(10) "department"
+      ["sys.id"]=>
+      string(2) "id"
+      ["sys.orig"]=>
+      array(2) {
+        ["id"]=>
+        string(1) "1"
+        ["name"]=>
+        string(14) "Electrical Eng"
+      }
+      ["tainted"]=>
+      bool(false)
+      ["changed"]=>
+      bool(false)
+    }
+    ["beanHelper":protected]=>
+    object(RedBeanPHP\BeanHelper\SimpleFacadeBeanHelper)#21 (0) {
+    }
+    ["fetchType":protected]=>
+    NULL
+    ["withSql":protected]=>
+    string(0) ""
+    ["withParams":protected]=>
+    array(0) {
+    }
+    ["aliasName":protected]=>
+    NULL
+    ["via":protected]=>
+    NULL
+    ["noLoad":protected]=>
+    bool(false)
+    ["all":protected]=>
+    bool(false)
+  }
+}
+Finding beans department for : id = 2
+array(1) {
+  [2]=>
+  object(RedBeanPHP\OODBBean)#55 (10) {
+    ["properties":protected]=>
+    array(2) {
+      ["id"]=>
+      string(1) "2"
+      ["name"]=>
+      string(15) "Electrical Comp"
+    }
+    ["__info":protected]=>
+    array(5) {
+      ["type"]=>
+      string(10) "department"
+      ["sys.id"]=>
+      string(2) "id"
+      ["sys.orig"]=>
+      array(2) {
+        ["id"]=>
+        string(1) "2"
+        ["name"]=>
+        string(15) "Electrical Comp"
+      }
+      ["tainted"]=>
+      bool(false)
+      ["changed"]=>
+      bool(false)
+    }
+    ["beanHelper":protected]=>
+    object(RedBeanPHP\BeanHelper\SimpleFacadeBeanHelper)#21 (0) {
+    }
+    ["fetchType":protected]=>
+    NULL
+    ["withSql":protected]=>
+    string(0) ""
+    ["withParams":protected]=>
+    array(0) {
+    }
+    ["aliasName":protected]=>
+    NULL
+    ["via":protected]=>
+    NULL
+    ["noLoad":protected]=>
+    bool(false)
+    ["all":protected]=>
+    bool(false)
+  }
+}
+Finding beans department for : id = 1
+array(1) {
+  [1]=>
+  object(RedBeanPHP\OODBBean)#55 (10) {
+    ["properties":protected]=>
+    array(2) {
+      ["id"]=>
+      string(1) "1"
+      ["name"]=>
+      string(14) "Electrical Eng"
+    }
+    ["__info":protected]=>
+    array(5) {
+      ["type"]=>
+      string(10) "department"
+      ["sys.id"]=>
+      string(2) "id"
+      ["sys.orig"]=>
+      array(2) {
+        ["id"]=>
+        string(1) "1"
+        ["name"]=>
+        string(14) "Electrical Eng"
+      }
+      ["tainted"]=>
+      bool(false)
+      ["changed"]=>
+      bool(false)
+    }
+    ["beanHelper":protected]=>
+    object(RedBeanPHP\BeanHelper\SimpleFacadeBeanHelper)#21 (0) {
+    }
+    ["fetchType":protected]=>
+    NULL
+    ["withSql":protected]=>
+    string(0) ""
+    ["withParams":protected]=>
+    array(0) {
+    }
+    ["aliasName":protected]=>
+    NULL
+    ["via":protected]=>
+    NULL
+    ["noLoad":protected]=>
+    bool(false)
+    ["all":protected]=>
+    bool(false)
+  }
+}
+Finding beans department for : id = 1
+array(1) {
+  [1]=>
+  object(RedBeanPHP\OODBBean)#55 (10) {
+    ["properties":protected]=>
+    array(2) {
+      ["id"]=>
+      string(1) "1"
+      ["name"]=>
+      string(14) "Electrical Eng"
+    }
+    ["__info":protected]=>
+    array(5) {
+      ["type"]=>
+      string(10) "department"
+      ["sys.id"]=>
+      string(2) "id"
+      ["sys.orig"]=>
+      array(2) {
+        ["id"]=>
+        string(1) "1"
+        ["name"]=>
+        string(14) "Electrical Eng"
+      }
+      ["tainted"]=>
+      bool(false)
+      ["changed"]=>
+      bool(false)
+    }
+    ["beanHelper":protected]=>
+    object(RedBeanPHP\BeanHelper\SimpleFacadeBeanHelper)#21 (0) {
+    }
+    ["fetchType":protected]=>
+    NULL
+    ["withSql":protected]=>
+    string(0) ""
+    ["withParams":protected]=>
+    array(0) {
+    }
+    ["aliasName":protected]=>
+    NULL
+    ["via":protected]=>
+    NULL
+    ["noLoad":protected]=>
+    bool(false)
+    ["all":protected]=>
+    bool(false)
+  }
+}
+page count for admin posts5

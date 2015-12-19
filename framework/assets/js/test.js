@@ -1,5 +1,5 @@
 bootbox.dialog({
-    message: "The publication has been edited.",
+    message: "The publication has been added.",
     title: "Success.",
     buttons: {
         success: {
@@ -9,11 +9,11 @@ bootbox.dialog({
                 window.location.replace("{{ base }}/content/{{ id }}")
             }
         },
-main: {
-    label: "OK",
-        className: "btn-primary",
-        callback: function() {
+        main: {
+            label: "OK",
+            className: "btn-primary",
+            callback: function() {
+            }
+        }
     }
-}
-}
 });
